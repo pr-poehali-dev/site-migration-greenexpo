@@ -117,13 +117,26 @@ export default function Index() {
             >
               ЗАБРОНИРОВАТЬ СТЕНД
             </button>
-            <Link
-              to="/visitors"
-              className="font-montserrat font-700 text-sm tracking-widest px-8 py-4 rounded-full border-2 transition-all duration-200 hover:opacity-80"
-              style={{ borderColor: '#b0b8a8', color: 'var(--eco-green-dark)', backgroundColor: 'rgba(255,255,255,0.3)' }}
-            >
-              КУПИТЬ БИЛЕТ
-            </Link>
+            <div className="flex flex-col items-center gap-1">
+              <a
+                href="https://www.flowers-expo.ru/flowers-expo/get_ticket.html?utm_medium=lnk&utm_source=greenexpo_pro&utm_campaign=regbutton"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-montserrat font-700 text-sm tracking-widest px-8 py-4 rounded-full border-2 transition-all duration-200 hover:opacity-80"
+                style={{ borderColor: '#b0b8a8', color: 'var(--eco-green-dark)', backgroundColor: 'rgba(255,255,255,0.3)' }}
+              >
+                КУПИТЬ БИЛЕТ
+              </a>
+              <a
+                href="https://www.flowers-expo.ru/flowers-expo/get_ticket.html?utm_medium=lnk&utm_source=greenexpo_pro&utm_campaign=regbutton"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-opensans text-xs underline"
+                style={{ color: 'var(--eco-green-dark)', opacity: 0.7 }}
+              >
+                Зарегистрироваться как посетитель
+              </a>
+            </div>
           </div>
 
           <div className="flex flex-wrap justify-center gap-4">
@@ -223,36 +236,152 @@ export default function Index() {
       )}
 
       {/* О выставке */}
-      <section className="py-20" style={{ backgroundColor: 'var(--eco-beige)' }}>
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="section-title">О выставке</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <p className="font-opensans text-base leading-relaxed mb-4" style={{ color: 'var(--eco-text)' }}>
-                <strong>GreenExpo</strong> — крупнейшая в России специализированная выставка-форум в сфере органической, натуральной и экологически чистой продукции. Объединяет производителей, дистрибьюторов, ретейлеров и конечных потребителей на единой площадке.
+      <section className="py-16" style={{ backgroundColor: '#f5f5f0' }}>
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="font-montserrat font-800 text-3xl md:text-4xl text-center mb-10" style={{ color: 'var(--eco-green-dark)' }}>
+            О выставке
+          </h2>
+
+          {/* Три верхние карточки-тезиса */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div className="bg-white rounded-2xl p-6 flex gap-4 items-start shadow-sm">
+              <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/6b1b6098-e9bf-407d-85d2-19cf2fbc0f07.png" alt="" className="w-10 h-10 flex-shrink-0 mt-1" />
+              <p className="font-opensans text-sm leading-relaxed" style={{ color: 'var(--eco-text)' }}>
+                <strong>GreenExpo</strong> – ведущая площадка для производителей, дистрибьюторов, потребителей ECO продукции, технологий и индустрии ландшафта
               </p>
-              <p className="font-opensans text-base leading-relaxed mb-6" style={{ color: 'var(--eco-text)' }}>
-                В 2025 году ждём более 1000 участников из 40+ регионов России и стран СНГ. Три насыщенных дня деловых встреч, дегустаций, мастер-классов и конференций.
-              </p>
-              <Link to="/about" className="inline-block font-montserrat font-700 px-8 py-3 rounded-full transition-all hover:scale-105" style={{ backgroundColor: 'var(--eco-green)', color: 'var(--eco-beige)' }}>
-                ПОДРОБНЕЕ О ВЫСТАВКЕ
-              </Link>
             </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-xl">
-              <img src={heroImage} alt="GreenExpo выставка" className="w-full h-80 object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+            <div className="bg-white rounded-2xl p-6 flex gap-4 items-start shadow-sm">
+              <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/8e0cdfee-34c3-4a9a-a795-b59ae01bda18.png" alt="" className="w-10 h-10 flex-shrink-0 mt-1" />
+              <p className="font-opensans text-sm leading-relaxed" style={{ color: 'var(--eco-text)' }}>
+                Выставка <strong>объединяет</strong> бизнес, конечных потребителей и специалистов отрасли
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 flex gap-4 items-start shadow-sm">
+              <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/11002a77-bee3-4e4a-96f0-00cbcc3cee7f.png" alt="" className="w-10 h-10 flex-shrink-0 mt-1" />
+              <div>
+                <p className="font-montserrat font-700 text-sm mb-1" style={{ color: 'var(--eco-green-dark)' }}>Миссия выставки</p>
+                <p className="font-opensans text-sm leading-relaxed" style={{ color: 'var(--eco-text)' }}>
+                  Поддержка экологических бизнесов и популяризация жизни в стиле ECO
+                </p>
+              </div>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {aboutFeatures.map((f) => (
-              <div key={f.title} className="card-eco p-6">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: 'rgba(45,106,45,0.1)' }}>
-                  <Icon name={f.icon} size={24} style={{ color: 'var(--eco-green)' }} />
-                </div>
-                <h3 className="font-montserrat font-700 text-base mb-2" style={{ color: 'var(--eco-text)' }}>{f.title}</h3>
-                <p className="font-opensans text-sm leading-relaxed" style={{ color: '#5a7a5a' }}>{f.desc}</p>
+
+          {/* Плиточки разделов выставки */}
+          {/* Ряд 1: большая слева + средняя справа */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            {/* ОРГАНИЧЕСКОЕ ЗЕМЛЕДЕЛИЕ — большая зелёная с фото женщины */}
+            <div className="relative rounded-2xl overflow-hidden min-h-[220px] flex items-end p-6" style={{ backgroundColor: 'var(--eco-green)' }}>
+              <img
+                src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/dcf021d6-29c5-422c-9484-c240760fac32.png"
+                alt=""
+                className="absolute bottom-0 right-4 h-full max-h-[210px] object-contain object-bottom pointer-events-none"
+              />
+              <div className="relative z-10 max-w-[60%]">
+                <span className="font-opensans text-xs mb-2 block" style={{ color: 'rgba(255,255,255,0.7)' }}>Раздел выставки</span>
+                <h3 className="font-montserrat font-800 text-base text-white mb-2 uppercase tracking-wide">Органическое земледение</h3>
+                <p className="font-opensans text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  Технологии, товары, услуги и оборудование для органического земледелия, садоводов, садовых центров и ритейла
+                </p>
               </div>
-            ))}
+            </div>
+
+            {/* СИТИ-ФЕРМЕРСТВО */}
+            <div className="relative rounded-2xl overflow-hidden min-h-[220px] flex items-end p-6" style={{ backgroundColor: '#2d5a2d' }}>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="relative z-10">
+                <span className="font-opensans text-xs mb-2 block" style={{ color: 'rgba(255,255,255,0.7)' }}>Раздел выставки</span>
+                <h3 className="font-montserrat font-800 text-base text-white mb-2 uppercase tracking-wide">Сити-фермерство</h3>
+                <p className="font-opensans text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  Товары, услуги и оборудование для выращивания зелени, овощей и фруктов в городских условиях
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Ряд 2: три равные плитки */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div className="relative rounded-2xl overflow-hidden min-h-[200px] flex items-end p-5" style={{ backgroundColor: '#3a6b3a' }}>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="relative z-10">
+                <span className="font-opensans text-xs mb-2 block" style={{ color: 'rgba(255,255,255,0.7)' }}>Раздел выставки</span>
+                <h3 className="font-montserrat font-800 text-sm text-white mb-1 uppercase tracking-wide">Ландшафтная экология</h3>
+                <p className="font-opensans text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  Товары, услуги и оборудование для ландшафтной индустрии и служб городского озеленения
+                </p>
+              </div>
+            </div>
+
+            <div className="relative rounded-2xl overflow-hidden min-h-[200px] flex items-end p-5" style={{ backgroundColor: 'var(--eco-green)' }}>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              <div className="relative z-10">
+                <span className="font-opensans text-xs mb-2 block" style={{ color: 'rgba(255,255,255,0.7)' }}>Раздел выставки</span>
+                <h3 className="font-montserrat font-800 text-sm text-white mb-1 uppercase tracking-wide">Рециклинг</h3>
+                <p className="font-opensans text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  Ответственное производство, потребление, повторное использование и восстановление товаров, упаковки и материалов
+                </p>
+              </div>
+            </div>
+
+            <div className="relative rounded-2xl overflow-hidden min-h-[200px] flex items-end p-5" style={{ backgroundColor: '#1e4a1e' }}>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="relative z-10">
+                <span className="font-opensans text-xs mb-2 block" style={{ color: 'rgba(255,255,255,0.7)' }}>Раздел выставки</span>
+                <h3 className="font-montserrat font-800 text-sm text-white mb-1 uppercase tracking-wide">Чистый дом и сад</h3>
+                <p className="font-opensans text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  Экологичные товары, услуги для ухода за домом/садом, инновационные экотехнологии в строительстве домов и коттеджей
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Ряд 3: широкая плитка */}
+          <div className="grid grid-cols-1 gap-4 mb-4">
+            <div className="relative rounded-2xl overflow-hidden min-h-[160px] flex items-center p-8" style={{ backgroundColor: 'var(--eco-green)' }}>
+              <div className="relative z-10 max-w-[65%]">
+                <span className="font-opensans text-xs mb-2 block" style={{ color: 'rgba(255,255,255,0.7)' }}>Раздел выставки</span>
+                <h3 className="font-montserrat font-800 text-lg text-white mb-2 uppercase tracking-wide">Эко-продукты для человека и питомцев</h3>
+                <p className="font-opensans text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  Технологии, товары, услуги и оборудование для производства экологически чистых продуктов питания человека и домашних питомцев
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Ряд 4: две плитки */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <div className="relative rounded-2xl overflow-hidden min-h-[160px] flex items-end p-6" style={{ backgroundColor: '#2d5a2d' }}>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              <div className="relative z-10">
+                <span className="font-opensans text-xs mb-2 block" style={{ color: 'rgba(255,255,255,0.7)' }}>Раздел выставки</span>
+                <h3 className="font-montserrat font-800 text-base text-white mb-1 uppercase tracking-wide">ECO Lifestyle</h3>
+                <p className="font-opensans text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  Агро-Экотуризм, экологичные косметика, одежда, аксессуары, техника, услуги
+                </p>
+              </div>
+            </div>
+
+            <div className="relative rounded-2xl overflow-hidden min-h-[160px] flex items-end p-6" style={{ backgroundColor: '#3a6b3a' }}>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              <div className="relative z-10">
+                <span className="font-opensans text-xs mb-2 block" style={{ color: 'rgba(255,255,255,0.7)' }}>Раздел выставки</span>
+                <h3 className="font-montserrat font-800 text-base text-white mb-1 uppercase tracking-wide">ECO Образование и просвещение</h3>
+                <p className="font-opensans text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  Обучающие программы, направленные на формирование экосознания и уважительного отношения к природе
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Кнопка */}
+          <div className="text-center">
+            <Link
+              to="/exhibitors"
+              className="inline-block font-montserrat font-700 text-sm tracking-widest px-12 py-4 rounded-full transition-all hover:opacity-90"
+              style={{ backgroundColor: 'var(--eco-green-dark)', color: 'white' }}
+            >
+              СПИСОК УЧАСТНИКОВ
+            </Link>
           </div>
         </div>
       </section>
