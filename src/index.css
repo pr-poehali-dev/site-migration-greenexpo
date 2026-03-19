@@ -1,101 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 45 30% 96%;
+    --foreground: 120 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 120 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 120 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 130 45% 28%;
+    --primary-foreground: 45 30% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 43 40% 88%;
+    --secondary-foreground: 120 15% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 43 25% 92%;
+    --muted-foreground: 120 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 43 60% 82%;
+    --accent-foreground: 120 15% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 43 25% 82%;
+    --input: 43 25% 85%;
+    --ring: 130 45% 28%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Custom eco colors */
+    --eco-green: #2d6a2d;
+    --eco-green-light: #4a9e4a;
+    --eco-green-dark: #1a4a1a;
+    --eco-beige: #f5f0e8;
+    --eco-beige-dark: #e8dfc8;
+    --eco-sand: #d4c5a0;
+    --eco-text: #1e3a1e;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-opensans;
+    background-color: var(--eco-beige);
+    color: var(--eco-text);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Montserrat", sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-montserrat {
+    font-family: "Montserrat", sans-serif;
+  }
+  .font-opensans {
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .bg-eco-green {
+    background-color: var(--eco-green);
+  }
+  .bg-eco-green-light {
+    background-color: var(--eco-green-light);
+  }
+  .bg-eco-green-dark {
+    background-color: var(--eco-green-dark);
+  }
+  .bg-eco-beige {
+    background-color: var(--eco-beige);
+  }
+  .bg-eco-beige-dark {
+    background-color: var(--eco-beige-dark);
+  }
+  .bg-eco-sand {
+    background-color: var(--eco-sand);
+  }
+  .text-eco-green {
+    color: var(--eco-green);
+  }
+  .text-eco-green-light {
+    color: var(--eco-green-light);
+  }
+  .text-eco-beige {
+    color: var(--eco-beige);
+  }
+  .text-eco-text {
+    color: var(--eco-text);
+  }
+
+  .btn-primary {
+    @apply bg-eco-green text-eco-beige font-montserrat font-600 px-8 py-3 rounded-full hover:bg-eco-green-dark transition-all duration-200 inline-block cursor-pointer;
+    background-color: var(--eco-green);
+    color: var(--eco-beige);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--eco-green-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(45, 106, 45, 0.3);
+  }
+
+  .btn-outline {
+    @apply font-montserrat font-600 px-8 py-3 rounded-full border-2 transition-all duration-200 inline-block cursor-pointer;
+    border-color: var(--eco-green);
+    color: var(--eco-green);
+  }
+
+  .btn-outline:hover {
+    background-color: var(--eco-green);
+    color: var(--eco-beige);
+  }
+
+  .section-title {
+    @apply font-montserrat font-700 text-3xl md:text-4xl text-center mb-10;
+    color: var(--eco-text);
+  }
+
+  .leaf-decoration::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -20px;
+    width: 200px;
+    height: 200px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M100,10 C140,10 180,50 180,100 C180,150 140,180 100,180 C60,180 20,150 20,100 C20,50 60,10 100,10 Z' fill='%234a9e4a' opacity='0.1'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    pointer-events: none;
+  }
+
+  .card-eco {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--eco-beige-dark);
+    transition:
+      box-shadow 0.2s,
+      transform 0.2s;
+  }
+
+  .card-eco:hover {
+    box-shadow: 0 8px 32px rgba(45, 106, 45, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .font-600 {
+    font-weight: 600;
+  }
+  .font-700 {
+    font-weight: 700;
+  }
+  .font-800 {
+    font-weight: 800;
   }
 }
