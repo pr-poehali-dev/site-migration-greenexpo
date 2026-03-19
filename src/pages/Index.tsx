@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -6,10 +7,12 @@ import Icon from '@/components/ui/icon';
 const heroImage = 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/files/5394c160-2a6a-4345-a2d3-d23038df86b2.jpg';
 const expoImage = 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/files/4db694dd-cc8c-49d7-979b-20eb8b01522b.jpg';
 
+const heroBg = 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/d60355ee-7f16-4f7a-9e5e-b0ac8b130940.png';
+
 const stats = [
-  { value: '1000+', label: 'участников' },
-  { value: '80+', label: 'экспонентов' },
-  { value: '20+', label: 'спикеров' },
+  { value: '12000+', label: 'посетителей', green: true },
+  { value: '50+', label: 'участников', green: false },
+  { value: '30+', label: 'экспертов и спикеров', green: true },
 ];
 
 const aboutFeatures = [
@@ -63,81 +66,161 @@ const infoPartners = [
 ];
 
 export default function Index() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [form, setForm] = useState({ name: '', phone: '', email: '' });
+  const [sent, setSent] = useState(false);
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setSent(true);
+  }
+
   return (
     <div style={{ backgroundColor: 'var(--eco-beige)' }}>
       <Header />
 
       {/* Hero */}
       <section
-        className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, var(--eco-green-dark) 0%, var(--eco-green) 60%, #3a7a3a 100%)' }}
+        className="relative min-h-[85vh] flex items-center justify-center overflow-hidden"
+        style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
-        <div className="absolute top-0 right-0 w-96 h-96 opacity-15 pointer-events-none">
-          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="280" cy="120" rx="200" ry="100" fill="white" transform="rotate(-30 280 120)" />
-          </svg>
-        </div>
-        <div className="absolute bottom-0 left-0 w-72 h-72 opacity-10 pointer-events-none">
-          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="80" cy="220" rx="160" ry="80" fill="white" transform="rotate(20 80 220)" />
-          </svg>
-        </div>
+        <div className="relative z-10 text-center max-w-3xl mx-auto px-6 py-20">
+          <p className="font-opensans text-sm md:text-base mb-6" style={{ color: 'var(--eco-green-dark)' }}>
+            <strong>7 - 9 сентября 2026 года</strong>, Москва, МВЦ «Крокус Экспо» Павильон 1, Зал 1
+          </p>
 
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4 py-20">
-          <div
-            className="inline-block font-montserrat text-sm font-600 px-5 py-2 rounded-full mb-6"
-            style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: 'var(--eco-sand)', border: '1px solid rgba(255,255,255,0.3)' }}
+          <h1
+            className="font-montserrat font-800 leading-tight mb-5"
+            style={{ fontSize: 'clamp(2.4rem, 6vw, 4.5rem)', color: 'var(--eco-green-dark)' }}
           >
-            8–10 сентября 2025 • Москва • МВЦ «Крокус Экспо», павильон 1, зал 1
-          </div>
-          <h1 className="font-montserrat font-800 text-5xl md:text-7xl text-white mb-4 leading-tight">
-            GreenExpo'2026
+            GreenExpo'2026 –<br />Жизнь в стиле ECO
           </h1>
-          <h2 className="font-montserrat font-700 text-2xl md:text-4xl mb-4" style={{ color: 'var(--eco-beige)' }}>
-            Жизнь в стиле <span style={{ color: '#a8d8a8' }}>ECO</span>
-          </h2>
-          <p className="font-opensans text-lg md:text-xl mb-4 leading-relaxed" style={{ color: 'rgba(245,240,232,0.85)' }}>
-            II Международная Выставка-Форум
-          </p>
-          <p className="font-opensans text-base mb-8 max-w-2xl mx-auto leading-relaxed" style={{ color: 'rgba(245,240,232,0.75)' }}>
-            для производителей, дистрибьюторов и потребителей ECO продукции
+
+          <p className="font-montserrat font-700 text-base md:text-lg mb-3" style={{ color: 'var(--eco-green-dark)' }}>
+            международная Выставка-Форум
           </p>
 
-          <ul className="text-left max-w-md mx-auto mb-10 space-y-2">
-            {['Органические продукты питания и напитки', 'Натуральная косметика и товары для красоты', 'Эко-товары для дома и быта', 'Биоразлагаемая упаковка и технологии'].map((item) => (
-              <li key={item} className="flex items-center gap-2 font-opensans text-sm" style={{ color: 'rgba(245,240,232,0.85)' }}>
-                <span style={{ color: '#a8d8a8' }}>✓</span> {item}
-              </li>
-            ))}
+          <ul className="text-center space-y-2 mb-8">
+            <li className="font-opensans text-sm md:text-base leading-relaxed" style={{ color: 'var(--eco-green-dark)' }}>
+              • для производителей, дистрибьюторов и потребителей ECO продукции, технологий
+            </li>
+            <li className="font-opensans text-sm md:text-base leading-relaxed" style={{ color: 'var(--eco-green-dark)' }}>
+              • для ландшафтных архитекторов, исполнителей работ, поставщиков оборудования и материалов для ландшафтного дизайна в фокусе ландшафтной экологии
+            </li>
           </ul>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Link
-              to="/exhibitors"
-              className="font-montserrat font-700 text-base px-10 py-4 rounded-full transition-all duration-200 hover:scale-105"
-              style={{ backgroundColor: 'white', color: 'var(--eco-green)' }}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+            <button
+              onClick={() => { setModalOpen(true); setSent(false); }}
+              className="font-montserrat font-700 text-sm tracking-widest px-8 py-4 rounded-full transition-all duration-200 hover:opacity-90"
+              style={{ backgroundColor: 'var(--eco-green-dark)', color: 'white' }}
             >
-              СТАТЬ УЧАСТНИКОМ
-            </Link>
+              ЗАБРОНИРОВАТЬ СТЕНД
+            </button>
             <Link
               to="/visitors"
-              className="font-montserrat font-700 text-base px-10 py-4 rounded-full border-2 transition-all duration-200 hover:scale-105"
-              style={{ borderColor: 'rgba(255,255,255,0.6)', color: 'white' }}
+              className="font-montserrat font-700 text-sm tracking-widest px-8 py-4 rounded-full border-2 transition-all duration-200 hover:opacity-80"
+              style={{ borderColor: '#b0b8a8', color: 'var(--eco-green-dark)', backgroundColor: 'rgba(255,255,255,0.3)' }}
             >
-              ПОСЕТИТЬ ВЫСТАВКУ
+              КУПИТЬ БИЛЕТ
             </Link>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8">
+          <div className="flex flex-wrap justify-center gap-4">
             {stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <div className="font-montserrat font-800 text-4xl text-white">{s.value}</div>
-                <div className="font-opensans text-sm" style={{ color: 'var(--eco-sand)' }}>{s.label}</div>
+              <div
+                key={s.label}
+                className="text-center px-6 py-3 rounded-2xl min-w-[120px]"
+                style={{
+                  backgroundColor: s.green ? 'var(--eco-green)' : 'white',
+                  color: s.green ? 'white' : 'var(--eco-green-dark)',
+                }}
+              >
+                <div className="font-montserrat font-800 text-2xl">{s.value}</div>
+                <div className="font-opensans text-xs mt-1">{s.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Модальное окно — Запрос на участие */}
+      {modalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center px-4"
+          style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}
+          onClick={() => setModalOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-md rounded-2xl p-8 shadow-2xl"
+            style={{ backgroundColor: 'white' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-700"
+              onClick={() => setModalOpen(false)}
+            >
+              <Icon name="X" size={20} />
+            </button>
+            <h2 className="font-montserrat font-800 text-xl mb-6 text-center" style={{ color: 'var(--eco-green-dark)' }}>
+              Запрос на участие в выставке
+            </h2>
+            {sent ? (
+              <p className="text-center font-opensans py-6" style={{ color: 'var(--eco-green-dark)' }}>
+                Спасибо! Ваш запрос отправлен, мы свяжемся с вами в ближайшее время.
+              </p>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <input
+                  required
+                  type="text"
+                  placeholder="Имя"
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  className="w-full border rounded-xl px-4 py-3 font-opensans text-sm outline-none focus:ring-2"
+                  style={{ borderColor: '#d0d8c8', color: 'var(--eco-text)' }}
+                />
+                <input
+                  required
+                  type="tel"
+                  placeholder="Телефон"
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  className="w-full border rounded-xl px-4 py-3 font-opensans text-sm outline-none focus:ring-2"
+                  style={{ borderColor: '#d0d8c8', color: 'var(--eco-text)' }}
+                />
+                <input
+                  required
+                  type="email"
+                  placeholder="Email"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  className="w-full border rounded-xl px-4 py-3 font-opensans text-sm outline-none focus:ring-2"
+                  style={{ borderColor: '#d0d8c8', color: 'var(--eco-text)' }}
+                />
+                <button
+                  type="submit"
+                  className="w-full font-montserrat font-700 text-sm tracking-widest py-4 rounded-full transition-all hover:opacity-90"
+                  style={{ backgroundColor: 'var(--eco-green-dark)', color: 'white' }}
+                >
+                  ОТПРАВИТЬ
+                </button>
+                <p className="text-center font-opensans text-xs leading-relaxed" style={{ color: '#888' }}>
+                  Нажимая на кнопку «Отправить» я принимаю{' '}
+                  <Link to="/terms" className="underline" style={{ color: 'var(--eco-green)' }} onClick={() => setModalOpen(false)}>
+                    Пользовательское соглашение
+                  </Link>{' '}
+                  и даю согласие на обработку, хранение и передачу указанных мной персональных данных согласно{' '}
+                  <Link to="/privacy" className="underline" style={{ color: 'var(--eco-green)' }} onClick={() => setModalOpen(false)}>
+                    Политике конфиденциальности
+                  </Link>
+                  *
+                </p>
+              </form>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* О выставке */}
       <section className="py-20" style={{ backgroundColor: 'var(--eco-beige)' }}>
