@@ -57,8 +57,9 @@ const pressItems = [
 const partners = [
   { name: 'Союз органического земледелия', logo: 'https://cdn.poehali.dev/files/42e67576-c450-45e0-90d0-e9796ca964c9.jpg' },
   { name: 'Фонд Органика', logo: 'https://cdn.poehali.dev/files/9920cf71-2de3-4a84-8396-0fb6e645e493.png' },
-  { name: 'Wildberries & Russ', logo: 'https://cdn.poehali.dev/files/eb175aaa-454e-4618-ac5c-7e80672e3d04.jpg' },
+  { name: 'Wildberries & Russ', logo: 'https://cdn.poehali.dev/files/9dfb62a3-8e69-4bb0-a08c-8c23a309809e.png' },
   { name: 'Роскачество', logo: 'https://cdn.poehali.dev/files/2c4f4bf7-7240-41e1-bcff-6b312fdc5a63.png' },
+  { name: 'SYNTX', logo: 'https://cdn.poehali.dev/files/eb175aaa-454e-4618-ac5c-7e80672e3d04.jpg' },
 ];
 
 const infoPartners = [
