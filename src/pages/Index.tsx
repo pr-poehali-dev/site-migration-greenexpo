@@ -40,8 +40,8 @@ const subsidyInfo = [
 
 const whyCome = [
   { icon: '', title: '1 билет – 2 выставки', desc: '(GreenExpo + FlowersExpo)', highlight: 'FlowersExpo', isLogos: true },
-  { icon: 'Users', title: '350+ компаний', desc: '', green: true },
-  { icon: 'Percent', title: 'СКИДКИ на продукцию экспонентов', desc: '' },
+  { icon: 'Users', title: '350+ компаний', desc: '', green: true, img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/ac37263e-a3f0-4e73-b1c3-ab61d796d7ce.png' },
+  { icon: 'Percent', title: 'СКИДКИ на продукцию экспонентов', desc: '', img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/4d56a7e4-e90b-481e-b226-d1f27392872f.png' },
   { icon: 'Home', title: 'БЕСПРОИГРЫШНАЯ лотерея для всех посетителей', desc: '' },
   { icon: 'UtensilsCrossed', title: 'Дегустация', desc: 'сортов и гибридов овощных культур российской селекции', green: true },
   { icon: 'Music', title: 'Насыщенная программа:', desc: 'мастер-классы, лекции, нетворкинг' },
@@ -516,9 +516,13 @@ export default function Index() {
                 style={{ backgroundColor: item.green ? 'rgba(45,106,45,0.08)' : 'white' }}
               >
                 {item.isLogos ? (
-                  <div className="flex gap-2 items-center justify-center mb-4 flex-wrap">
-                    <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/d60355ee-7f16-4f7a-9e5e-b0ac8b130940.png" alt="GreenExpo" className="h-8 object-contain" />
-                    <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/files/4db694dd-cc8c-49d7-979b-20eb8b01522b.jpg" alt="FlowersExpo" className="h-8 object-contain" />
+                  <div className="flex flex-col gap-2 items-center justify-center mb-4">
+                    <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/50bd4f74-638e-401b-a97a-9648d41cc09d.png" alt="GreenExpo" className="h-8 object-contain" />
+                    <img src="https://cdn.poehali.dev/files/c8d69aa7-7bdc-4eb6-9355-88587867cf38.png" alt="FlowersExpo" className="h-8 object-contain" />
+                  </div>
+                ) : item.img ? (
+                  <div className="w-14 h-14 flex items-center justify-center mb-4">
+                    <img src={item.img} alt={item.title} className="w-full h-full object-contain" />
                   </div>
                 ) : (
                   <div className="w-14 h-14 flex items-center justify-center mb-4">
