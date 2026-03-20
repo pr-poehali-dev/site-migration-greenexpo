@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <Link to="/" className="flex flex-col gap-3 mb-4">
               <img
-                src="https://cdn.poehali.dev/files/a47265f8-d34c-4637-9683-d921eaa95b2a.jpg"
+                src="https://cdn.poehali.dev/files/fd84a788-1a72-431d-bef6-6c7a5d181c51.png"
                 alt="GreenExpo"
                 className="h-10 w-auto object-contain"
               />

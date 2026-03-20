@@ -57,7 +57,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <img
-              src="https://cdn.poehali.dev/files/a47265f8-d34c-4637-9683-d921eaa95b2a.jpg"
+              src="https://cdn.poehali.dev/files/fd84a788-1a72-431d-bef6-6c7a5d181c51.png"
               alt="GreenExpo"
               className="h-10 w-auto object-contain"
             />
