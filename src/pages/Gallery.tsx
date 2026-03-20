@@ -32,6 +32,11 @@ const photos = [
   { src: 'https://cdn.poehali.dev/files/bd34469c-325f-4e5a-a1f8-a253ea4f3029.jpg', caption: 'Стенд «Виноград Подмосковья»' },
   { src: 'https://cdn.poehali.dev/files/6f491f53-2e90-4d7f-918a-5d319b9d36b7.jpg', caption: 'Экспозиция гладиолусов' },
   { src: 'https://cdn.poehali.dev/files/308bcc4d-1369-4d0a-8a61-8e70ee38c49e.jpg', caption: 'Официальное открытие выставки' },
+  { src: 'https://cdn.poehali.dev/files/b4d6c893-8976-4c2e-8611-64327217ee91.jpg', caption: 'Команда организаторов на сцене' },
+  { src: 'https://cdn.poehali.dev/files/843e1381-7727-4535-a89a-ebe6252a5ad8.jpg', caption: 'Участница с агладеонемой' },
+  { src: 'https://cdn.poehali.dev/files/4c83d0c4-e946-4fb0-9ce6-04abab07d382.jpg', caption: 'Публика на показе' },
+  { src: 'https://cdn.poehali.dev/files/0a02ebbb-f94f-49d0-af56-8d1732f930cd.jpg', caption: 'Стенд питомника деревьев' },
+  { src: 'https://cdn.poehali.dev/files/b94152d6-0da3-4cf7-be5b-8e6eb9fa752d.jpg', caption: 'Экспозиция винограда' },
 ];
 
 export default function Gallery() {
