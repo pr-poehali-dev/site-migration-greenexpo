@@ -673,7 +673,7 @@ export default function Index() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-0.5 shrink-0">•</span>
-                  <span>Адрес офиса</span>
+                  <span>Адрес офиса: Москва, Озерковский переулок, д. 12, офис 611</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-0.5 shrink-0">•</span>
