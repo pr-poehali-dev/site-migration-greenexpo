@@ -7,6 +7,11 @@ const photos = [
   { src: 'https://cdn.poehali.dev/files/b0316b19-d712-4eb9-b921-836469c2fd34.jpg', caption: 'Кулинарное шоу' },
   { src: 'https://cdn.poehali.dev/files/6b17fa07-87af-4de2-9e7b-b71f95978e25.jpg', caption: 'Нетворкинг-сессия' },
   { src: 'https://cdn.poehali.dev/files/bf128f7f-5cfb-46ad-a355-bc796f78c755.jpg', caption: 'Мастер-класс' },
+  { src: 'https://cdn.poehali.dev/files/21619d54-5a19-47e9-bfa7-0f1d39bbe2a9.jpg', caption: 'Торжественное открытие' },
+  { src: 'https://cdn.poehali.dev/files/fe83b722-55d6-4eb1-8e49-1ca73a78a457.jpg', caption: 'Перерезание ленты' },
+  { src: 'https://cdn.poehali.dev/files/2e78f1f2-7f12-482c-9e34-833bc6830aba.jpg', caption: 'Выступление на сцене' },
+  { src: 'https://cdn.poehali.dev/files/f57dffe5-d867-4209-8be1-9a6a59f59e20.jpg', caption: 'Мастер-класс по уходу за растениями' },
+  { src: 'https://cdn.poehali.dev/files/bb02c00c-f83f-44dd-8028-23b5fc14862e.jpg', caption: 'Экостиль на выставке' },
 ];
 
 export default function Gallery() {
