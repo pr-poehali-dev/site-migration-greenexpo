@@ -328,23 +328,29 @@ export default function Index() {
             </div>
           </div>
 
-          {/* Ряд 3: широкая плитка */}
+          {/* Ряд 3: широкая плитка — Эко-продукты */}
           <div className="grid grid-cols-1 gap-4 mb-4">
-            <div className="relative rounded-2xl overflow-hidden min-h-[160px] flex items-center p-8" style={{ backgroundColor: 'var(--eco-green)' }}>
-              <div className="relative z-10 max-w-[65%]">
+            <div className="relative rounded-2xl overflow-hidden min-h-[200px] flex items-center p-8" style={{ backgroundColor: '#2d5a2d' }}>
+              <div className="relative z-10 max-w-[60%]">
                 <span className="font-opensans text-xs mb-2 block" style={{ color: 'rgba(255,255,255,0.7)' }}>Раздел выставки</span>
                 <h3 className="font-montserrat font-800 text-lg text-white mb-2 uppercase tracking-wide">Эко-продукты для человека и питомцев</h3>
                 <p className="font-opensans text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
                   Технологии, товары, услуги и оборудование для производства экологически чистых продуктов питания человека и домашних питомцев
                 </p>
               </div>
+              <img
+                src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/c1d43e3b-d3f3-4596-8e48-985451b19036.png"
+                alt=""
+                className="absolute right-0 bottom-0 h-[115%] w-auto object-contain object-bottom pointer-events-none"
+              />
             </div>
           </div>
 
           {/* Ряд 4: две плитки */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-            <div className="relative rounded-2xl overflow-hidden min-h-[160px] flex items-end p-6" style={{ backgroundColor: '#2d5a2d' }}>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+            <div className="relative rounded-2xl overflow-hidden min-h-[200px] flex items-end p-6" style={{ backgroundColor: '#1e4a1e' }}>
+              <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/30d45dec-6313-4f4a-a94d-8ed33168e4b4.png" alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10" />
               <div className="relative z-10">
                 <span className="font-opensans text-xs mb-2 block" style={{ color: 'rgba(255,255,255,0.7)' }}>Раздел выставки</span>
                 <h3 className="font-montserrat font-800 text-base text-white mb-1 uppercase tracking-wide">ECO Lifestyle</h3>
@@ -354,8 +360,9 @@ export default function Index() {
               </div>
             </div>
 
-            <div className="relative rounded-2xl overflow-hidden min-h-[160px] flex items-end p-6" style={{ backgroundColor: '#3a6b3a' }}>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+            <div className="relative rounded-2xl overflow-hidden min-h-[200px] flex items-end p-6" style={{ backgroundColor: '#3a6b3a' }}>
+              <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/4929e8cb-e16f-4b7d-afaf-b839ab72f158.jpeg" alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10" />
               <div className="relative z-10">
                 <span className="font-opensans text-xs mb-2 block" style={{ color: 'rgba(255,255,255,0.7)' }}>Раздел выставки</span>
                 <h3 className="font-montserrat font-800 text-base text-white mb-1 uppercase tracking-wide">ECO Образование и просвещение</h3>
@@ -368,13 +375,15 @@ export default function Index() {
 
           {/* Кнопка */}
           <div className="text-center">
-            <Link
-              to="/exhibitors"
+            <a
+              href="https://www.flowers-expo.ru/online/exhibitors.html?o=name&beh_participation_expo[]=Green%20Expo%202026&utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=button_2_block"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block font-montserrat font-700 text-sm tracking-widest px-12 py-4 rounded-full transition-all hover:opacity-90"
               style={{ backgroundColor: 'var(--eco-green-dark)', color: 'white' }}
             >
               СПИСОК УЧАСТНИКОВ
-            </Link>
+            </a>
           </div>
         </div>
       </section>
