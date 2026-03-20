@@ -22,6 +22,11 @@ const photos = [
   { src: 'https://cdn.poehali.dev/files/d18f81e4-4983-4add-94d4-543e1611ff92.jpg', caption: 'Дегустация сортов томатов' },
   { src: 'https://cdn.poehali.dev/files/f28908f4-7e5f-4282-bbe6-2bfc7c1f1086.jpg', caption: 'Топиарное искусство' },
   { src: 'https://cdn.poehali.dev/files/e3c615d7-4878-4430-b4f5-014ac6dde0f5.jpg', caption: 'Павильон с экзотическими растениями' },
+  { src: 'https://cdn.poehali.dev/files/4519552a-cfeb-44d4-a79f-ad5fe8aac12d.jpg', caption: 'Дегустация огурцов' },
+  { src: 'https://cdn.poehali.dev/files/b4a36543-c464-4a31-ab96-42d6557ec022.jpg', caption: 'Оживлённые аллеи выставки' },
+  { src: 'https://cdn.poehali.dev/files/1d349e93-8c87-412f-8970-c2b6f648d46e.jpg', caption: 'Зрители на лекции' },
+  { src: 'https://cdn.poehali.dev/files/f472e63f-ece0-4f42-a411-a512b2480bbb.jpg', caption: 'Мастер-класс по пересадке растений' },
+  { src: 'https://cdn.poehali.dev/files/1639ad53-95d8-4329-961d-39a4460e6dea.jpg', caption: 'Семинар «Заряди растения витаминами»' },
 ];
 
 export default function Gallery() {
