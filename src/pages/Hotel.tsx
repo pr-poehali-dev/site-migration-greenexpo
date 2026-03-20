@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 const hotels = [
   {
     name: '«Аквариум Отель» ⭐⭐⭐',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Hotel_Aquarium_Moscow.jpg/800px-Hotel_Aquarium_Moscow.jpg',
+    img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/dcadaf31-34d4-485a-9e07-0f1982f02026.jpg',
     imgAlt: 'Hotel Aquarium',
     description: (
       <>
@@ -32,7 +32,7 @@ const hotels = [
   },
   {
     name: 'Бизнес-отель 4* «Гринвуд»',
-    img: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
+    img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/93c08cf9-d592-46f9-b748-6b257e16cee3.jpeg',
     imgAlt: 'Greenwood Hotel',
     description: (
       <>
@@ -54,7 +54,7 @@ const hotels = [
   },
   {
     name: 'Апарт-отель YE\'S Mitino',
-    img: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80',
+    img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/4f231809-5a0c-48e9-8e16-8a4c254bccad.jpg',
     imgAlt: "YE'S Mitino",
     description: (
       <>
@@ -78,7 +78,7 @@ const hotels = [
   },
   {
     name: '«Hampton by Hilton Moscow Strogino» ⭐⭐⭐',
-    img: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+    img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/b34cfa33-d665-42fa-bf53-a4347dd8acd4.jpeg',
     imgAlt: 'Hampton by Hilton',
     description: (
       <>
