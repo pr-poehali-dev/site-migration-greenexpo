@@ -640,57 +640,44 @@ export default function Index() {
       </section>
 
       {/* Контакты */}
-      <section className="py-16" style={{ backgroundColor: 'var(--eco-beige-dark)' }}>
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#f7f5ef' }}>
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(https://cdn.poehali.dev/files/ca5fe1ab-a41c-4f44-bf7f-5e2b403c8f4e.png)', opacity: 0.6 }} />
+        <div className="relative max-w-5xl mx-auto px-4">
           <h2 className="section-title">Свяжитесь с нами</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="card-eco p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--eco-green)' }}>
-                  <span className="text-white font-montserrat text-xs" style={{ fontWeight: 800 }}>GE</span>
-                </div>
-                <div>
-                  <div className="font-montserrat font-700 text-base" style={{ color: 'var(--eco-green)' }}>GreenExpo</div>
-                  <div className="font-opensans text-xs" style={{ color: '#5a7a5a' }}>Выставочная компания</div>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            {/* Левая карточка — реквизиты */}
+            <div className="bg-white rounded-2xl p-8 shadow-sm">
+              <div className="flex items-center gap-6 mb-6">
+                <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/50bd4f74-638e-401b-a97a-9648d41cc09d.png" alt="GreenExpo" className="h-12 object-contain" />
+                <img src="https://cdn.poehali.dev/files/c8d69aa7-7bdc-4eb6-9355-88587867cf38.png" alt="Flowers Expo" className="h-12 object-contain" />
               </div>
-              <div className="space-y-3 font-opensans text-sm" style={{ color: 'var(--eco-text)' }}>
-                <div className="flex items-start gap-2">
-                  <Icon name="MapPin" size={16} style={{ color: 'var(--eco-green)', marginTop: 2 }} />
-                  <span>125315, Москва, ул. Планерная, д. 7, корп. 1, стр. 3</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Icon name="Phone" size={16} style={{ color: 'var(--eco-green)' }} />
-                  <a href="tel:+74959889904" className="hover:underline">+7 (495) 988-99-04</a>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Icon name="Phone" size={16} style={{ color: 'var(--eco-green)' }} />
-                  <a href="tel:+74955090143" className="hover:underline">+7 (495) 509-01-43</a>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Icon name="Mail" size={16} style={{ color: 'var(--eco-green)' }} />
-                  <a href="mailto:info@greenexpo.pro" className="hover:underline">info@greenexpo.pro</a>
-                </div>
+              <div className="mb-4">
+                <p className="font-montserrat font-700 text-sm uppercase tracking-wide mb-3" style={{ color: 'var(--eco-text)' }}>Реквизиты компании:</p>
+                <ul className="space-y-2 font-opensans text-sm" style={{ color: 'var(--eco-text)' }}>
+                  <li className="flex items-start gap-2"><span style={{ color: 'var(--eco-text)' }}>•</span><span>ООО «Выставочная компания «ГринЭкспо»</span></li>
+                  <li className="flex items-start gap-2"><span>•</span><span>Адрес офиса</span></li>
+                  <li className="flex items-start gap-2"><span>•</span><span>Телефон: <strong>+7 (495) 118-06-39</strong></span></li>
+                  <li className="flex items-start gap-2"><span>•</span><span>Email: <a href="mailto:mail@flowers-expo.ru" className="font-bold" style={{ color: 'var(--eco-text)' }}>mail@flowers-expo.ru</a></span></li>
+                </ul>
               </div>
             </div>
-            <div className="card-eco p-8">
-              <h3 className="font-montserrat font-700 text-lg mb-4" style={{ color: 'var(--eco-green)' }}>Место проведения</h3>
-              <div className="space-y-3 font-opensans text-sm" style={{ color: 'var(--eco-text)' }}>
-                <div className="flex items-start gap-2">
-                  <Icon name="Building2" size={16} style={{ color: 'var(--eco-green)', marginTop: 2 }} />
-                  <span>МВЦ «Крокус Экспо», павильон 1, зал 1</span>
+
+            {/* Правая карточка — контакты */}
+            <div className="bg-white rounded-2xl p-8 shadow-sm">
+              <div className="flex items-center justify-between mb-5">
+                <p className="font-montserrat font-700 text-sm uppercase tracking-wide" style={{ color: 'var(--eco-text)' }}>Контакты:</p>
+                <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/50bd4f74-638e-401b-a97a-9648d41cc09d.png" alt="GreenExpo" className="h-10 object-contain" />
+              </div>
+              <div className="space-y-5 font-opensans text-sm">
+                <div>
+                  <p style={{ color: 'var(--eco-text)' }}>Руководитель выставки-форума GreenExpo. Жизнь в стиле ЕСО</p>
+                  <p className="font-bold mt-1" style={{ color: 'var(--eco-text)' }}>Анастасия Егорова</p>
+                  <a href="mailto:mail@greenexpo.pro" style={{ color: 'var(--eco-green)' }} className="hover:underline">mail@greenexpo.pro</a>
                 </div>
-                <div className="flex items-start gap-2">
-                  <Icon name="MapPin" size={16} style={{ color: 'var(--eco-green)', marginTop: 2 }} />
-                  <span>Московская обл., Красногорский р-н, 65–66 км МКАД</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Icon name="Train" size={16} style={{ color: 'var(--eco-green)', marginTop: 2 }} />
-                  <span>м. Мякинино (Арбатско-Покровская линия)</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Icon name="Calendar" size={16} style={{ color: 'var(--eco-green)', marginTop: 2 }} />
-                  <span>8–10 сентября 2025, 10:00–18:00</span>
+                <div>
+                  <p style={{ color: 'var(--eco-text)' }}>Руководитель отдела маркетинга</p>
+                  <p className="font-bold mt-1" style={{ color: 'var(--eco-text)' }}>Константин Пожидаев</p>
+                  <a href="mailto:marketing@greenexpo.pro" style={{ color: 'var(--eco-green)' }} className="hover:underline">marketing@greenexpo.pro</a>
                 </div>
               </div>
             </div>
