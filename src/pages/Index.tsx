@@ -39,10 +39,13 @@ const subsidyInfo = [
 ];
 
 const whyCome = [
-  { icon: 'Eye', title: 'Увидеть новинки рынка', desc: 'Сотни эко-брендов в одном месте' },
-  { icon: 'ChefHat', title: 'Мастер-классы', desc: 'Кулинарные шоу и дегустации от шеф-поваров' },
-  { icon: 'BookOpen', title: 'Обучение', desc: 'Лекции по здоровому образу жизни и питанию' },
-  { icon: 'ShoppingCart', title: 'Покупки напрямую', desc: 'Приобретение продуктов по ценам производителей' },
+  { icon: '', title: '1 билет – 2 выставки', desc: '(GreenExpo + FlowersExpo)', highlight: 'FlowersExpo', isLogos: true },
+  { icon: 'Users', title: '350+ компаний', desc: '', green: true },
+  { icon: 'Percent', title: 'СКИДКИ на продукцию экспонентов', desc: '' },
+  { icon: 'Home', title: 'БЕСПРОИГРЫШНАЯ лотерея для всех посетителей', desc: '' },
+  { icon: 'UtensilsCrossed', title: 'Дегустация', desc: 'сортов и гибридов овощных культур российской селекции', green: true },
+  { icon: 'Music', title: 'Насыщенная программа:', desc: 'мастер-классы, лекции, нетворкинг' },
+  { icon: 'UserCheck', title: 'Живые встречи', desc: 'с эко-блогерами и экспертами' },
 ];
 
 const pressItems = [
@@ -498,23 +501,85 @@ export default function Index() {
       </section>
 
       {/* Почему стоит прийти */}
-      <section className="py-20" style={{ backgroundColor: 'var(--eco-beige)' }}>
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="section-title">Почему стоит прийти?</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-            {whyCome.map((item) => (
-              <div key={item.title} className="text-center p-6 card-eco">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(45,106,45,0.1)' }}>
-                  <Icon name={item.icon} size={28} style={{ color: 'var(--eco-green)' }} />
-                </div>
-                <h3 className="font-montserrat font-700 text-base mb-2" style={{ color: 'var(--eco-text)' }}>{item.title}</h3>
-                <p className="font-opensans text-sm" style={{ color: '#5a7a5a' }}>{item.desc}</p>
+      <section className="py-20" style={{ backgroundColor: '#f5f5f0' }}>
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="font-montserrat font-800 text-3xl md:text-4xl text-center mb-10" style={{ color: 'var(--eco-text)' }}>
+            Почему стоит прийти?
+          </h2>
+
+          {/* Ряд 1: 4 карточки */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+            {whyCome.slice(0, 4).map((item, i) => (
+              <div
+                key={item.title}
+                className="rounded-2xl p-6 flex flex-col items-center text-center"
+                style={{ backgroundColor: item.green ? 'rgba(45,106,45,0.08)' : 'white' }}
+              >
+                {item.isLogos ? (
+                  <div className="flex gap-2 items-center justify-center mb-4 flex-wrap">
+                    <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/d60355ee-7f16-4f7a-9e5e-b0ac8b130940.png" alt="GreenExpo" className="h-8 object-contain" />
+                    <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/files/4db694dd-cc8c-49d7-979b-20eb8b01522b.jpg" alt="FlowersExpo" className="h-8 object-contain" />
+                  </div>
+                ) : (
+                  <div className="w-14 h-14 flex items-center justify-center mb-4">
+                    <Icon name={item.icon} size={36} style={{ color: 'var(--eco-green)' }} />
+                  </div>
+                )}
+                <p className="font-montserrat font-700 text-sm leading-snug" style={{ color: 'var(--eco-text)' }}>
+                  {item.title}
+                </p>
+                {item.desc && (
+                  <p className="font-opensans text-xs mt-1 leading-relaxed" style={{ color: item.highlight ? '#5a7a5a' : '#5a7a5a' }}>
+                    {item.desc.replace(item.highlight || '', '')}
+                    {item.highlight && (
+                      <span style={{ color: '#e07b39' }}>{item.highlight}</span>
+                    )}
+                  </p>
+                )}
               </div>
             ))}
           </div>
-          <div className="text-center">
-            <Link to="/visitors" className="inline-block font-montserrat font-700 px-8 py-3 rounded-full transition-all hover:scale-105" style={{ backgroundColor: 'var(--eco-green)', color: 'var(--eco-beige)' }}>
-              ПРИЙТИ БЕСПЛАТНО
+
+          {/* Ряд 2: 3 карточки */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+            {whyCome.slice(4).map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl p-6 flex flex-col items-center text-center"
+                style={{ backgroundColor: item.green ? 'rgba(45,106,45,0.08)' : 'white' }}
+              >
+                <div className="w-14 h-14 flex items-center justify-center mb-4">
+                  <Icon name={item.icon} size={36} style={{ color: 'var(--eco-green)' }} />
+                </div>
+                <p className="font-montserrat font-700 text-sm leading-snug" style={{ color: 'var(--eco-text)' }}>
+                  {item.title}
+                </p>
+                {item.desc && (
+                  <p className="font-opensans text-xs mt-1 leading-relaxed" style={{ color: 'var(--eco-green)' }}>
+                    {item.desc}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Кнопки */}
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="https://www.flowers-expo.ru/online/visitor-registration.html?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=button_buy_ticket"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-montserrat font-700 text-sm tracking-widest px-10 py-4 rounded-full transition-all hover:opacity-90"
+              style={{ backgroundColor: 'var(--eco-green-dark)', color: 'white' }}
+            >
+              КУПИТЬ БИЛЕТ
+            </a>
+            <Link
+              to="/visitors"
+              className="font-montserrat font-700 text-sm tracking-widest px-10 py-4 rounded-full border-2 transition-all hover:opacity-80"
+              style={{ borderColor: 'var(--eco-green-dark)', color: 'var(--eco-green-dark)', backgroundColor: 'transparent' }}
+            >
+              КАК ДОБРАТЬСЯ / ГОСТИНИЦЫ
             </Link>
           </div>
         </div>
