@@ -1,18 +1,12 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-const heroImg = 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/files/5394c160-2a6a-4345-a2d3-d23038df86b2.jpg';
-const expoImg = 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/files/4db694dd-cc8c-49d7-979b-20eb8b01522b.jpg';
-
 const photos = [
-  { src: heroImg, caption: 'Открытие GreenExpo 2024' },
-  { src: expoImg, caption: 'Экспозиция органических продуктов' },
-  { src: heroImg, caption: 'Кулинарное шоу' },
-  { src: expoImg, caption: 'Нетворкинг-сессия' },
-  { src: heroImg, caption: 'Пленарная сессия' },
-  { src: expoImg, caption: 'Дегустация продуктов' },
-  { src: heroImg, caption: 'Выставочные стенды' },
-  { src: expoImg, caption: 'Мастер-класс' },
+  { src: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/f5916126-7a61-45e1-b923-579c094b71da.jpg', caption: 'Открытие GreenExpo 2025' },
+  { src: 'https://cdn.poehali.dev/files/dcbb0a2d-3a87-475d-a8e9-6f71050cf6a5.jpg', caption: 'Экспозиция органических продуктов' },
+  { src: 'https://cdn.poehali.dev/files/b0316b19-d712-4eb9-b921-836469c2fd34.jpg', caption: 'Кулинарное шоу' },
+  { src: 'https://cdn.poehali.dev/files/6b17fa07-87af-4de2-9e7b-b71f95978e25.jpg', caption: 'Нетворкинг-сессия' },
+  { src: 'https://cdn.poehali.dev/files/bf128f7f-5cfb-46ad-a355-bc796f78c755.jpg', caption: 'Мастер-класс' },
 ];
 
 export default function Gallery() {
@@ -24,7 +18,7 @@ export default function Gallery() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="font-montserrat font-800 text-4xl md:text-6xl text-white mb-4">Фотогалерея</h1>
           <p className="font-opensans text-lg" style={{ color: 'rgba(245,240,232,0.85)' }}>
-            GreenExpo 2024 — воспоминания в фотографиях
+            GreenExpo 2025 — воспоминания в фотографиях
           </p>
         </div>
       </section>

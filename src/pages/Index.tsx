@@ -620,7 +620,12 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="section-title">Фотогалерея</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
-            {[heroImage, expoImage, heroImage, expoImage].map((img, i) => (
+            {[
+              'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/f5916126-7a61-45e1-b923-579c094b71da.jpg',
+              'https://cdn.poehali.dev/files/dcbb0a2d-3a87-475d-a8e9-6f71050cf6a5.jpg',
+              'https://cdn.poehali.dev/files/b0316b19-d712-4eb9-b921-836469c2fd34.jpg',
+              'https://cdn.poehali.dev/files/6b17fa07-87af-4de2-9e7b-b71f95978e25.jpg',
+            ].map((img, i) => (
               <div key={i} className="rounded-xl overflow-hidden aspect-square">
                 <img src={img} alt={`Фото ${i + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
               </div>
