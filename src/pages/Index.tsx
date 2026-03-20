@@ -75,7 +75,7 @@ const NOTIFY_URL = 'https://functions.poehali.dev/28e6c844-7b1b-41c6-9811-be3b29
 
 function reachMetrikaGoal(goal: string) {
   const w = window as unknown as { ym?: (id: number, action: string, goal: string) => void };
-  if (w.ym) w.ym(12345678, 'reachGoal', goal);
+  if (w.ym) w.ym(100343781, 'reachGoal', goal);
 }
 
 export default function Index() {
