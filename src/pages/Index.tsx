@@ -49,9 +49,9 @@ const whyCome = [
 ];
 
 const pressItems = [
-  { icon: 'Newspaper', label: 'Публикации в СМИ' },
-  { icon: 'Camera', label: 'Пресс-конференция' },
-  { icon: 'Video', label: 'Телесъёмки' },
+  { img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/3905c358-91dd-4c8e-9b3e-076b5cb45649.jpg', label: 'Публикации в СМИ' },
+  { img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/2ae1d359-01d6-44a3-b837-aeb1c216f5cc.jpg', label: 'Пресс-конференция' },
+  { img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/884da8d0-6131-4c94-b2e0-522bae05ff46.jpg', label: 'Телесъёмки' },
 ];
 
 const partners = [
@@ -599,9 +599,11 @@ export default function Index() {
           <h2 className="section-title">Материалы для СМИ</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
             {pressItems.map((item) => (
-              <div key={item.label} className="p-8 text-center rounded-2xl cursor-pointer" style={{ background: 'linear-gradient(135deg, var(--eco-green-dark), var(--eco-green))' }}>
-                <Icon name={item.icon} size={40} className="mx-auto mb-4" style={{ color: 'rgba(245,240,232,0.8)' }} />
-                <div className="font-montserrat font-700 text-white text-base">{item.label}</div>
+              <div key={item.label} className="relative overflow-hidden rounded-2xl cursor-pointer h-48" >
+                <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 flex items-end justify-center pb-5" style={{ background: 'linear-gradient(to top, rgba(20,60,20,0.75) 0%, transparent 60%)' }}>
+                  <div className="font-montserrat font-700 text-white text-base">{item.label}</div>
+                </div>
               </div>
             ))}
           </div>
