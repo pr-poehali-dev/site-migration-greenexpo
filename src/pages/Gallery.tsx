@@ -12,6 +12,11 @@ const photos = [
   { src: 'https://cdn.poehali.dev/files/2e78f1f2-7f12-482c-9e34-833bc6830aba.jpg', caption: 'Выступление на сцене' },
   { src: 'https://cdn.poehali.dev/files/f57dffe5-d867-4209-8be1-9a6a59f59e20.jpg', caption: 'Мастер-класс по уходу за растениями' },
   { src: 'https://cdn.poehali.dev/files/bb02c00c-f83f-44dd-8028-23b5fc14862e.jpg', caption: 'Экостиль на выставке' },
+  { src: 'https://cdn.poehali.dev/files/8929b01c-e46f-419c-b090-7cf4203d6b0e.jpg', caption: 'Дегустация томатов' },
+  { src: 'https://cdn.poehali.dev/files/da8d3bd0-6aa5-425f-bab9-5299ad08bd1e.jpg', caption: 'Экспозиция роз' },
+  { src: 'https://cdn.poehali.dev/files/6a9e0bda-29d1-4196-af4b-864a21b55da1.jpg', caption: 'Овощи и зелень' },
+  { src: 'https://cdn.poehali.dev/files/ef91969e-06e2-457f-9205-f3cd8c9eee3b.jpg', caption: 'Сувенир GreenExpo' },
+  { src: 'https://cdn.poehali.dev/files/5184e276-ce98-48eb-9486-337d18debb88.jpg', caption: 'Посетители выставки' },
 ];
 
 export default function Gallery() {
