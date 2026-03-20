@@ -63,10 +63,11 @@ const partners = [
 ];
 
 const infoPartners = [
-  { name: 'NIBOMA', icon: '📰' },
-  { name: 'ECO portal', icon: '🌍' },
-  { name: 'Агро', icon: '🌾' },
-  { name: 'Союзорганик', icon: '☘️' },
+  { name: 'ШОЗ', logo: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/220b2bbc-3cae-4d52-ac08-c90e705d371b.jpg' },
+  { name: 'АГРОпрактика', logo: 'https://cdn.poehali.dev/files/3215cc0c-27f0-4cab-9555-2eacb8ff8f94.jpg' },
+  { name: 'Союз органического земледелия', logo: 'https://cdn.poehali.dev/files/067b4fdc-f0a2-4535-8417-07d2ba92cdb3.jpg' },
+  { name: 'ECO portal', logo: 'https://cdn.poehali.dev/files/b091d059-c574-4adf-932b-21699ea8822e.jpg' },
+  { name: 'NIKOMA', logo: 'https://cdn.poehali.dev/files/aa068fce-d090-43fc-b8db-37e389af587b.png' },
 ];
 
 export default function Index() {
@@ -760,8 +761,8 @@ export default function Index() {
           <h2 className="section-title">Информационные партнёры</h2>
           <div className="flex flex-wrap justify-center items-center gap-8">
             {infoPartners.map((p) => (
-              <div key={p.name} className="bg-white rounded-2xl px-8 py-4 shadow-sm flex items-center justify-center">
-                <span className="font-montserrat text-sm" style={{ fontWeight: 600, color: 'var(--eco-text)' }}>{p.name}</span>
+              <div key={p.name} className="bg-white rounded-2xl px-6 py-5 shadow-sm flex items-center justify-center" style={{ minWidth: 140, minHeight: 80 }}>
+                <img src={p.logo} alt={p.name} className="max-h-16 max-w-[160px] object-contain" />
               </div>
             ))}
           </div>
