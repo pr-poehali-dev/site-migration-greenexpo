@@ -17,6 +17,11 @@ const photos = [
   { src: 'https://cdn.poehali.dev/files/6a9e0bda-29d1-4196-af4b-864a21b55da1.jpg', caption: 'Овощи и зелень' },
   { src: 'https://cdn.poehali.dev/files/ef91969e-06e2-457f-9205-f3cd8c9eee3b.jpg', caption: 'Сувенир GreenExpo' },
   { src: 'https://cdn.poehali.dev/files/5184e276-ce98-48eb-9486-337d18debb88.jpg', caption: 'Посетители выставки' },
+  { src: 'https://cdn.poehali.dev/files/b9396f78-f3ad-4361-affd-5f37a4dd4256.jpg', caption: 'Гортензии и растения' },
+  { src: 'https://cdn.poehali.dev/files/687d52bc-03ff-4240-a6c9-3521f497e673.jpg', caption: 'Прогулка по выставке' },
+  { src: 'https://cdn.poehali.dev/files/d18f81e4-4983-4add-94d4-543e1611ff92.jpg', caption: 'Дегустация сортов томатов' },
+  { src: 'https://cdn.poehali.dev/files/f28908f4-7e5f-4282-bbe6-2bfc7c1f1086.jpg', caption: 'Топиарное искусство' },
+  { src: 'https://cdn.poehali.dev/files/e3c615d7-4878-4430-b4f5-014ac6dde0f5.jpg', caption: 'Павильон с экзотическими растениями' },
 ];
 
 export default function Gallery() {
