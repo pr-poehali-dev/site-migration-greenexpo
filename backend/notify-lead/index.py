@@ -42,7 +42,7 @@ Email: {email}
 
 def send_telegram(name: str, phone: str, email: str, role: str, source: str):
     token = os.environ['TELEGRAM_BOT_TOKEN']
-    chat_ids = ['@ctr_agent', '@nastacia_egorova']
+    chat_ids = [299451222, '@nastacia_egorova']
 
     source_label = 'Поп-ап форма' if source == 'popup' else 'Форма на сайте'
     role_label = role if role else 'не указана'
