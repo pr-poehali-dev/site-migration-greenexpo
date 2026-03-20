@@ -51,7 +51,7 @@ export default function AboutCompany() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-opensans text-sm" style={{ color: 'var(--eco-text)' }}>
               <div><span style={{ color: '#5a7a5a' }}>Полное наименование:</span><br />ООО «Выставочная компания ГринЭкспо»</div>
               <div><span style={{ color: '#5a7a5a' }}>ИНН:</span><br />7705906333</div>
-              <div><span style={{ color: '#5a7a5a' }}>Юридический адрес:</span><br />125315, г. Москва, ул. Планерная, д. 7, корп. 1, стр. 3</div>
+              <div><span style={{ color: '#5a7a5a' }}>Юридический адрес:</span><br />город Москва, Озерковский пер., д. 12, этаж 6 пом. 8, 9, офис 611</div>
               <div><span style={{ color: '#5a7a5a' }}>Телефон:</span><br /><a href="tel:+74959889904" className="hover:underline">+7 (495) 988-99-04</a></div>
               <div><span style={{ color: '#5a7a5a' }}>Email:</span><br /><a href="mailto:info@greenexpo.pro" className="hover:underline">info@greenexpo.pro</a></div>
               <div><span style={{ color: '#5a7a5a' }}>Сайт:</span><br /><a href="https://greenexpo.pro" target="_blank" rel="noreferrer" className="hover:underline">greenexpo.pro</a></div>

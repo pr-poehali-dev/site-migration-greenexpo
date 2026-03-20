@@ -55,7 +55,7 @@ export default function Contacts() {
               <div className="space-y-3">
                 <div className="flex items-start gap-2 font-opensans text-sm" style={{ color: 'var(--eco-text)' }}>
                   <Icon name="MapPin" size={16} style={{ color: 'var(--eco-green)', marginTop: 2, flexShrink: 0 }} />
-                  <span>125315, г. Москва, ул. Планерная, д. 7, корп. 1, стр. 3</span>
+                  <span>город Москва, Озерковский пер., д. 12, этаж 6 пом. 8, 9, офис 611</span>
                 </div>
                 {contacts.map((c) => (
                   <div key={c.dept}>
