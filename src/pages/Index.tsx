@@ -23,12 +23,14 @@ const aboutFeatures = [
 ];
 
 const whyParticipate = [
-  { icon: 'TrendingUp', title: 'Расширение рынка сбыта', desc: 'Прямой выход на новых клиентов и партнёров из 40+ регионов России' },
-  { icon: 'Handshake', title: 'Офлайн-контакты', desc: 'Живое общение с байерами торговых сетей: ВкусВилл, Wildberries, Самокат' },
-  { icon: 'BarChart3', title: 'Аналитика рынка', desc: 'Доклады экспертов о трендах органического рынка 2025–2026' },
-  { icon: 'Award', title: 'Имидж и PR', desc: 'Публикации в профессиональных СМИ, телесъёмки, пресс-конференции' },
-  { icon: 'Star', title: 'Конкурс GreenAward', desc: 'Участие в конкурсе лучших эко-продуктов и брендов года' },
-  { icon: 'Globe', title: 'Международные связи', desc: 'Участники из Беларуси, Казахстана, Армении и стран ЕС' },
+  { icon: 'UserCheck', title: 'Гарантированные качественные B2B контакты', desc: 'с дистрибьюторами, закупщиками торговых сетей, экомагазинов, садовых центров и др.' },
+  { icon: 'Target', title: '100% целевая аудитория', desc: '- B2B и B2C потребители' },
+  { icon: 'ShoppingCart', title: 'Возможность продавать', desc: 'продукцию' },
+  { icon: 'Monitor', title: 'Демонстрация продукции/услуг', desc: 'заинтересованной целевой аудитории' },
+  { icon: 'Maximize2', title: 'Расширение рынка сбыта', desc: 'и географии продаж' },
+  { icon: 'Award', title: 'Повышение узнаваемости бренда', desc: '' },
+  { icon: 'MessageSquareMore', title: 'Получение обратной связи', desc: 'от посетителей выставки' },
+  { icon: 'Megaphone', title: 'Продвижение через маркетинговые инструменты', desc: 'FlowersExpo2026 и GreenExpo2026' },
 ];
 
 const subsidyInfo = [
@@ -409,26 +411,58 @@ export default function Index() {
       </section>
 
       {/* Почему стоит участвовать */}
-      <section className="py-20" style={{ backgroundColor: 'var(--eco-beige)' }}>
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="section-title">Почему стоит участвовать?</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-            {whyParticipate.map((item) => (
-              <div key={item.title} className="card-eco p-6 flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: 'rgba(45,106,45,0.1)' }}>
-                  <Icon name={item.icon} size={22} style={{ color: 'var(--eco-green)' }} />
+      <section className="py-20" style={{ backgroundColor: 'white' }}>
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="font-montserrat font-800 text-3xl md:text-4xl text-center mb-12" style={{ color: 'var(--eco-text)' }}>
+            Почему стоит участвовать?
+          </h2>
+
+          {/* Ряд 1: 4 колонки с вертикальными разделителями */}
+          <div className="grid grid-cols-2 md:grid-cols-4 mb-0" style={{ borderTop: '1px solid #e0e8d8', borderLeft: '1px solid #e0e8d8' }}>
+            {whyParticipate.slice(0, 4).map((item) => (
+              <div
+                key={item.title}
+                className="flex flex-col items-center text-center p-6 gap-3"
+                style={{ borderRight: '1px solid #e0e8d8', borderBottom: '1px solid #e0e8d8' }}
+              >
+                <div className="w-14 h-14 rounded-full flex items-center justify-center mb-1" style={{ backgroundColor: 'rgba(45,106,45,0.08)' }}>
+                  <Icon name={item.icon} size={26} style={{ color: 'var(--eco-green)' }} />
                 </div>
                 <div>
-                  <h3 className="font-montserrat font-700 text-sm mb-1" style={{ color: 'var(--eco-text)' }}>{item.title}</h3>
-                  <p className="font-opensans text-xs leading-relaxed" style={{ color: '#5a7a5a' }}>{item.desc}</p>
+                  <p className="font-montserrat font-700 text-sm leading-snug mb-1" style={{ color: 'var(--eco-text)' }}>{item.title}</p>
+                  {item.desc && <p className="font-opensans text-xs leading-relaxed" style={{ color: '#5a7a5a' }}>{item.desc}</p>}
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Ряд 2: 4 колонки */}
+          <div className="grid grid-cols-2 md:grid-cols-4 mb-10" style={{ borderLeft: '1px solid #e0e8d8' }}>
+            {whyParticipate.slice(4).map((item) => (
+              <div
+                key={item.title}
+                className="flex flex-col items-center text-center p-6 gap-3"
+                style={{ borderRight: '1px solid #e0e8d8', borderBottom: '1px solid #e0e8d8' }}
+              >
+                <div className="w-14 h-14 rounded-full flex items-center justify-center mb-1" style={{ backgroundColor: 'rgba(45,106,45,0.08)' }}>
+                  <Icon name={item.icon} size={26} style={{ color: 'var(--eco-green)' }} />
+                </div>
+                <div>
+                  <p className="font-montserrat font-700 text-sm leading-snug mb-1" style={{ color: 'var(--eco-text)' }}>{item.title}</p>
+                  {item.desc && <p className="font-opensans text-xs leading-relaxed" style={{ color: '#5a7a5a' }}>{item.desc}</p>}
+                </div>
+              </div>
+            ))}
+          </div>
+
           <div className="text-center">
-            <Link to="/exhibitors" className="inline-block font-montserrat font-700 px-8 py-3 rounded-full transition-all hover:scale-105" style={{ backgroundColor: 'var(--eco-green)', color: 'var(--eco-beige)' }}>
-              УЧАСТВОВАТЬ В ВЫСТАВКЕ
-            </Link>
+            <button
+              onClick={() => { setModalOpen(true); setSent(false); }}
+              className="inline-block font-montserrat font-700 text-sm tracking-widest px-12 py-4 rounded-full transition-all hover:opacity-90"
+              style={{ backgroundColor: 'var(--eco-green-dark)', color: 'white' }}
+            >
+              ЗАБРОНИРОВАТЬ СТЕНД
+            </button>
           </div>
         </div>
       </section>
