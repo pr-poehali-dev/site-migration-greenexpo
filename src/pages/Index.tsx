@@ -723,7 +723,8 @@ export default function Index() {
           <div className="card-eco p-8">
             <form className="space-y-4" onSubmit={e => e.preventDefault()}>
               <input type="text" placeholder="Имя" className="w-full px-4 py-3 rounded-lg font-opensans text-sm outline-none" style={{ border: '1px solid var(--eco-beige-dark)', backgroundColor: 'var(--eco-beige)' }} />
-              <input type="text" placeholder="Телефон или Email" className="w-full px-4 py-3 rounded-lg font-opensans text-sm outline-none" style={{ border: '1px solid var(--eco-beige-dark)', backgroundColor: 'var(--eco-beige)' }} />
+              <input type="tel" placeholder="Телефон" className="w-full px-4 py-3 rounded-lg font-opensans text-sm outline-none" style={{ border: '1px solid var(--eco-beige-dark)', backgroundColor: 'var(--eco-beige)' }} />
+              <input type="email" placeholder="Email" className="w-full px-4 py-3 rounded-lg font-opensans text-sm outline-none" style={{ border: '1px solid var(--eco-beige-dark)', backgroundColor: 'var(--eco-beige)' }} />
               <select className="w-full px-4 py-3 rounded-lg font-opensans text-sm outline-none" style={{ border: '1px solid var(--eco-beige-dark)', backgroundColor: 'var(--eco-beige)', color: 'var(--eco-text)' }}>
                 <option value="">Я участвую как...</option>
                 <option value="exhibitor">Экспонент (участник выставки)</option>
