@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/icon';
@@ -74,6 +74,15 @@ export default function Index() {
   const [modalOpen, setModalOpen] = useState(false);
   const [form, setForm] = useState({ name: '', phone: '', email: '' });
   const [sent, setSent] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.get('modal') === 'participate') {
+      setModalOpen(true);
+      setSent(false);
+      setSearchParams({});
+    }
+  }, [searchParams, setSearchParams]);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -82,7 +91,7 @@ export default function Index() {
 
   return (
     <div style={{ backgroundColor: 'var(--eco-beige)' }}>
-      <Header />
+      <Header onOpenModal={() => { setModalOpen(true); setSent(false); }} />
 
       {/* Hero */}
       <section
@@ -230,7 +239,7 @@ export default function Index() {
       )}
 
       {/* О выставке */}
-      <section className="py-16" style={{ backgroundColor: '#f5f5f0' }}>
+      <section id="about" className="py-16" style={{ backgroundColor: '#f5f5f0' }}>
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="font-montserrat font-800 text-3xl md:text-4xl text-center mb-10" style={{ color: 'var(--eco-green-dark)' }}>
             О выставке
@@ -414,7 +423,7 @@ export default function Index() {
       </section>
 
       {/* Почему стоит участвовать */}
-      <section className="py-20" style={{ backgroundColor: 'white' }}>
+      <section id="exhibitors" className="py-20" style={{ backgroundColor: 'white' }}>
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="font-montserrat font-800 text-3xl md:text-4xl text-center mb-12" style={{ color: 'var(--eco-text)' }}>
             Почему стоит участвовать?
@@ -501,7 +510,7 @@ export default function Index() {
       </section>
 
       {/* Почему стоит прийти */}
-      <section className="py-20" style={{ backgroundColor: '#f5f5f0' }}>
+      <section id="visitors" className="py-20" style={{ backgroundColor: '#f5f5f0' }}>
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="font-montserrat font-800 text-3xl md:text-4xl text-center mb-10" style={{ color: 'var(--eco-text)' }}>
             Почему стоит прийти?
@@ -594,7 +603,7 @@ export default function Index() {
       </section>
 
       {/* Материалы для СМИ */}
-      <section className="py-16" style={{ backgroundColor: 'var(--eco-beige-dark)' }}>
+      <section id="press" className="py-16" style={{ backgroundColor: 'var(--eco-beige-dark)' }}>
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="section-title">Материалы для СМИ</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
@@ -640,7 +649,7 @@ export default function Index() {
       </section>
 
       {/* Контакты */}
-      <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#f5f5f0' }}>
+      <section id="contacts" className="py-16 relative overflow-hidden" style={{ backgroundColor: '#f5f5f0' }}>
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/84f2f88c-6aa6-4f01-9de8-e809acc3fe7f.png)' }}
