@@ -20,14 +20,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 flex-shrink-0">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--eco-green-light)' }}>
-              <span className="text-white font-montserrat font-800 text-xs">GE</span>
-            </div>
-            <div className="hidden sm:block">
-              <div className="font-montserrat font-800 text-white text-sm leading-tight">GreenExpo</div>
-              <div className="font-opensans text-xs leading-tight" style={{ color: 'var(--eco-sand)' }}>Жизнь в стиле ECO</div>
-            </div>
+          <Link to="/" className="flex items-center flex-shrink-0">
+            <img
+              src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/7a4c96ba-45db-4ee6-bf3e-6756d71c17e9.jpg"
+              alt="GreenExpo"
+              className="h-10 w-auto object-contain"
+              style={{ filter: 'brightness(0) invert(1)' }}
+            />
           </Link>
 
           {/* Desktop Nav */}

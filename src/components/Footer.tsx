@@ -5,9 +5,10 @@ const footerLinks = {
     { label: 'О выставке', path: '/about' },
     { label: 'Участникам', path: '/exhibitors' },
     { label: 'Посетителям', path: '/visitors' },
+    { label: 'Программа', path: '/program' },
     { label: 'Прессе', path: '/press' },
-    { label: 'Как добраться', path: '/contacts#how-to-get' },
-    { label: 'Гостиницы', path: '/contacts#hotels' },
+    { label: 'Как добраться', path: '/contacts' },
+    { label: 'Гостиницы', path: '/hotel' },
     { label: 'Фотогалерея', path: '/gallery' },
     { label: 'Архив', path: '/archive' },
   ],
@@ -24,22 +25,27 @@ export default function Footer() {
     <footer style={{ backgroundColor: 'var(--eco-green-dark)' }} className="pt-12 pb-6">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
-          {/* Logo & Info */}
+          {/* Logos & Info */}
           <div className="md:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--eco-green-light)' }}>
-                <span className="text-white font-montserrat font-800 text-sm">GE</span>
-              </div>
-              <div>
-                <div className="font-montserrat font-800 text-white text-base leading-tight">GreenExpo</div>
-                <div className="font-opensans text-xs" style={{ color: 'var(--eco-sand)' }}>Жизнь в стиле ECO</div>
-              </div>
+            <Link to="/" className="flex flex-col gap-3 mb-4">
+              <img
+                src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/7a4c96ba-45db-4ee6-bf3e-6756d71c17e9.jpg"
+                alt="GreenExpo"
+                className="h-10 w-auto object-contain"
+                style={{ filter: 'brightness(0) invert(1)' }}
+              />
+              <img
+                src="https://cdn.poehali.dev/files/caccf2a2-7076-4882-8486-894308630638.png"
+                alt="Flowers Expo 2026"
+                className="h-10 w-auto object-contain"
+                style={{ filter: 'brightness(0) invert(1)' }}
+              />
             </Link>
-            <p className="font-opensans text-sm mb-4" style={{ color: 'rgba(245,240,232,0.7)' }}>
-              II Международная Выставка-Форум для производителей, дистрибьюторов и потребителей ECO продукции
+            <p className="font-opensans text-sm mb-3" style={{ color: 'rgba(245,240,232,0.7)' }}>
+              2 выставки на одной площадке
             </p>
             <div className="font-opensans text-sm space-y-1" style={{ color: 'var(--eco-sand)' }}>
-              <p>8–10 сентября 2025</p>
+              <p>7–9 сентября 2026</p>
               <p>МВЦ «Крокус Экспо», павильон 1</p>
             </div>
           </div>
@@ -126,7 +132,7 @@ export default function Footer() {
         <div className="border-t pt-6" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">
             <p className="font-opensans text-xs" style={{ color: 'rgba(245,240,232,0.5)' }}>
-              © 2025 ООО «Выставочная компания ГринЭкспо». ИНН 7705906333
+              © 2026 ООО «Выставочная компания ГринЭкспо». ИНН 7705906333
             </p>
             <div className="flex gap-4">
               <Link to="/privacy" className="font-opensans text-xs hover:text-white transition-colors" style={{ color: 'rgba(245,240,232,0.5)' }}>
