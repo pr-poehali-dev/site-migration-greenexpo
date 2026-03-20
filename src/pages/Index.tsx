@@ -486,12 +486,13 @@ export default function Index() {
             </div>
           </div>
           <div className="text-center">
-            <button
+            <Link
+              to="/sub"
               className="inline-block font-montserrat font-700 text-sm tracking-widest px-12 py-4 rounded-full transition-all hover:opacity-90"
               style={{ backgroundColor: 'var(--eco-green-dark)', color: 'white' }}
             >
               ПОДРОБНЕЕ О СУБСИДИЯХ
-            </button>
+            </Link>
           </div>
         </div>
       </section>
