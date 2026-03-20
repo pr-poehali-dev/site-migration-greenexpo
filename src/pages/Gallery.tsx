@@ -27,6 +27,11 @@ const photos = [
   { src: 'https://cdn.poehali.dev/files/1d349e93-8c87-412f-8970-c2b6f648d46e.jpg', caption: 'Зрители на лекции' },
   { src: 'https://cdn.poehali.dev/files/f472e63f-ece0-4f42-a411-a512b2480bbb.jpg', caption: 'Мастер-класс по пересадке растений' },
   { src: 'https://cdn.poehali.dev/files/1639ad53-95d8-4329-961d-39a4460e6dea.jpg', caption: 'Семинар «Заряди растения витаминами»' },
+  { src: 'https://cdn.poehali.dev/files/d4e346ff-05a9-43e4-9856-a7029f021ce6.jpg', caption: 'Спикер на мастер-классе' },
+  { src: 'https://cdn.poehali.dev/files/e74ede73-5be9-413e-994d-d0b8e32b7d9a.jpg', caption: 'Полный зал на лекции' },
+  { src: 'https://cdn.poehali.dev/files/bd34469c-325f-4e5a-a1f8-a253ea4f3029.jpg', caption: 'Стенд «Виноград Подмосковья»' },
+  { src: 'https://cdn.poehali.dev/files/6f491f53-2e90-4d7f-918a-5d319b9d36b7.jpg', caption: 'Экспозиция гладиолусов' },
+  { src: 'https://cdn.poehali.dev/files/308bcc4d-1369-4d0a-8a61-8e70ee38c49e.jpg', caption: 'Официальное открытие выставки' },
 ];
 
 export default function Gallery() {
