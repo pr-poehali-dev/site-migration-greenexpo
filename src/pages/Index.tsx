@@ -70,10 +70,23 @@ const infoPartners = [
   { name: 'NIKOMA', logo: 'https://cdn.poehali.dev/files/aa068fce-d090-43fc-b8db-37e389af587b.png' },
 ];
 
+const NOTIFY_URL = 'https://functions.poehali.dev/28e6c844-7b1b-41c6-9811-be3b2957727c';
+
+function reachMetrikaGoal(goal: string) {
+  const w = window as unknown as { ym?: (id: number, action: string, goal: string) => void };
+  if (w.ym) w.ym(12345678, 'reachGoal', goal);
+}
+
 export default function Index() {
   const [modalOpen, setModalOpen] = useState(false);
   const [form, setForm] = useState({ name: '', phone: '', email: '' });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+
+  const [openForm, setOpenForm] = useState({ name: '', phone: '', email: '', role: '' });
+  const [openSent, setOpenSent] = useState(false);
+  const [openSending, setOpenSending] = useState(false);
+
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
@@ -84,14 +97,47 @@ export default function Index() {
     }
   }, [searchParams, setSearchParams]);
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleModalSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSent(true);
+    setSending(true);
+    try {
+      await fetch(NOTIFY_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, source: 'popup' }),
+      });
+      reachMetrikaGoal('form_submit');
+    } finally {
+      setSending(false);
+      setSent(true);
+    }
+  }
+
+  async function handleOpenFormSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setOpenSending(true);
+    try {
+      await fetch(NOTIFY_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...openForm, source: 'form' }),
+      });
+      reachMetrikaGoal('form_submit');
+    } finally {
+      setOpenSending(false);
+      setOpenSent(true);
+    }
+  }
+
+  function openModal() {
+    reachMetrikaGoal('open_modal');
+    setModalOpen(true);
+    setSent(false);
   }
 
   return (
     <div style={{ backgroundColor: 'var(--eco-beige)' }}>
-      <Header onOpenModal={() => { setModalOpen(true); setSent(false); }} />
+      <Header onOpenModal={openModal} />
 
       {/* Hero */}
       <section
@@ -125,7 +171,7 @@ export default function Index() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
             <button
-              onClick={() => { setModalOpen(true); setSent(false); }}
+              onClick={openModal}
               className="font-montserrat font-700 text-sm tracking-widest px-8 py-4 rounded-full transition-all duration-200 hover:opacity-90"
               style={{ backgroundColor: 'var(--eco-green-dark)', color: 'white' }}
             >
@@ -186,7 +232,7 @@ export default function Index() {
                 Спасибо! Ваш запрос отправлен, мы свяжемся с вами в ближайшее время.
               </p>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleModalSubmit} className="space-y-4">
                 <input
                   required
                   type="text"
@@ -216,10 +262,11 @@ export default function Index() {
                 />
                 <button
                   type="submit"
+                  disabled={sending}
                   className="w-full font-montserrat font-700 text-sm tracking-widest py-4 rounded-full transition-all hover:opacity-90"
-                  style={{ backgroundColor: 'var(--eco-green-dark)', color: 'white' }}
+                  style={{ backgroundColor: 'var(--eco-green-dark)', color: 'white', opacity: sending ? 0.7 : 1 }}
                 >
-                  ОТПРАВИТЬ
+                  {sending ? 'ОТПРАВЛЯЕМ...' : 'ОТПРАВИТЬ'}
                 </button>
                 <p className="text-center font-opensans text-xs leading-relaxed" style={{ color: '#888' }}>
                   Нажимая на кнопку «Отправить» я принимаю{' '}
@@ -730,28 +777,34 @@ export default function Index() {
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="section-title">Принять участие в выставке</h2>
           <div className="card-eco p-8">
-            <form className="space-y-4" onSubmit={e => e.preventDefault()}>
-              <input type="text" placeholder="Имя" className="w-full px-4 py-3 rounded-lg font-opensans text-sm outline-none" style={{ border: '1px solid var(--eco-beige-dark)', backgroundColor: 'var(--eco-beige)' }} />
-              <input type="tel" placeholder="Телефон" className="w-full px-4 py-3 rounded-lg font-opensans text-sm outline-none" style={{ border: '1px solid var(--eco-beige-dark)', backgroundColor: 'var(--eco-beige)' }} />
-              <input type="email" placeholder="Email" className="w-full px-4 py-3 rounded-lg font-opensans text-sm outline-none" style={{ border: '1px solid var(--eco-beige-dark)', backgroundColor: 'var(--eco-beige)' }} />
-              <select className="w-full px-4 py-3 rounded-lg font-opensans text-sm outline-none" style={{ border: '1px solid var(--eco-beige-dark)', backgroundColor: 'var(--eco-beige)', color: 'var(--eco-text)' }}>
-                <option value="">Я участвую как...</option>
-                <option value="exhibitor">Экспонент (участник выставки)</option>
-                <option value="visitor">Посетитель</option>
-                <option value="press">Представитель прессы</option>
-                <option value="speaker">Спикер / докладчик</option>
-              </select>
-              <div className="flex items-start gap-2">
-                <input type="checkbox" id="agree" className="mt-1" />
-                <label htmlFor="agree" className="font-opensans text-xs" style={{ color: '#5a7a5a' }}>
-                  Даю согласие на обработку персональных данных в соответствии с{' '}
-                  <Link to="/privacy" style={{ color: 'var(--eco-green)' }} className="hover:underline">политикой конфиденциальности</Link>
-                </label>
-              </div>
-              <button type="submit" className="w-full font-montserrat text-base py-4 rounded-full transition-all hover:scale-[1.02]" style={{ backgroundColor: 'var(--eco-green)', color: 'var(--eco-beige)', fontWeight: 700 }}>
-                ОТПРАВИТЬ ЗАЯВКУ
-              </button>
-            </form>
+            {openSent ? (
+              <p className="text-center font-opensans py-8 text-lg" style={{ color: 'var(--eco-green-dark)' }}>
+                Спасибо! Ваша заявка принята, мы свяжемся с вами в ближайшее время.
+              </p>
+            ) : (
+              <form className="space-y-4" onSubmit={handleOpenFormSubmit}>
+                <input required type="text" placeholder="Имя" value={openForm.name} onChange={e => setOpenForm({ ...openForm, name: e.target.value })} className="w-full px-4 py-3 rounded-lg font-opensans text-sm outline-none" style={{ border: '1px solid var(--eco-beige-dark)', backgroundColor: 'var(--eco-beige)' }} />
+                <input required type="tel" placeholder="Телефон" value={openForm.phone} onChange={e => setOpenForm({ ...openForm, phone: e.target.value })} className="w-full px-4 py-3 rounded-lg font-opensans text-sm outline-none" style={{ border: '1px solid var(--eco-beige-dark)', backgroundColor: 'var(--eco-beige)' }} />
+                <input type="email" placeholder="Email" value={openForm.email} onChange={e => setOpenForm({ ...openForm, email: e.target.value })} className="w-full px-4 py-3 rounded-lg font-opensans text-sm outline-none" style={{ border: '1px solid var(--eco-beige-dark)', backgroundColor: 'var(--eco-beige)' }} />
+                <select value={openForm.role} onChange={e => setOpenForm({ ...openForm, role: e.target.value })} className="w-full px-4 py-3 rounded-lg font-opensans text-sm outline-none" style={{ border: '1px solid var(--eco-beige-dark)', backgroundColor: 'var(--eco-beige)', color: 'var(--eco-text)' }}>
+                  <option value="">Я участвую как...</option>
+                  <option value="Экспонент">Экспонент (участник выставки)</option>
+                  <option value="Посетитель">Посетитель</option>
+                  <option value="Пресса">Представитель прессы</option>
+                  <option value="Спикер">Спикер / докладчик</option>
+                </select>
+                <div className="flex items-start gap-2">
+                  <input required type="checkbox" id="agree" className="mt-1" />
+                  <label htmlFor="agree" className="font-opensans text-xs" style={{ color: '#5a7a5a' }}>
+                    Даю согласие на обработку персональных данных в соответствии с{' '}
+                    <Link to="/privacy" style={{ color: 'var(--eco-green)' }} className="hover:underline">политикой конфиденциальности</Link>
+                  </label>
+                </div>
+                <button type="submit" disabled={openSending} className="w-full font-montserrat text-base py-4 rounded-full transition-all hover:scale-[1.02]" style={{ backgroundColor: 'var(--eco-green)', color: 'var(--eco-beige)', fontWeight: 700, opacity: openSending ? 0.7 : 1 }}>
+                  {openSending ? 'ОТПРАВЛЯЕМ...' : 'ОТПРАВИТЬ ЗАЯВКУ'}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </section>

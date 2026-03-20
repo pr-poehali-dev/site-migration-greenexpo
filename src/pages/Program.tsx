@@ -66,40 +66,20 @@ export default function Program() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="font-montserrat font-800 text-4xl md:text-6xl text-white mb-4">Программа</h1>
           <p className="font-opensans text-lg" style={{ color: 'rgba(245,240,232,0.85)' }}>
-            8–10 сентября 2025 года • МВЦ «Крокус Экспо»
+            7–9 сентября 2026 года • МВЦ «Крокус Экспо»
           </p>
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4">
-          {days.map((day) => (
-            <div key={day.date} className="mb-12">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="font-montserrat font-800 text-sm px-4 py-2 rounded-full text-white" style={{ backgroundColor: day.color }}>
-                  {day.label}
-                </div>
-                <h2 className="font-montserrat font-700 text-2xl" style={{ color: 'var(--eco-text)' }}>{day.date}</h2>
-              </div>
-              <div className="space-y-3">
-                {day.events.map((ev, i) => (
-                  <div key={i} className="card-eco p-4 flex gap-4 items-start" style={{ backgroundColor: typeColors[ev.type]?.bg || 'white' }}>
-                    <div className="font-montserrat font-700 text-sm w-14 flex-shrink-0" style={{ color: 'var(--eco-green)' }}>{ev.time}</div>
-                    <div className="flex-1">
-                      <div className="font-montserrat font-600 text-sm mb-1" style={{ color: 'var(--eco-text)' }}>{ev.title}</div>
-                      <div className="flex items-center gap-1 font-opensans text-xs" style={{ color: '#5a7a5a' }}>
-                        <Icon name="MapPin" size={12} style={{ color: 'var(--eco-green)' }} />
-                        {ev.location}
-                      </div>
-                    </div>
-                    <div className="font-opensans text-xs px-2 py-1 rounded" style={{ backgroundColor: 'rgba(45,106,45,0.12)', color: 'var(--eco-green)', whiteSpace: 'nowrap' }}>
-                      {typeColors[ev.type]?.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+      <section className="py-32">
+        <div className="max-w-2xl mx-auto px-4 text-center">
+          <Icon name="CalendarClock" size={64} className="mx-auto mb-8" style={{ color: 'var(--eco-green)' }} />
+          <h2 className="font-montserrat font-800 text-2xl md:text-3xl mb-6" style={{ color: 'var(--eco-green-dark)' }}>
+            Программа выставки формируется
+          </h2>
+          <p className="font-opensans text-lg" style={{ color: '#5a7a5a' }}>
+            Программа выставки GreenExpo'2026 активно формируется и скоро появится на сайте.
+          </p>
         </div>
       </section>
 
