@@ -640,47 +640,78 @@ export default function Index() {
       </section>
 
       {/* Контакты */}
-      <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#f7f5ef' }}>
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(https://cdn.poehali.dev/files/ca5fe1ab-a41c-4f44-bf7f-5e2b403c8f4e.png)', opacity: 0.6 }} />
+      <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#f5f5f0' }}>
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/84f2f88c-6aa6-4f01-9de8-e809acc3fe7f.png)' }}
+        />
         <div className="relative max-w-5xl mx-auto px-4">
           <h2 className="section-title">Свяжитесь с нами</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+
             {/* Левая карточка — реквизиты */}
             <div className="bg-white rounded-2xl p-8 shadow-sm">
               <div className="flex items-center gap-6 mb-6">
-                <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/50bd4f74-638e-401b-a97a-9648d41cc09d.png" alt="GreenExpo" className="h-12 object-contain" />
-                <img src="https://cdn.poehali.dev/files/c8d69aa7-7bdc-4eb6-9355-88587867cf38.png" alt="Flowers Expo" className="h-12 object-contain" />
+                <img
+                  src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/50bd4f74-638e-401b-a97a-9648d41cc09d.png"
+                  alt="GreenExpo"
+                  className="h-14 object-contain"
+                />
+                <img
+                  src="https://cdn.poehali.dev/files/c8d69aa7-7bdc-4eb6-9355-88587867cf38.png"
+                  alt="Flowers Expo"
+                  className="h-14 object-contain"
+                />
               </div>
-              <div className="mb-4">
-                <p className="font-montserrat font-700 text-sm uppercase tracking-wide mb-3" style={{ color: 'var(--eco-text)' }}>Реквизиты компании:</p>
-                <ul className="space-y-2 font-opensans text-sm" style={{ color: 'var(--eco-text)' }}>
-                  <li className="flex items-start gap-2"><span style={{ color: 'var(--eco-text)' }}>•</span><span>ООО «Выставочная компания «ГринЭкспо»</span></li>
-                  <li className="flex items-start gap-2"><span>•</span><span>Адрес офиса</span></li>
-                  <li className="flex items-start gap-2"><span>•</span><span>Телефон: <strong>+7 (495) 118-06-39</strong></span></li>
-                  <li className="flex items-start gap-2"><span>•</span><span>Email: <a href="mailto:mail@flowers-expo.ru" className="font-bold" style={{ color: 'var(--eco-text)' }}>mail@flowers-expo.ru</a></span></li>
-                </ul>
-              </div>
+              <p className="font-montserrat font-bold text-sm uppercase tracking-wide mb-3" style={{ color: 'var(--eco-text)' }}>
+                Реквизиты компании:
+              </p>
+              <ul className="space-y-1.5 font-opensans text-sm" style={{ color: 'var(--eco-text)' }}>
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 shrink-0">•</span>
+                  <span>ООО «Выставочная компания «ГринЭкспо»</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 shrink-0">•</span>
+                  <span>Адрес офиса</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 shrink-0">•</span>
+                  <span>Телефон: <strong>+7 (495) 118-06-39</strong></span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-0.5 shrink-0">•</span>
+                  <span>Email: <a href="mailto:mail@flowers-expo.ru" className="font-bold hover:underline" style={{ color: 'var(--eco-text)' }}>mail@flowers-expo.ru</a></span>
+                </li>
+              </ul>
             </div>
 
             {/* Правая карточка — контакты */}
             <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <div className="flex items-center justify-between mb-5">
-                <p className="font-montserrat font-700 text-sm uppercase tracking-wide" style={{ color: 'var(--eco-text)' }}>Контакты:</p>
-                <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/50bd4f74-638e-401b-a97a-9648d41cc09d.png" alt="GreenExpo" className="h-10 object-contain" />
+              <div className="flex items-center justify-between mb-6">
+                <p className="font-montserrat font-bold text-sm uppercase tracking-wide" style={{ color: 'var(--eco-text)' }}>
+                  Контакты:
+                </p>
+                <img
+                  src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/50bd4f74-638e-401b-a97a-9648d41cc09d.png"
+                  alt="GreenExpo"
+                  className="h-10 object-contain"
+                />
               </div>
-              <div className="space-y-5 font-opensans text-sm">
+              <div className="space-y-6 font-opensans text-sm">
                 <div>
                   <p style={{ color: 'var(--eco-text)' }}>Руководитель выставки-форума GreenExpo. Жизнь в стиле ЕСО</p>
                   <p className="font-bold mt-1" style={{ color: 'var(--eco-text)' }}>Анастасия Егорова</p>
-                  <a href="mailto:mail@greenexpo.pro" style={{ color: 'var(--eco-green)' }} className="hover:underline">mail@greenexpo.pro</a>
+                  <a href="mailto:mail@greenexpo.pro" className="hover:underline" style={{ color: '#c0392b' }}>mail@greenexpo.pro</a>
                 </div>
                 <div>
                   <p style={{ color: 'var(--eco-text)' }}>Руководитель отдела маркетинга</p>
                   <p className="font-bold mt-1" style={{ color: 'var(--eco-text)' }}>Константин Пожидаев</p>
-                  <a href="mailto:marketing@greenexpo.pro" style={{ color: 'var(--eco-green)' }} className="hover:underline">marketing@greenexpo.pro</a>
+                  <a href="mailto:marketing@greenexpo.pro" className="hover:underline" style={{ color: '#c0392b' }}>marketing@greenexpo.pro</a>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
