@@ -1,7 +1,7 @@
 """
 Отправка уведомления о новом лиде на email и в Telegram.
 Принимает: name, phone, email, role (опционально), source (popup/form).
-v2
+v3
 """
 import json
 import os
