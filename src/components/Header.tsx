@@ -22,10 +22,9 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <img
-              src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/7a4c96ba-45db-4ee6-bf3e-6756d71c17e9.jpg"
+              src="https://cdn.poehali.dev/files/a47265f8-d34c-4637-9683-d921eaa95b2a.jpg"
               alt="GreenExpo"
               className="h-10 w-auto object-contain"
-              style={{ filter: 'brightness(0) invert(1)' }}
             />
           </Link>
 
