@@ -1,26 +1,33 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const footerLinks = {
-  about: [
-    { label: 'О выставке', path: '/about' },
-    { label: 'Участникам', path: '/exhibitors' },
-    { label: 'Посетителям', path: '/visitors' },
-    { label: 'Программа', path: '/program' },
-    { label: 'Прессе', path: '/press' },
-    { label: 'Как добраться', path: '/contacts' },
-    { label: 'Гостиницы', path: '/hotel' },
-    { label: 'Фотогалерея', path: '/gallery' },
-    { label: 'Архив', path: '/archive' },
-  ],
-  company: [
-    { label: 'О компании', path: '/about-company' },
-    { label: 'Контакты', path: '/contacts' },
-    { label: 'Пользовательское соглашение', path: '/terms' },
-    { label: 'Политика конфиденциальности', path: '/privacy' },
-  ],
-};
+const navItems = [
+  { label: 'О выставке', anchor: 'about' },
+  { label: 'Экспонентам', anchor: 'exhibitors' },
+  { label: 'Посетителям', anchor: 'visitors' },
+  { label: 'Программа', path: '/program' },
+  { label: 'Прессе', anchor: 'press' },
+  { label: 'Контакты', anchor: 'contacts' },
+];
 
 export default function Footer() {
+  const navigate = useNavigate();
+
+  function handleNavClick(item: typeof navItems[0]) {
+    if (item.path) {
+      navigate(item.path);
+    } else if (item.anchor) {
+      const el = document.getElementById(item.anchor);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        navigate('/');
+        setTimeout(() => {
+          document.getElementById(item.anchor!)?.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
+      }
+    }
+  }
+
   return (
     <footer style={{ backgroundColor: 'var(--eco-green-dark)' }} className="pt-12 pb-6">
       <div className="max-w-7xl mx-auto px-4">
@@ -72,47 +79,32 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* About Links */}
+          {/* Nav Links */}
           <div>
             <h4 className="font-montserrat font-700 text-white text-sm uppercase tracking-wider mb-4">
-              О ВЫСТАВКЕ
+              НАВИГАЦИЯ
             </h4>
             <ul className="space-y-2">
-              {footerLinks.about.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="font-opensans text-sm transition-colors hover:text-white"
+              {navItems.map((item) => (
+                <li key={item.label}>
+                  <button
+                    onClick={() => handleNavClick(item)}
+                    className="font-opensans text-sm transition-colors hover:text-white text-left cursor-pointer bg-transparent border-none p-0"
                     style={{ color: 'rgba(245,240,232,0.7)' }}
                   >
-                    {link.label}
-                  </Link>
+                    {item.label}
+                  </button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Company Links */}
+          {/* Contacts */}
           <div>
             <h4 className="font-montserrat font-700 text-white text-sm uppercase tracking-wider mb-4">
-              О НАС
+              КОНТАКТЫ
             </h4>
-            <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="font-opensans text-sm transition-colors hover:text-white"
-                    style={{ color: 'rgba(245,240,232,0.7)' }}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            {/* Contacts */}
-            <div className="mt-6 space-y-1">
+            <div className="space-y-1">
               <p className="font-opensans text-sm" style={{ color: 'var(--eco-sand)' }}>
                 <a href="tel:+74959889904" className="hover:text-white transition-colors">+7 (495) 988-99-04</a>
               </p>
