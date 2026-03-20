@@ -42,10 +42,10 @@ const whyCome = [
   { icon: '', title: '1 билет – 2 выставки', desc: '(GreenExpo + FlowersExpo)', highlight: 'FlowersExpo', isLogos: true },
   { icon: 'Users', title: '350+ компаний', desc: '', green: true, img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/ac37263e-a3f0-4e73-b1c3-ab61d796d7ce.png' },
   { icon: 'Percent', title: 'СКИДКИ на продукцию экспонентов', desc: '', img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/4d56a7e4-e90b-481e-b226-d1f27392872f.png' },
-  { icon: 'Home', title: 'БЕСПРОИГРЫШНАЯ лотерея для всех посетителей', desc: '' },
-  { icon: 'UtensilsCrossed', title: 'Дегустация', desc: 'сортов и гибридов овощных культур российской селекции', green: true },
-  { icon: 'Music', title: 'Насыщенная программа:', desc: 'мастер-классы, лекции, нетворкинг' },
-  { icon: 'UserCheck', title: 'Живые встречи', desc: 'с эко-блогерами и экспертами' },
+  { icon: 'Home', title: 'БЕСПРОИГРЫШНАЯ лотерея для всех посетителей', desc: '', img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/c81118d3-8fd2-4638-93b8-f2f0305f6c19.png' },
+  { icon: 'UtensilsCrossed', title: 'Дегустация', desc: 'сортов и гибридов овощных культур российской селекции', green: true, img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/cd0e8157-1622-44ba-83e5-9b973e5c65d0.png' },
+  { icon: 'Music', title: 'Насыщенная программа:', desc: 'мастер-классы, лекции, нетворкинг', img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/9862d8ab-b7ef-4b74-95ea-e696ffd6e418.png' },
+  { icon: 'UserCheck', title: 'Живые встречи', desc: 'с эко-блогерами и экспертами', img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/033425af-569c-4b6f-a5bc-31c4497d00c6.png' },
 ];
 
 const pressItems = [
@@ -553,7 +553,11 @@ export default function Index() {
                 style={{ backgroundColor: item.green ? 'rgba(45,106,45,0.08)' : 'white' }}
               >
                 <div className="w-14 h-14 flex items-center justify-center mb-4">
-                  <Icon name={item.icon} size={36} style={{ color: 'var(--eco-green)' }} />
+                  {item.img ? (
+                    <img src={item.img} alt={item.title} className="w-full h-full object-contain" />
+                  ) : (
+                    <Icon name={item.icon} size={36} style={{ color: 'var(--eco-green)' }} />
+                  )}
                 </div>
                 <p className="font-montserrat font-700 text-sm leading-snug" style={{ color: 'var(--eco-text)' }}>
                   {item.title}
@@ -579,7 +583,7 @@ export default function Index() {
               КУПИТЬ БИЛЕТ
             </a>
             <Link
-              to="/visitors"
+              to="/hotel"
               className="font-montserrat font-700 text-sm tracking-widest px-10 py-4 rounded-full border-2 transition-all hover:opacity-80"
               style={{ borderColor: 'var(--eco-green-dark)', color: 'var(--eco-green-dark)', backgroundColor: 'transparent' }}
             >

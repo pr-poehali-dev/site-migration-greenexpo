@@ -17,6 +17,7 @@ import Gallery from "./pages/Gallery";
 import Archive from "./pages/Archive";
 import AboutCompany from "./pages/AboutCompany";
 import Subsidies from "./pages/Subsidies";
+import Hotel from "./pages/Hotel";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/archive" element={<Archive />} />
           <Route path="/about-company" element={<AboutCompany />} />
           <Route path="/sub" element={<Subsidies />} />
+          <Route path="/hotel" element={<Hotel />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
