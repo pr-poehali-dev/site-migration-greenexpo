@@ -117,26 +117,15 @@ export default function Index() {
             >
               ЗАБРОНИРОВАТЬ СТЕНД
             </button>
-            <div className="flex flex-col items-center gap-1">
-              <a
-                href="https://www.flowers-expo.ru/flowers-expo/get_ticket.html?utm_medium=lnk&utm_source=greenexpo_pro&utm_campaign=regbutton"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-montserrat font-700 text-sm tracking-widest px-8 py-4 rounded-full border-2 transition-all duration-200 hover:opacity-80"
-                style={{ borderColor: '#b0b8a8', color: 'var(--eco-green-dark)', backgroundColor: 'rgba(255,255,255,0.3)' }}
-              >
-                КУПИТЬ БИЛЕТ
-              </a>
-              <a
-                href="https://www.flowers-expo.ru/flowers-expo/get_ticket.html?utm_medium=lnk&utm_source=greenexpo_pro&utm_campaign=regbutton"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-opensans text-xs underline"
-                style={{ color: 'var(--eco-green-dark)', opacity: 0.7 }}
-              >
-                Зарегистрироваться как посетитель
-              </a>
-            </div>
+            <a
+              href="https://www.flowers-expo.ru/flowers-expo/get_ticket.html?utm_medium=lnk&utm_source=greenexpo_pro&utm_campaign=regbutton"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-montserrat font-700 text-sm tracking-widest px-8 py-4 rounded-full border-2 transition-all duration-200 hover:opacity-80"
+              style={{ borderColor: '#b0b8a8', color: 'var(--eco-green-dark)', backgroundColor: 'rgba(255,255,255,0.3)' }}
+            >
+              КУПИТЬ БИЛЕТ
+            </a>
           </div>
 
           <div className="flex flex-wrap justify-center gap-4">
