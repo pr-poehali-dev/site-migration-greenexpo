@@ -1,7 +1,8 @@
 """
 Отправка уведомления о новом лиде на email и в Telegram.
-Принимает: name, phone, email, role (опционально), source (popup/form).
-v3
+Принимает: name, phone, email, role (опционально), source (popup/form),
+utm_source, utm_medium, utm_campaign, utm_term, utm_content (опционально).
+v4
 """
 import json
 import os
@@ -11,7 +12,23 @@ from email.mime.multipart import MIMEMultipart
 import urllib.request
 
 
-def send_emails(name: str, phone: str, email: str, role: str, source: str):
+def format_utm(utm: dict) -> str:
+    labels = {
+        'utm_source': 'Источник (utm_source)',
+        'utm_medium': 'Канал (utm_medium)',
+        'utm_campaign': 'Кампания (utm_campaign)',
+        'utm_term': 'Ключевое слово (utm_term)',
+        'utm_content': 'Объявление (utm_content)',
+    }
+    lines = []
+    for key, label in labels.items():
+        val = utm.get(key, '').strip()
+        if val:
+            lines.append(f"{label}: {val}")
+    return '\n'.join(lines) if lines else 'не определён'
+
+
+def send_emails(name: str, phone: str, email: str, role: str, source: str, utm: dict):
     smtp_host = os.environ.get('SMTP_HOST', 'smtp.yandex.ru')
     smtp_user = os.environ['SMTP_USER']
     smtp_password = os.environ['SMTP_PASSWORD']
@@ -19,14 +36,18 @@ def send_emails(name: str, phone: str, email: str, role: str, source: str):
 
     source_label = 'Поп-ап форма' if source == 'popup' else 'Форма на сайте'
     role_label = role if role else 'не указана'
+    utm_text = format_utm(utm)
 
     body = f"""Новая заявка с сайта GreenExpo!
 
-Источник: {source_label}
+Источник формы: {source_label}
 Имя: {name}
 Телефон: {phone}
 Email: {email}
 Роль: {role_label}
+
+— UTM-метки —
+{utm_text}
 """
 
     msg = MIMEMultipart()
@@ -40,20 +61,28 @@ Email: {email}
         server.sendmail(smtp_user, recipients, msg.as_string())
 
 
-def send_telegram(name: str, phone: str, email: str, role: str, source: str):
+def send_telegram(name: str, phone: str, email: str, role: str, source: str, utm: dict):
     token = os.environ['TELEGRAM_BOT_TOKEN']
     chat_ids = [299451222, '@nastacia_egorova']
 
     source_label = 'Поп-ап форма' if source == 'popup' else 'Форма на сайте'
     role_label = role if role else 'не указана'
 
+    utm_lines = []
+    for key in ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']:
+        val = utm.get(key, '').strip()
+        if val:
+            utm_lines.append(f"  `{key}`: {val}")
+    utm_block = '\n'.join(utm_lines) if utm_lines else '  _не определён_'
+
     text = (
         f"🌿 *Новая заявка GreenExpo*\n\n"
-        f"📋 Источник: {source_label}\n"
+        f"📋 Форма: {source_label}\n"
         f"👤 Имя: {name}\n"
         f"📞 Телефон: {phone}\n"
         f"✉️ Email: {email}\n"
-        f"🏷 Роль: {role_label}"
+        f"🏷 Роль: {role_label}\n\n"
+        f"📊 *UTM-метки:*\n{utm_block}"
     )
 
     for chat_id in chat_ids:
@@ -87,6 +116,14 @@ def handler(event: dict, context) -> dict:
     role = body.get('role', '').strip()
     source = body.get('source', 'form')
 
+    utm = {
+        'utm_source': body.get('utm_source', ''),
+        'utm_medium': body.get('utm_medium', ''),
+        'utm_campaign': body.get('utm_campaign', ''),
+        'utm_term': body.get('utm_term', ''),
+        'utm_content': body.get('utm_content', ''),
+    }
+
     if not name or not phone:
         return {
             'statusCode': 400,
@@ -94,8 +131,8 @@ def handler(event: dict, context) -> dict:
             'body': json.dumps({'error': 'name and phone are required'})
         }
 
-    send_emails(name, phone, email, role, source)
-    send_telegram(name, phone, email, role, source)
+    send_emails(name, phone, email, role, source, utm)
+    send_telegram(name, phone, email, role, source, utm)
 
     return {
         'statusCode': 200,

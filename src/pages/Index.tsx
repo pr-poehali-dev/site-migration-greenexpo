@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/icon';
+import { useUtm } from '@/hooks/useUtm';
 
 const heroImage = 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/files/5394c160-2a6a-4345-a2d3-d23038df86b2.jpg';
 const expoImage = 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/files/4db694dd-cc8c-49d7-979b-20eb8b01522b.jpg';
@@ -78,6 +79,8 @@ function reachMetrikaGoal(goal: string) {
 }
 
 export default function Index() {
+  const utm = useUtm();
+
   const [modalOpen, setModalOpen] = useState(false);
   const [form, setForm] = useState({ name: '', phone: '', email: '' });
   const [sent, setSent] = useState(false);
@@ -104,7 +107,7 @@ export default function Index() {
       await fetch(NOTIFY_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, source: 'popup' }),
+        body: JSON.stringify({ ...form, source: 'popup', ...utm }),
       });
       reachMetrikaGoal('form_submit');
     } finally {
@@ -120,7 +123,7 @@ export default function Index() {
       await fetch(NOTIFY_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...openForm, source: 'form' }),
+        body: JSON.stringify({ ...openForm, source: 'form', ...utm }),
       });
       reachMetrikaGoal('form_submit');
     } finally {
