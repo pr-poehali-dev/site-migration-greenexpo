@@ -55,12 +55,10 @@ const pressItems = [
 ];
 
 const partners = [
-  { name: 'Фонд Органика', icon: '🌿' },
-  { name: 'Wildberries', icon: '🟣' },
-  { name: 'Russ', icon: '📡' },
-  { name: 'Liga-Sam', icon: '🌾' },
-  { name: 'Объединённые кондитеры', icon: '🍫' },
-  { name: 'MAJOR AGRO', icon: '🌱' },
+  { name: 'Союз органического земледелия', logo: 'https://cdn.poehali.dev/files/42e67576-c450-45e0-90d0-e9796ca964c9.jpg' },
+  { name: 'Фонд Органика', logo: 'https://cdn.poehali.dev/files/9920cf71-2de3-4a84-8396-0fb6e645e493.png' },
+  { name: 'Wildberries & Russ', logo: 'https://cdn.poehali.dev/files/eb175aaa-454e-4618-ac5c-7e80672e3d04.jpg' },
+  { name: 'Роскачество', logo: 'https://cdn.poehali.dev/files/2c4f4bf7-7240-41e1-bcff-6b312fdc5a63.png' },
 ];
 
 const infoPartners = [
@@ -751,19 +749,17 @@ export default function Index() {
       <section className="py-16" style={{ backgroundColor: 'var(--eco-beige-dark)' }}>
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="section-title">Партнёры</h2>
-          <div className="flex flex-wrap justify-center gap-6 mb-12">
+          <div className="flex flex-wrap justify-center items-center gap-8 mb-12">
             {partners.map((p) => (
-              <div key={p.name} className="card-eco px-8 py-4 flex items-center gap-3">
-                <span className="text-2xl">{p.icon}</span>
-                <span className="font-montserrat text-sm" style={{ fontWeight: 600, color: 'var(--eco-text)' }}>{p.name}</span>
+              <div key={p.name} className="bg-white rounded-2xl px-6 py-5 shadow-sm flex items-center justify-center" style={{ minWidth: 160, minHeight: 80 }}>
+                <img src={p.logo} alt={p.name} className="max-h-16 max-w-[160px] object-contain" />
               </div>
             ))}
           </div>
           <h2 className="section-title">Информационные партнёры</h2>
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center items-center gap-8">
             {infoPartners.map((p) => (
-              <div key={p.name} className="card-eco px-8 py-4 flex items-center gap-3">
-                <span className="text-2xl">{p.icon}</span>
+              <div key={p.name} className="bg-white rounded-2xl px-8 py-4 shadow-sm flex items-center justify-center">
                 <span className="font-montserrat text-sm" style={{ fontWeight: 600, color: 'var(--eco-text)' }}>{p.name}</span>
               </div>
             ))}
