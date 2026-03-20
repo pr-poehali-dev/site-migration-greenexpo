@@ -277,7 +277,8 @@ export default function Index() {
 
             {/* СИТИ-ФЕРМЕРСТВО */}
             <div className="relative rounded-2xl overflow-hidden min-h-[220px] flex items-end p-6" style={{ backgroundColor: '#2d5a2d' }}>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/1e655bb7-61de-4a4c-937a-d3a631169f58.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10" />
               <div className="relative z-10">
                 <span className="font-opensans text-xs mb-2 block" style={{ color: 'rgba(255,255,255,0.7)' }}>Раздел выставки</span>
                 <h3 className="font-montserrat font-800 text-base text-white mb-2 uppercase tracking-wide">Сити-фермерство</h3>
@@ -291,7 +292,8 @@ export default function Index() {
           {/* Ряд 2: три равные плитки */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <div className="relative rounded-2xl overflow-hidden min-h-[200px] flex items-end p-5" style={{ backgroundColor: '#3a6b3a' }}>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/2235e4a0-6c33-4bf2-82c2-fbc78383aafe.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10" />
               <div className="relative z-10">
                 <span className="font-opensans text-xs mb-2 block" style={{ color: 'rgba(255,255,255,0.7)' }}>Раздел выставки</span>
                 <h3 className="font-montserrat font-800 text-sm text-white mb-1 uppercase tracking-wide">Ландшафтная экология</h3>
@@ -302,7 +304,8 @@ export default function Index() {
             </div>
 
             <div className="relative rounded-2xl overflow-hidden min-h-[200px] flex items-end p-5" style={{ backgroundColor: 'var(--eco-green)' }}>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/08771415-4a1e-48da-8a8d-0369fe1d2bf8.png" alt="" className="absolute inset-0 w-full h-full object-cover object-top" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10" />
               <div className="relative z-10">
                 <span className="font-opensans text-xs mb-2 block" style={{ color: 'rgba(255,255,255,0.7)' }}>Раздел выставки</span>
                 <h3 className="font-montserrat font-800 text-sm text-white mb-1 uppercase tracking-wide">Рециклинг</h3>
@@ -313,7 +316,8 @@ export default function Index() {
             </div>
 
             <div className="relative rounded-2xl overflow-hidden min-h-[200px] flex items-end p-5" style={{ backgroundColor: '#1e4a1e' }}>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/7bf51926-a502-44cb-a164-8a62afd6bea5.png" alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10" />
               <div className="relative z-10">
                 <span className="font-opensans text-xs mb-2 block" style={{ color: 'rgba(255,255,255,0.7)' }}>Раздел выставки</span>
                 <h3 className="font-montserrat font-800 text-sm text-white mb-1 uppercase tracking-wide">Чистый дом и сад</h3>
