@@ -468,21 +468,30 @@ export default function Index() {
       </section>
 
       {/* Субсидии */}
-      <section className="py-16" style={{ backgroundColor: 'var(--eco-beige-dark)' }}>
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="section-title">Субсидии на участие</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            {subsidyInfo.map((item) => (
-              <div key={item.title} className="card-eco p-8">
-                <h3 className="font-montserrat font-700 text-lg mb-3" style={{ color: 'var(--eco-green)' }}>{item.title}</h3>
-                <p className="font-opensans text-base leading-relaxed" style={{ color: 'var(--eco-text)' }}>{item.desc}</p>
-              </div>
-            ))}
+      <section className="py-16" style={{ backgroundColor: '#f0f0f0' }}>
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="font-montserrat font-800 text-3xl md:text-4xl text-center mb-10" style={{ color: 'var(--eco-green-dark)' }}>
+            Субсидии на участие
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            <div className="bg-white rounded-2xl p-10 flex items-center justify-center text-center shadow-sm">
+              <p className="font-opensans text-base leading-relaxed" style={{ color: 'var(--eco-text)' }}>
+                Компании могут <span className="font-montserrat font-700" style={{ color: '#c97d2a' }}>получить компенсацию</span> на аренду и застройку стенда
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-10 flex items-center justify-center text-center shadow-sm">
+              <p className="font-opensans text-base leading-relaxed" style={{ color: 'var(--eco-text)' }}>
+                <span className="font-montserrat font-700" style={{ color: 'var(--eco-green-dark)' }}>Список расходов,</span> которые можно компенсировать
+              </p>
+            </div>
           </div>
           <div className="text-center">
-            <Link to="/exhibitors" className="inline-block font-montserrat font-700 px-8 py-3 rounded-full transition-all hover:scale-105" style={{ backgroundColor: 'var(--eco-green)', color: 'var(--eco-beige)' }}>
-              УЗНАТЬ О СУБСИДИЯХ
-            </Link>
+            <button
+              className="inline-block font-montserrat font-700 text-sm tracking-widest px-12 py-4 rounded-full transition-all hover:opacity-90"
+              style={{ backgroundColor: 'var(--eco-green-dark)', color: 'white' }}
+            >
+              ПОДРОБНЕЕ О СУБСИДИЯХ
+            </button>
           </div>
         </div>
       </section>
