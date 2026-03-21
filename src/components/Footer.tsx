@@ -106,13 +106,10 @@ export default function Footer() {
             </h4>
             <div className="space-y-1">
               <p className="font-opensans text-sm" style={{ color: 'var(--eco-sand)' }}>
-                <a href="tel:+74959889904" className="hover:text-white transition-colors">+7 (495) 988-99-04</a>
+                <a href="tel:+74951180639" className="hover:text-white transition-colors">+7 (495) 118-06-39</a>
               </p>
               <p className="font-opensans text-sm" style={{ color: 'var(--eco-sand)' }}>
-                <a href="tel:+74955090143" className="hover:text-white transition-colors">+7 (495) 509-01-43</a>
-              </p>
-              <p className="font-opensans text-sm" style={{ color: 'var(--eco-sand)' }}>
-                <a href="mailto:info@greenexpo.pro" className="hover:text-white transition-colors">info@greenexpo.pro</a>
+                <a href="mailto:mail@flowers-expo.ru" className="hover:text-white transition-colors">mail@flowers-expo.ru</a>
               </p>
             </div>
           </div>

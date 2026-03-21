@@ -32,7 +32,7 @@ def send_emails(name: str, phone: str, email: str, role: str, source: str, utm: 
     smtp_host = os.environ.get('SMTP_HOST', 'smtp.yandex.ru')
     smtp_user = os.environ['SMTP_USER']
     smtp_password = os.environ['SMTP_PASSWORD']
-    recipients = ['managergreenexpo@yandex.ru', 'egorova.pr@gmail.com']
+    recipients = ['managergreenexpo@yandex.ru', 'egorova.pr@gmail.com', 'mail@flowers-expo.ru']
 
     source_label = 'Поп-ап форма' if source == 'popup' else 'Форма на сайте'
     role_label = role if role else 'не указана'
@@ -63,7 +63,7 @@ Email: {email}
 
 def send_telegram(name: str, phone: str, email: str, role: str, source: str, utm: dict):
     token = os.environ['TELEGRAM_BOT_TOKEN']
-    chat_ids = [299451222, '@nastacia_egorova']
+    chat_ids = []  # TODO: добавить числовые chat_id после проверки у пользователей
 
     source_label = 'Поп-ап форма' if source == 'popup' else 'Форма на сайте'
     role_label = role if role else 'не указана'
