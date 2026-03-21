@@ -710,7 +710,7 @@ export default function Index() {
 
             {/* Левая карточка — реквизиты */}
             <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <div className="flex items-center gap-6 mb-6">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-6">
                 <img
                   src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/50bd4f74-638e-401b-a97a-9648d41cc09d.png"
                   alt="GreenExpo"
