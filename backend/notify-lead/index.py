@@ -63,7 +63,7 @@ Email: {email}
 
 def send_telegram(name: str, phone: str, email: str, role: str, source: str, utm: dict):
     token = os.environ['TELEGRAM_BOT_TOKEN']
-    chat_ids = []  # TODO: добавить числовые chat_id после проверки у пользователей
+    chat_ids = [299451222, 925960165]
 
     source_label = 'Поп-ап форма' if source == 'popup' else 'Форма на сайте'
     role_label = role if role else 'не указана'
