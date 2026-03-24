@@ -64,11 +64,11 @@ const partners = [
 ];
 
 const infoPartners = [
-  { name: 'ШОЗ', logo: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/220b2bbc-3cae-4d52-ac08-c90e705d371b.jpg' },
-  { name: 'АГРОпрактика', logo: 'https://cdn.poehali.dev/files/3215cc0c-27f0-4cab-9555-2eacb8ff8f94.jpg' },
-  { name: 'Союз органического земледелия', logo: 'https://cdn.poehali.dev/files/067b4fdc-f0a2-4535-8417-07d2ba92cdb3.jpg' },
-  { name: 'ECO portal', logo: 'https://cdn.poehali.dev/files/b091d059-c574-4adf-932b-21699ea8822e.jpg' },
-  { name: 'NIKOMA', logo: 'https://cdn.poehali.dev/files/aa068fce-d090-43fc-b8db-37e389af587b.png' },
+  { name: 'ШОЗ', logo: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/220b2bbc-3cae-4d52-ac08-c90e705d371b.jpg', url: 'https://vk.com/organicschool_online?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
+  { name: 'АГРОпрактика', logo: 'https://cdn.poehali.dev/files/3215cc0c-27f0-4cab-9555-2eacb8ff8f94.jpg', url: 'https://www.agropraktika.com/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
+  { name: 'Союз органического земледелия', logo: 'https://cdn.poehali.dev/files/067b4fdc-f0a2-4535-8417-07d2ba92cdb3.jpg', url: 'https://soz.bio/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
+  { name: 'ECO portal', logo: 'https://cdn.poehali.dev/files/b091d059-c574-4adf-932b-21699ea8822e.jpg', url: 'https://ecoportal.su/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
+  { name: 'NIKOMA', logo: 'https://cdn.poehali.dev/files/aa068fce-d090-43fc-b8db-37e389af587b.png', url: 'https://vk.com/nikoma_garden?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
 ];
 
 const NOTIFY_URL = 'https://functions.poehali.dev/28e6c844-7b1b-41c6-9811-be3b2957727c';
@@ -817,9 +817,9 @@ export default function Index() {
           <h2 className="section-title">Информационные партнёры</h2>
           <div className="flex flex-wrap justify-center items-center gap-8">
             {infoPartners.map((p) => (
-              <div key={p.name} className="bg-white rounded-2xl px-6 py-5 shadow-sm flex items-center justify-center" style={{ minWidth: 140, minHeight: 80 }}>
+              <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl px-6 py-5 shadow-sm flex items-center justify-center hover:opacity-80 transition-opacity" style={{ minWidth: 140, minHeight: 80 }}>
                 <img src={p.logo} alt={p.name} className="max-h-16 max-w-[160px] object-contain" />
-              </div>
+              </a>
             ))}
           </div>
         </div>
