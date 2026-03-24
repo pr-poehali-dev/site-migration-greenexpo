@@ -159,7 +159,7 @@ export default function Hotel() {
         {/* Кнопка Как добраться */}
         <div className="flex justify-center mt-10">
           <a
-            href="https://www.crocus-expo.ru/visitors/how-to-get/"
+            href="https://www.flowers-expo.ru/flowers-expo/visitors/road.html?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=button_3_block"
             target="_blank"
             rel="noopener noreferrer"
             className="font-montserrat font-700 text-sm tracking-widest px-12 py-4 rounded-full transition-all hover:opacity-90"
