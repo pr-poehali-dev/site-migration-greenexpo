@@ -40,7 +40,7 @@ const subsidyInfo = [
 ];
 
 const whyCome = [
-  { icon: '', title: '1 билет – 2 выставки', desc: '(GreenExpo + FlowersExpo)', highlight: 'FlowersExpo', isLogos: true },
+  { icon: '', title: '1 билет – 2 выставки', desc: '(GreenExpo + FlowersExpo)', highlight: 'FlowersExpo', highlightUrl: 'https://www.flowers-expo.ru/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=button_3_block', isLogos: true },
   { icon: 'Users', title: '350+ компаний', desc: '', green: true, img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/ac37263e-a3f0-4e73-b1c3-ab61d796d7ce.png' },
   { icon: 'Percent', title: 'СКИДКИ на продукцию экспонентов', desc: '', img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/4d56a7e4-e90b-481e-b226-d1f27392872f.png' },
   { icon: 'Home', title: 'БЕСПРОИГРЫШНАЯ лотерея для всех посетителей', desc: '', img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/c81118d3-8fd2-4638-93b8-f2f0305f6c19.png' },
@@ -587,7 +587,9 @@ export default function Index() {
                   <p className="font-opensans text-xs mt-1 leading-relaxed" style={{ color: item.highlight ? '#5a7a5a' : '#5a7a5a' }}>
                     {item.desc.replace(item.highlight || '', '')}
                     {item.highlight && (
-                      <span style={{ color: '#e07b39' }}>{item.highlight}</span>
+                      item.highlightUrl
+                        ? <a href={item.highlightUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#e07b39', textDecoration: 'underline' }}>{item.highlight}</a>
+                        : <span style={{ color: '#e07b39' }}>{item.highlight}</span>
                     )}
                   </p>
                 )}
