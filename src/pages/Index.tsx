@@ -56,11 +56,11 @@ const pressItems = [
 ];
 
 const partners = [
-  { name: 'Союз органического земледелия', logo: 'https://cdn.poehali.dev/files/42e67576-c450-45e0-90d0-e9796ca964c9.jpg' },
-  { name: 'Фонд Органика', logo: 'https://cdn.poehali.dev/files/9920cf71-2de3-4a84-8396-0fb6e645e493.png' },
-  { name: 'Wildberries & Russ', logo: 'https://cdn.poehali.dev/files/9dfb62a3-8e69-4bb0-a08c-8c23a309809e.png' },
-  { name: 'Роскачество', logo: 'https://cdn.poehali.dev/files/2c4f4bf7-7240-41e1-bcff-6b312fdc5a63.png' },
-  { name: 'SYNTX', logo: 'https://cdn.poehali.dev/files/eb175aaa-454e-4618-ac5c-7e80672e3d04.jpg' },
+  { name: 'Союз органического земледелия', logo: 'https://cdn.poehali.dev/files/42e67576-c450-45e0-90d0-e9796ca964c9.jpg', url: 'https://soz.bio/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
+  { name: 'Фонд Органика', logo: 'https://cdn.poehali.dev/files/9920cf71-2de3-4a84-8396-0fb6e645e493.png', url: 'https://organicfund.ru/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
+  { name: 'Wildberries & Russ', logo: 'https://cdn.poehali.dev/files/9dfb62a3-8e69-4bb0-a08c-8c23a309809e.png', url: 'https://www.wildberries.ru/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
+  { name: 'Роскачество', logo: 'https://cdn.poehali.dev/files/2c4f4bf7-7240-41e1-bcff-6b312fdc5a63.png', url: 'https://roskachestvo.gov.ru/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
+  { name: 'SYNTX', logo: 'https://cdn.poehali.dev/files/eb175aaa-454e-4618-ac5c-7e80672e3d04.jpg', url: 'https://syntx.ai/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
 ];
 
 const infoPartners = [
@@ -809,9 +809,9 @@ export default function Index() {
           <h2 className="section-title">Партнёры</h2>
           <div className="flex flex-wrap justify-center items-center gap-8 mb-12">
             {partners.map((p) => (
-              <div key={p.name} className="bg-white rounded-2xl px-6 py-5 shadow-sm flex items-center justify-center" style={{ minWidth: 160, minHeight: 80 }}>
+              <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl px-6 py-5 shadow-sm flex items-center justify-center hover:opacity-80 transition-opacity" style={{ minWidth: 160, minHeight: 80 }}>
                 <img src={p.logo} alt={p.name} className="max-h-16 max-w-[160px] object-contain" />
-              </div>
+              </a>
             ))}
           </div>
           <h2 className="section-title">Информационные партнёры</h2>
