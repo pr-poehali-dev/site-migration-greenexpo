@@ -14,7 +14,7 @@ const hotels = [
         </p>
         <p className="mt-3">
           Бронирование будет доступно по ссылке:{' '}
-          <a href="https://aquariumhotel.ru/rooms/" target="_blank" rel="noopener noreferrer" className="hotel-link">
+          <a href="https://aquariumhotel.ru/rooms/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=button_3_block" target="_blank" rel="noopener noreferrer" className="hotel-link">
             https://aquariumhotel.ru/rooms/
           </a>
         </p>
@@ -24,7 +24,7 @@ const hotels = [
           <li>– телефон <span className="hotel-link">+7 (499) 490-18-28</span></li>
           <li>– WhatsApp <span className="hotel-link">+7 (926) 837-01-34</span></li>
         </ul>
-        <a href="https://aquariumhotel.ru/" target="_blank" rel="noopener noreferrer" className="hotel-link block mt-2">
+        <a href="https://aquariumhotel.ru/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=button_3_block" target="_blank" rel="noopener noreferrer" className="hotel-link block mt-2">
           https://aquariumhotel.ru/
         </a>
       </>
@@ -46,7 +46,7 @@ const hotels = [
           <li>– Wi-Fi, халаты, тапочки, гигиенические принадлежности, индивидуальное кондиционирование в номерах;</li>
           <li>– Отель в 4 км от Крокуса Экспо и в 14 км от аэропорта Шереметьево.</li>
         </ul>
-        <a href="http://www.hotelgreenwood.ru" target="_blank" rel="noopener noreferrer" className="hotel-link block mt-3">
+        <a href="http://www.hotelgreenwood.ru?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=button_3_block" target="_blank" rel="noopener noreferrer" className="hotel-link block mt-3">
           www.hotelgreenwood.ru
         </a>
       </>
@@ -87,7 +87,7 @@ const hotels = [
           Гостиница на 206 номеров, ресторан, оплата картой, возможно проживание с животными,
           Wi-Fi, тренажёрный зал, прачечная, химчистка.
         </p>
-        <a href="https://hamptonstrogino.ru/" target="_blank" rel="noopener noreferrer" className="hotel-link block mt-2">
+        <a href="https://hamptonstrogino.ru/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=button_3_block" target="_blank" rel="noopener noreferrer" className="hotel-link block mt-2">
           https://hamptonstrogino.ru/
         </a>
       </>
@@ -104,7 +104,7 @@ const hotels = [
           «Строгино» • Рум-сервис • Рядом с ВЦ «КРОКУС ЭКСПО» Строгино ул. Кулакова, 20.
           1 остановка на метро от Выставочного центра «Крокус Экспо» • Гостиница на 206 номеров
         </p>
-        <a href="http://www.krashika-enot.ru/" target="_blank" rel="noopener noreferrer" className="hotel-link block mt-2">
+        <a href="http://www.krashika-enot.ru/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=button_3_block" target="_blank" rel="noopener noreferrer" className="hotel-link block mt-2">
           http://www.krashika-enot.ru/
         </a>
       </>

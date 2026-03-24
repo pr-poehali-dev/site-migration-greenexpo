@@ -652,11 +652,8 @@ export default function Index() {
           <h2 className="section-title">Материалы для СМИ</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
             {pressItems.map((item) => (
-              <div key={item.label} className="relative overflow-hidden rounded-2xl cursor-pointer h-48" >
+              <div key={item.label} className="relative overflow-hidden rounded-2xl cursor-pointer h-48">
                 <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
-                <div className="absolute inset-0 flex items-end justify-center pb-5" style={{ background: 'linear-gradient(to top, rgba(20,60,20,0.75) 0%, transparent 60%)' }}>
-                  <div className="font-montserrat font-700 text-white text-base">{item.label}</div>
-                </div>
               </div>
             ))}
           </div>

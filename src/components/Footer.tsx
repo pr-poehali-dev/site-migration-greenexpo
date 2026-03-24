@@ -34,18 +34,22 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
           {/* Logos & Info */}
           <div className="md:col-span-1">
-            <Link to="/" className="flex flex-col gap-3 mb-4">
-              <img
-                src="https://cdn.poehali.dev/files/fd84a788-1a72-431d-bef6-6c7a5d181c51.png"
-                alt="GreenExpo"
-                className="h-10 w-auto object-contain"
-              />
-              <img
-                src="https://cdn.poehali.dev/files/caccf2a2-7076-4882-8486-894308630638.png"
-                alt="Flowers Expo 2026"
-                className="h-10 w-auto object-contain"
-              />
-            </Link>
+            <div className="flex flex-col gap-3 mb-4">
+              <Link to="/">
+                <img
+                  src="https://cdn.poehali.dev/files/fd84a788-1a72-431d-bef6-6c7a5d181c51.png"
+                  alt="GreenExpo"
+                  className="h-10 w-auto object-contain"
+                />
+              </Link>
+              <a href="https://www.flowers-expo.ru/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=footer" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://cdn.poehali.dev/files/caccf2a2-7076-4882-8486-894308630638.png"
+                  alt="Flowers Expo 2026"
+                  className="h-10 w-auto object-contain"
+                />
+              </a>
+            </div>
             <p className="font-opensans text-sm mb-3" style={{ color: 'rgba(245,240,232,0.7)' }}>
               2 выставки на одной площадке
             </p>
