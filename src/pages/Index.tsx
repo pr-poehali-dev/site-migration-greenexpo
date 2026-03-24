@@ -453,22 +453,14 @@ export default function Index() {
       </section>
 
       {/* Зелёный баннер */}
-      <section className="py-16" style={{ backgroundColor: 'var(--eco-green)' }}>
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2 className="font-montserrat font-800 text-3xl md:text-4xl text-white mb-4">
+      <section className="py-10" style={{ backgroundColor: 'var(--eco-green)' }}>
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h2 className="font-montserrat font-800 text-3xl md:text-4xl text-white mb-3">
             ЭКО — это не тренд, это образ жизни
           </h2>
-          <p className="font-opensans text-base md:text-lg mb-8" style={{ color: 'rgba(245,240,232,0.85)' }}>
+          <p className="font-opensans text-base md:text-lg" style={{ color: 'rgba(245,240,232,0.85)' }}>
             Присоединяйтесь к сообществу людей, которые выбирают здоровье, экологию и ответственное потребление
           </p>
-          <div className="flex flex-wrap justify-center gap-6">
-            {[{ label: 'Производителей органики', val: '80+' }, { label: 'Деловых мероприятий', val: '30+' }, { label: 'Регионов-участников', val: '40+' }, { label: 'Часов нетворкинга', val: '72' }].map((item) => (
-              <div key={item.label} className="text-center px-6">
-                <div className="font-montserrat font-800 text-3xl text-white">{item.val}</div>
-                <div className="font-opensans text-sm" style={{ color: 'rgba(245,240,232,0.75)' }}>{item.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
