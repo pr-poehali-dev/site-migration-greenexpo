@@ -34,7 +34,13 @@ def send_emails(name: str, phone: str, email: str, role: str, source: str, utm: 
     smtp_password = os.environ['SMTP_PASSWORD']
     recipients = ['managergreenexpo@yandex.ru', 'egorova.pr@gmail.com', 'mail@flowers-expo.ru']
 
-    source_label = 'Поп-ап форма' if source == 'popup' else 'Форма на сайте'
+    source_labels = {
+        'popup': 'Поп-ап форма',
+        'form': 'Форма на сайте',
+        'dacha_participant': 'Спецпроект ДАЧА — заявка участника',
+        'dacha_presentation': 'Спецпроект ДАЧА — запрос презентации',
+    }
+    source_label = source_labels.get(source, 'Форма на сайте')
     role_label = role if role else 'не указана'
     utm_text = format_utm(utm)
 
@@ -65,7 +71,13 @@ def send_telegram(name: str, phone: str, email: str, role: str, source: str, utm
     token = os.environ['TELEGRAM_BOT_TOKEN']
     chat_ids = [299451222, 925960165]
 
-    source_label = 'Поп-ап форма' if source == 'popup' else 'Форма на сайте'
+    source_labels = {
+        'popup': 'Поп-ап форма',
+        'form': 'Форма на сайте',
+        'dacha_participant': 'Спецпроект ДАЧА — заявка участника',
+        'dacha_presentation': 'Спецпроект ДАЧА — запрос презентации',
+    }
+    source_label = source_labels.get(source, 'Форма на сайте')
     role_label = role if role else 'не указана'
 
     utm_lines = []
