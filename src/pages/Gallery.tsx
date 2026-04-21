@@ -29,7 +29,7 @@ const photos = [
   { src: 'https://cdn.poehali.dev/files/1639ad53-95d8-4329-961d-39a4460e6dea.jpg', caption: 'Семинар «Заряди растения витаминами»' },
   { src: 'https://cdn.poehali.dev/files/d4e346ff-05a9-43e4-9856-a7029f021ce6.jpg', caption: 'Спикер на мастер-классе' },
   { src: 'https://cdn.poehali.dev/files/e74ede73-5be9-413e-994d-d0b8e32b7d9a.jpg', caption: 'Полный зал на лекции' },
-  { src: 'https://cdn.poehali.dev/files/bd34469c-325f-4e5a-a1f8-a253ea4f3029.jpg', caption: 'Стенд «Виноград Подмосковья»' },
+  { src: 'https://cdn.poehali.dev/files/bd34469c-325f-4e5a-a1f8-a253ea4f3029.jpg', caption: 'Стенд «Виноград Ульяновска»' },
   { src: 'https://cdn.poehali.dev/files/6f491f53-2e90-4d7f-918a-5d319b9d36b7.jpg', caption: 'Экспозиция гладиолусов' },
   { src: 'https://cdn.poehali.dev/files/308bcc4d-1369-4d0a-8a61-8e70ee38c49e.jpg', caption: 'Официальное открытие выставки' },
   { src: 'https://cdn.poehali.dev/files/b4d6c893-8976-4c2e-8611-64327217ee91.jpg', caption: 'Команда организаторов на сцене' },
