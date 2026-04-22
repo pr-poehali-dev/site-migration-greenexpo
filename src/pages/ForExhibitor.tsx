@@ -52,7 +52,6 @@ const FORMATS = [
   { title: 'Выставочный стенд', icon: '🏢', items: ['от 6 до 12+ м²', 'стандартная застройка', 'мебель, освещение, вывеска', 'размещение в каталоге', 'персональный менеджер'] },
   { title: 'Деловая программа', icon: '🎤', items: ['выступление на конференции', 'мастер-класс', 'презентация продукта', 'панельная дискуссия'] },
   { title: 'Спонсорский пакет', icon: '⭐', items: ['брендинг зон', 'приоритетное размещение', 'индивидуальные интеграции', 'расширенная реклама'] },
-  { title: 'Онлайн-участие', icon: '💻', items: ['размещение в онлайн-каталоге', 'упоминание в рассылках', 'доступ к контактам'] },
 ];
 
 const PACKAGE_ITEMS = [
@@ -402,7 +401,7 @@ export default function ForExhibitor() {
       <section className="py-20" style={{ backgroundColor: 'var(--eco-beige)' }}>
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="section-title text-center mb-12">Выберите формат под ваши задачи</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
             {FORMATS.map((fmt, i) => (
               <div key={i} className="card-eco p-6 rounded-2xl flex flex-col" style={{ backgroundColor: 'white', border: '1px solid var(--eco-beige-dark)' }}>
                 <span className="text-4xl block mb-3">{fmt.icon}</span>
@@ -437,7 +436,7 @@ export default function ForExhibitor() {
             ))}
           </div>
           <p className="text-center font-opensans text-sm mt-4" style={{ color: 'var(--eco-text)', opacity: 0.6 }}>
-            <strong style={{ opacity: 0.8 }}>Дополнительно:</strong> брендирование, холодильное оборудование, TV-панели, склад, расширенная реклама.
+            <strong style={{ opacity: 0.8 }}>Дополнительно:</strong> брендирование, холодильное оборудование, TV-панели, склад, расширенная реклама, индивидуальная застройка.
           </p>
         </div>
       </section>
