@@ -637,13 +637,13 @@ export default function ForExhibitor() {
             <div className="rounded-2xl p-6" style={{ backgroundColor: 'white', border: '1px solid var(--eco-beige-dark)' }}>
               <h3 className="font-montserrat font-bold mb-4" style={{ color: 'var(--eco-text)' }}>Участие в выставке</h3>
               <div className="flex flex-col gap-2">
-                <a href="tel:+74955090143" className="flex items-center gap-2 font-opensans text-sm hover:opacity-80 transition-opacity" style={{ color: 'var(--eco-text)' }}>
+                <a href="tel:+74951180639" className="flex items-center gap-2 font-opensans text-sm hover:opacity-80 transition-opacity" style={{ color: 'var(--eco-text)' }}>
                   <Icon name="Phone" size={16} style={{ color: 'var(--eco-green)', flexShrink: 0 } as React.CSSProperties} />
-                  +7 (495) 509-01-43
+                  +7 (495) 118-06-39
                 </a>
-                <a href="mailto:expo@greenexpo.pro" className="flex items-center gap-2 font-opensans text-sm hover:opacity-80 transition-opacity" style={{ color: 'var(--eco-text)' }}>
+                <a href="mailto:mail@greenexpo.pro" className="flex items-center gap-2 font-opensans text-sm hover:opacity-80 transition-opacity" style={{ color: 'var(--eco-text)' }}>
                   <Icon name="Mail" size={16} style={{ color: 'var(--eco-green)', flexShrink: 0 } as React.CSSProperties} />
-                  expo@greenexpo.pro
+                  mail@greenexpo.pro
                 </a>
               </div>
             </div>
