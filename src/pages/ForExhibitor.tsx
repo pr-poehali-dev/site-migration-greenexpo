@@ -33,8 +33,8 @@ const SEGMENTS = [
 const ADVANTAGES = [
   { emoji: '🎯', title: 'Целевая аудитория в одном месте', text: 'Закупщики и дистрибьюторы приходят сами — с конкретным запросом на продукцию вашего сегмента.' },
   { emoji: '💼', title: 'Прямые переговоры с байерами', text: 'За 3 дня — десятки живых переговоров с теми, кто принимает решения о закупках.' },
-  { emoji: '🌍', title: 'Выход на федеральный рынок', text: 'Москва, Крокус Экспо. Доступ к партнёрам со всей России и из других стран.' },
-  { emoji: '🤝', title: 'Расширение дилерской сети', text: 'На выставке работают дистрибьюторы, ищущие новые бренды для своего портфеля.' },
+  { emoji: '🌍', title: 'Выход на федеральный рынок', text: 'Москва, МВЦ "Крокус Экспо". Доступ к партнёрам со всей России и из других стран.' },
+  { emoji: '🤝', title: 'Расширение дилерской сети', text: 'Выставку посещают дистрибьюторы, которые ищут новые бренды для своего портфеля.' },
   { emoji: '📢', title: 'PR и медийный эффект', text: 'Работают профильные медиа и блогеры. Участие усиливает позиции бренда.' },
   { emoji: '💰', title: 'Субсидии для МСБ', text: 'Малый и средний бизнес может компенсировать расходы на участие через региональные программы.' },
 ];
@@ -241,7 +241,7 @@ export default function ForExhibitor() {
             className="inline-block border border-white/20 rounded-full px-4 py-1.5 text-sm font-montserrat font-600 mb-6 tracking-wide"
             style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
           >
-            7–9 СЕНТЯБРЯ 2026 · КРОКУС ЭКСПО · МОСКВА
+            7–9 СЕНТЯБРЯ 2026 · МВЦ "КРОКУС ЭКСПО" · МОСКВА
           </div>
           <h1 className="font-montserrat font-black leading-tight mb-6" style={{ fontSize: 'clamp(2.2rem, 5vw, 4rem)' }}>
             GreenExpo 2026 —<br />
@@ -249,7 +249,7 @@ export default function ForExhibitor() {
             «Жизнь в стиле ECO»
           </h1>
           <p className="text-lg md:text-xl mb-12 font-opensans max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.85)' }}>
-            Крокус Экспо, Москва. Площадка, где производители встречаются с покупателями, дистрибьюторами и партнёрами.
+            МВЦ "Крокус Экспо", Москва. Площадка, где производители встречаются с покупателями, дистрибьюторами и партнёрами.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
             {[
@@ -274,11 +274,11 @@ export default function ForExhibitor() {
           <p className="text-center max-w-3xl mx-auto mb-12 leading-relaxed font-opensans text-lg" style={{ color: 'var(--eco-text)', opacity: 0.8 }}>
             GreenExpo — международная выставка-форум «Жизнь в стиле ECO». Специализированная площадка, объединяющая производителей, дистрибьюторов, закупщиков и потребителей в сегментах органического, натурального и экологичного образа жизни.
             <br /><br />
-            Выставка проходит в Крокус Экспо — одной из крупнейших выставочных площадок России.
+            Выставка проходит в МВЦ "Крокус Экспо" — одной из крупнейших выставочных площадок России.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { icon: '📍', label: 'Крокус Экспо, Москва' },
+              { icon: '📍', label: 'МВЦ "Крокус Экспо", Москва' },
               { icon: '🌍', label: 'Международный формат' },
               { icon: '👥', label: 'B2B + B2C аудитория' },
               { icon: '🎯', label: '8 тематических разделов' },
@@ -335,7 +335,7 @@ export default function ForExhibitor() {
             <div className="rounded-2xl p-8" style={{ backgroundColor: 'white', border: '1px solid var(--eco-beige-dark)' }}>
               <h3 className="font-montserrat font-bold text-lg mb-4" style={{ color: 'var(--eco-green)' }}>B2B-аудитория</h3>
               <ul className="space-y-2">
-                {['Закупщики торговых сетей', 'Дистрибьюторы и оптовые компании', 'Владельцы специализированных магазинов', 'Представители маркетплейсов', 'Компании HoReCa', 'Региональные партнёры и дилеры', 'Аптечные сети', 'Импортёры и экспортёры', 'Профильные медиа и блогеры'].map((item, i) => (
+                {['Закупщики торговых сетей', 'Дистрибьюторы и оптовые компании', 'Владельцы специализированных магазинов', 'Представители маркетплейсов', 'Компании HoReCa', 'Региональные партнёры и дилеры', 'Профильные медиа и блогеры', 'Специалисты и профильные организации, занимающиеся проектированием, строительством и управлением зелёными пространствами', 'Эксперты в области ландшафтной архитектуры, устойчивого развития городов и зелёной инфраструктуры'].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 font-opensans text-sm" style={{ color: 'var(--eco-text)', opacity: 0.8 }}>
                     <span style={{ color: 'var(--eco-green)' }}>✓</span> {item}
                   </li>
@@ -345,7 +345,7 @@ export default function ForExhibitor() {
             <div className="rounded-2xl p-8" style={{ backgroundColor: 'white', border: '1px solid var(--eco-beige-dark)' }}>
               <h3 className="font-montserrat font-bold text-lg mb-4" style={{ color: 'var(--eco-green)' }}>B2C-аудитория</h3>
               <ul className="space-y-2">
-                {['Осознанные потребители', 'Покупатели органической продукции', 'Поклонники ЗОЖ', 'Потребители натуральной косметики', 'Семьи с детьми', 'Сити-фермеры и садоводы', 'Eco-активисты'].map((item, i) => (
+                {['Потребители ECO продукции', 'Поклонники ЗОЖ', 'Сити-фермеры', 'Eco-активисты', 'Садоводы'].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 font-opensans text-sm" style={{ color: 'var(--eco-text)', opacity: 0.8 }}>
                     <span style={{ color: 'var(--eco-green)' }}>✓</span> {item}
                   </li>
@@ -380,13 +380,12 @@ export default function ForExhibitor() {
       {/* ===== СУБСИДИЯ ===== */}
       <section className="py-20" style={{ backgroundColor: 'var(--eco-beige-dark)' }}>
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <span className="text-5xl block mb-4">💰</span>
           <h2 className="section-title mb-4">Участие может быть компенсировано</h2>
           <p className="mb-6 font-opensans text-lg max-w-2xl mx-auto" style={{ color: 'var(--eco-text)', opacity: 0.8 }}>
             Для малого и среднего бизнеса в ряде регионов России доступны программы, позволяющие компенсировать часть или все расходы на участие в выставке.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {['аренду выставочной площади', 'застройку стенда', 'регистрационные взносы', 'рекламные услуги'].map((item, i) => (
+            {['аренда выставочной площади', 'застройка стенда', 'регистрационный взнос', 'рекламные услуги'].map((item, i) => (
               <span key={i} className="text-white px-4 py-2 rounded-full text-sm font-montserrat font-semibold" style={{ backgroundColor: 'var(--eco-green)' }}>
                 ✓ {item}
               </span>
