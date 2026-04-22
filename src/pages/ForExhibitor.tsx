@@ -295,10 +295,7 @@ export default function ForExhibitor() {
       {/* ===== ТЕМАТИЧЕСКИЕ РАЗДЕЛЫ ===== */}
       <section className="py-20" style={{ backgroundColor: 'var(--eco-beige)' }}>
         <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="section-title text-center mb-3">Ваш бренд вписывается в один из разделов выставки</h2>
-          <p className="text-center mb-12 font-opensans" style={{ color: 'var(--eco-text)', opacity: 0.7 }}>
-            8 специализированных направлений для вашего бизнеса
-          </p>
+          <h2 className="section-title text-center mb-12">8 специализированных направлений для вашего бизнеса</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             {SEGMENTS.map((seg, i) => (
               <div key={i} className="card-eco p-5 rounded-2xl" style={{ backgroundColor: 'white', border: '1px solid var(--eco-beige-dark)' }}>
