@@ -26,6 +26,7 @@ import AboutCompany from "./pages/AboutCompany";
 import Subsidies from "./pages/Subsidies";
 import Hotel from "./pages/Hotel";
 import Dacha from "./pages/Dacha";
+import ForExhibitor from "./pages/ForExhibitor";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -53,6 +54,7 @@ const App = () => (
           <Route path="/sub" element={<Subsidies />} />
           <Route path="/hotel" element={<Hotel />} />
           <Route path="/dacha" element={<Dacha />} />
+          <Route path="/forexhibitor" element={<ForExhibitor />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
