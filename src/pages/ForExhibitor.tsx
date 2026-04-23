@@ -20,38 +20,38 @@ function reachMetrikaGoal(goal: string) {
 }
 
 const SEGMENTS = [
-  { icon: '🥗', title: 'Органическая продукция и здоровое питание' },
-  { icon: '💄', title: 'Натуральная и органическая косметика' },
-  { icon: '🏠', title: 'Экотовары для дома и быта' },
-  { icon: '🌱', title: 'Сити-фермерство и urban farming' },
-  { icon: '🌳', title: 'Ландшафтный дизайн и благоустройство' },
-  { icon: '🏕️', title: 'Экотуризм и экологичный отдых' },
-  { icon: '👕', title: 'Экологичная мода и аксессуары' },
-  { icon: '♻️', title: 'Экологичные технологии и упаковка' },
+  { icon: '', title: 'Органическая продукция и здоровое питание' },
+  { icon: '', title: 'Натуральная и органическая косметика' },
+  { icon: '', title: 'Экотовары для дома и быта' },
+  { icon: '', title: 'Сити-фермерство и urban farming' },
+  { icon: '', title: 'Ландшафтный дизайн и благоустройство' },
+  { icon: '', title: 'Экотуризм и экологичный отдых' },
+  { icon: '', title: 'Экологичная мода и аксессуары' },
+  { icon: '', title: 'Экологичные технологии и упаковка' },
 ];
 
 const ADVANTAGES = [
-  { emoji: '🎯', title: 'Целевая аудитория в одном месте', text: 'Закупщики и дистрибьюторы приходят сами — с конкретным запросом на продукцию вашего сегмента.' },
-  { emoji: '💼', title: 'Прямые переговоры с байерами', text: 'За 3 дня — десятки живых переговоров с теми, кто принимает решения о закупках.' },
-  { emoji: '🌍', title: 'Выход на федеральный рынок', text: 'Москва, МВЦ "Крокус Экспо". Доступ к партнёрам со всей России и из других стран.' },
-  { emoji: '🤝', title: 'Расширение дилерской сети', text: 'Выставку посещают дистрибьюторы, которые ищут новые бренды для своего портфеля.' },
-  { emoji: '📢', title: 'PR и медийный эффект', text: 'Работают профильные медиа и блогеры. Участие усиливает позиции бренда.' },
-  { emoji: '💰', title: 'Субсидии для МСБ', text: 'Малый и средний бизнес может компенсировать расходы на участие через региональные программы.' },
+  { emoji: '', title: 'Целевая аудитория в одном месте', text: 'Закупщики и дистрибьюторы приходят сами — с конкретным запросом на продукцию вашего сегмента.' },
+  { emoji: '', title: 'Прямые переговоры с байерами', text: 'За 3 дня — десятки живых переговоров с теми, кто принимает решения о закупках.' },
+  { emoji: '', title: 'Выход на федеральный рынок', text: 'Москва, МВЦ "Крокус Экспо". Доступ к партнёрам со всей России и из других стран.' },
+  { emoji: '', title: 'Расширение дилерской сети', text: 'Выставку посещают дистрибьюторы, которые ищут новые бренды для своего портфеля.' },
+  { emoji: '', title: 'PR и медийный эффект', text: 'Работают профильные медиа и блогеры. Участие усиливает позиции бренда.' },
+  { emoji: '', title: 'Субсидии для МСБ', text: 'Малый и средний бизнес может компенсировать расходы на участие через региональные программы.' },
 ];
 
 const BUSINESS_CASES = [
-  { emoji: '🏭', condition: 'Если вы региональный производитель', result: 'выход на федеральный рынок' },
-  { emoji: '🔍', condition: 'Если вы ищете дистрибьюторов', result: 'прямой контакт с оптовиками' },
-  { emoji: '🚀', condition: 'Если вы запускаете новинку', result: 'тестирование и обратная связь' },
-  { emoji: '🛒', condition: 'Если хотите войти в торговые сети', result: 'байеры на месте' },
-  { emoji: '🌏', condition: 'Если вы зарубежный бренд', result: 'вход на российский рынок' },
-  { emoji: '📣', condition: 'Если хотите усилить бренд', result: 'PR и медийный эффект' },
+  { emoji: '', condition: 'Если вы региональный производитель', result: 'выход на федеральный рынок' },
+  { emoji: '', condition: 'Если вы ищете дистрибьюторов', result: 'прямой контакт с оптовиками' },
+  { emoji: '', condition: 'Если вы запускаете новинку', result: 'тестирование и обратная связь' },
+  { emoji: '', condition: 'Если хотите войти в торговые сети', result: 'байеры на месте' },
+  { emoji: '', condition: 'Если вы зарубежный бренд', result: 'вход на российский рынок' },
+  { emoji: '', condition: 'Если хотите усилить бренд', result: 'PR и медийный эффект' },
 ];
 
 const FORMATS = [
-  { title: 'Выставочный стенд', icon: '🏢', items: ['от 6 до 12+ м²', 'стандартная застройка', 'мебель, освещение, вывеска', 'размещение в каталоге', 'персональный менеджер'] },
-  { title: 'Деловая программа', icon: '🎤', items: ['выступление на конференции', 'мастер-класс', 'презентация продукта', 'панельная дискуссия'] },
-  { title: 'Спонсорский пакет', icon: '⭐', items: ['брендинг зон', 'приоритетное размещение', 'индивидуальные интеграции', 'расширенная реклама'] },
+  { title: 'Выставочный стенд', icon: '', items: ['от 6 до 12+ м²', 'стандартная застройка', 'мебель, освещение, вывеска', 'размещение в каталоге', 'персональный менеджер'] },
+  { title: 'Деловая программа', icon: '', items: ['выступление на конференции', 'мастер-класс', 'презентация продукта', 'панельная дискуссия'] },
+  { title: 'Спонсорский пакет', icon: '', items: ['брендинг зон', 'приоритетное размещение', 'индивидуальные интеграции', 'расширенная реклама'] },
 ];
 
 const PACKAGE_ITEMS = [
@@ -252,13 +252,12 @@ export default function ForExhibitor() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
             {[
-              { icon: '🌿', text: 'B2B + B2C аудитория в одном месте' },
-              { icon: '🤝', text: 'Прямые переговоры с байерами и дистрибьюторами' },
-              { icon: '💰', text: 'Возможность компенсации расходов через субсидию для МСБ' },
+              { text: 'B2B + B2C аудитория в одном месте' },
+              { text: 'Прямые переговоры с байерами и дистрибьюторами' },
+              { text: 'Возможность компенсации расходов через субсидию для МСБ' },
             ].map((item, i) => (
               <div key={i} className="border border-white/20 rounded-xl p-4 text-sm"
                 style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}>
-                <span className="text-2xl block mb-2">{item.icon}</span>
                 <span className="font-opensans" style={{ color: 'rgba(255,255,255,0.9)' }}>{item.text}</span>
               </div>
             ))}
@@ -277,13 +276,12 @@ export default function ForExhibitor() {
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { icon: '📍', label: 'МВЦ "Крокус Экспо", Москва' },
-              { icon: '🌍', label: 'Международный формат' },
-              { icon: '👥', label: 'B2B + B2C аудитория' },
-              { icon: '🎯', label: '8 тематических разделов' },
+              { label: 'МВЦ "Крокус Экспо", Москва' },
+              { label: 'Международный формат' },
+              { label: 'B2B + B2C аудитория' },
+              { label: '8 тематических разделов' },
             ].map((item, i) => (
               <div key={i} className="card-eco text-center p-6 rounded-2xl" style={{ border: '1px solid var(--eco-beige-dark)' }}>
-                <span className="text-4xl block mb-3">{item.icon}</span>
                 <span className="font-montserrat font-semibold text-sm leading-snug" style={{ color: 'var(--eco-text)' }}>{item.label}</span>
               </div>
             ))}
@@ -298,7 +296,6 @@ export default function ForExhibitor() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             {SEGMENTS.map((seg, i) => (
               <div key={i} className="card-eco p-5 rounded-2xl" style={{ backgroundColor: 'white', border: '1px solid var(--eco-beige-dark)' }}>
-                <span className="text-3xl block mb-2">{seg.icon}</span>
                 <span className="font-montserrat font-semibold text-sm leading-snug" style={{ color: 'var(--eco-text)' }}>{seg.title}</span>
               </div>
             ))}
@@ -319,9 +316,9 @@ export default function ForExhibitor() {
           </p>
           {ctaBtn('Получить условия участия', 'Узнать стоимость участия', 'forexhibitor_price')}
           <div className="mt-6 flex flex-col gap-1.5 text-sm font-opensans items-center" style={{ color: 'var(--eco-text)', opacity: 0.65 }}>
-            <span>✅ Перезвоним в течение часа в рабочее время</span>
-            <span>✅ Данные не передаём третьим лицам</span>
-            <span>✅ Расскажем про субсидию для МСБ</span>
+            <span>Перезвоним в течение часа в рабочее время</span>
+            <span>Данные не передаём третьим лицам</span>
+            <span>Расскажем про субсидию для МСБ</span>
           </div>
         </div>
       </section>
@@ -354,7 +351,7 @@ export default function ForExhibitor() {
           </div>
           <div className="rounded-2xl p-6 text-center" style={{ backgroundColor: 'var(--eco-green)' }}>
             <p className="font-montserrat font-semibold text-lg text-white">
-              💡 На GreenExpo приходит подготовленная аудитория. Это значит — высокая заинтересованность, готовность к диалогу и реальные решения о закупках.
+              На GreenExpo приходит подготовленная аудитория. Это значит — высокая заинтересованность, готовность к диалогу и реальные решения о закупках.
             </p>
           </div>
         </div>
@@ -367,7 +364,6 @@ export default function ForExhibitor() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {ADVANTAGES.map((adv, i) => (
               <div key={i} className="card-eco p-6 rounded-2xl" style={{ backgroundColor: 'var(--eco-beige)', border: '1px solid var(--eco-beige-dark)' }}>
-                <span className="text-4xl block mb-3">{adv.emoji}</span>
                 <h3 className="font-montserrat font-bold mb-2" style={{ color: 'var(--eco-text)' }}>{adv.title}</h3>
                 <p className="font-opensans text-sm leading-relaxed" style={{ color: 'var(--eco-text)', opacity: 0.7 }}>{adv.text}</p>
               </div>
@@ -404,7 +400,6 @@ export default function ForExhibitor() {
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {FORMATS.map((fmt, i) => (
               <div key={i} className="card-eco p-6 rounded-2xl flex flex-col" style={{ backgroundColor: 'white', border: '1px solid var(--eco-beige-dark)' }}>
-                <span className="text-4xl block mb-3">{fmt.icon}</span>
                 <h3 className="font-montserrat font-bold mb-3 text-sm" style={{ color: 'var(--eco-text)' }}>{fmt.title}</h3>
                 <ul className="flex flex-col gap-1.5 flex-1">
                   {fmt.items.map((item, j) => (
@@ -430,7 +425,7 @@ export default function ForExhibitor() {
             {PACKAGE_ITEMS.map((item, i) => (
               <div key={i} className="flex items-center gap-3 rounded-xl px-5 py-3"
                 style={{ backgroundColor: 'var(--eco-beige)', border: '1px solid var(--eco-beige-dark)' }}>
-                <span className="text-lg flex-shrink-0" style={{ color: 'var(--eco-green)' }}>✅</span>
+                <Icon name="Check" size={16} className="flex-shrink-0" style={{ color: 'var(--eco-green)' } as React.CSSProperties} />
                 <span className="font-opensans text-sm" style={{ color: 'var(--eco-text)' }}>{item}</span>
               </div>
             ))}
@@ -448,7 +443,6 @@ export default function ForExhibitor() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {BUSINESS_CASES.map((bc, i) => (
               <div key={i} className="card-eco p-6 rounded-2xl" style={{ backgroundColor: 'white', border: '1px solid var(--eco-beige-dark)' }}>
-                <span className="text-3xl block mb-3">{bc.emoji}</span>
                 <p className="font-opensans text-sm" style={{ color: 'var(--eco-text)' }}>
                   <span className="font-semibold">{bc.condition}</span> — {bc.result}
                 </p>
@@ -478,15 +472,14 @@ export default function ForExhibitor() {
           </p>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {[
-              { icon: '📊', title: 'Конференция' },
-              { icon: '💬', title: 'Круглые столы' },
-              { icon: '🎓', title: 'Мастер-классы' },
-              { icon: '🆕', title: 'Презентации новинок' },
-              { icon: '🤝', title: 'B2B-встречи speed-dating' },
-            ].map((item, i) => (
+              'Конференция',
+              'Круглые столы',
+              'Мастер-классы',
+              'Презентации новинок',
+              'B2B-встречи speed-dating',
+            ].map((title, i) => (
               <div key={i} className="card-eco p-5 rounded-2xl text-center" style={{ backgroundColor: 'white', border: '1px solid var(--eco-beige-dark)' }}>
-                <span className="text-3xl block mb-2">{item.icon}</span>
-                <span className="font-montserrat font-semibold text-sm" style={{ color: 'var(--eco-text)' }}>{item.title}</span>
+                <span className="font-montserrat font-semibold text-sm" style={{ color: 'var(--eco-text)' }}>{title}</span>
               </div>
             ))}
           </div>
