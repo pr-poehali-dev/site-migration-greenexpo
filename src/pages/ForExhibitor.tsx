@@ -536,13 +536,13 @@ export default function ForExhibitor() {
             Остались вопросы? Нужно обсудить нестандартный формат или крупное партнёрство? Напишите лично директору выставки в удобном мессенджере.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://t.me/greenexpo" target="_blank" rel="noopener noreferrer"
+            <a href="https://t.me/nastacia_egorova" target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-3 text-white px-8 py-4 rounded-full font-montserrat font-700 text-sm tracking-widest transition-opacity hover:opacity-90"
               style={{ backgroundColor: '#2AABEE' }}>
               <Icon name="Send" size={20} />
               Написать в Telegram
             </a>
-            <a href="https://vk.me/greenexpo" target="_blank" rel="noopener noreferrer"
+            <a href="https://vk.me/nastacia.egorova" target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-3 text-white px-8 py-4 rounded-full font-montserrat font-700 text-sm tracking-widest transition-opacity hover:opacity-90"
               style={{ backgroundColor: '#4680C2' }}>
               <Icon name="MessageCircle" size={20} />
