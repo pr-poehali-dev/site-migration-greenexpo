@@ -26,7 +26,6 @@ const aboutFeatures = [
 const whyParticipate = [
   { icon: 'UserCheck', title: 'Гарантированные качественные B2B контакты', desc: 'с дистрибьюторами, закупщиками торговых сетей, экомагазинов, садовых центров и др.' },
   { icon: 'Target', title: '100% целевая аудитория', desc: '- B2B и B2C потребители' },
-  { icon: 'ShoppingCart', title: 'Возможность продавать', desc: 'продукцию' },
   { icon: 'Monitor', title: 'Демонстрация продукции/услуг', desc: 'заинтересованной целевой аудитории' },
   { icon: 'Maximize2', title: 'Расширение рынка сбыта', desc: 'и географии продаж' },
   { icon: 'Award', title: 'Повышение узнаваемости бренда', desc: '' },
@@ -156,12 +155,8 @@ export default function Index() {
             className="font-montserrat font-800 leading-tight mb-5"
             style={{ fontSize: 'clamp(2.4rem, 6vw, 4.5rem)', color: 'var(--eco-green-dark)' }}
           >
-            GreenExpo'2026 –<br />Жизнь в стиле ECO
+            GreenExpo'2026 –<br />международная выставка-форум
           </h1>
-
-          <p className="font-montserrat font-700 text-base md:text-lg mb-3" style={{ color: 'var(--eco-green-dark)' }}>
-            международная Выставка-Форум
-          </p>
 
           <ul className="text-center space-y-2 mb-8">
             <li className="font-opensans text-sm md:text-base leading-relaxed" style={{ color: 'var(--eco-green-dark)' }}>
@@ -473,7 +468,7 @@ export default function Index() {
             Почему стоит участвовать?
           </h2>
 
-          {/* Ряд 1: 4 колонки с вертикальными разделителями */}
+          {/* Ряд 1: 4 колонки */}
           <div className="grid grid-cols-2 md:grid-cols-4 mb-0" style={{ borderTop: '1px solid #e0e8d8', borderLeft: '1px solid #e0e8d8' }}>
             {whyParticipate.slice(0, 4).map((item) => (
               <div
@@ -492,8 +487,8 @@ export default function Index() {
             ))}
           </div>
 
-          {/* Ряд 2: 4 колонки */}
-          <div className="grid grid-cols-2 md:grid-cols-4 mb-10" style={{ borderLeft: '1px solid #e0e8d8' }}>
+          {/* Ряд 2: 3 колонки */}
+          <div className="grid grid-cols-1 md:grid-cols-3 mb-10" style={{ borderLeft: '1px solid #e0e8d8' }}>
             {whyParticipate.slice(4).map((item) => (
               <div
                 key={item.title}
