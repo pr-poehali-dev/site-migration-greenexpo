@@ -20,14 +20,14 @@ function reachMetrikaGoal(goal: string) {
 }
 
 const SEGMENTS = [
-  { icon: '', title: 'Органическая продукция и здоровое питание' },
-  { icon: '', title: 'Натуральная и органическая косметика' },
-  { icon: '', title: 'Экотовары для дома и быта' },
-  { icon: '', title: 'Сити-фермерство и urban farming' },
-  { icon: '', title: 'Ландшафтный дизайн и благоустройство' },
-  { icon: '', title: 'Экотуризм и экологичный отдых' },
-  { icon: '', title: 'Экологичная мода и аксессуары' },
-  { icon: '', title: 'Экологичные технологии и упаковка' },
+  { title: 'Органическое земледелие', desc: 'Технологии, товары, услуги и оборудование для органического земледелия, садоводов, садовых центров и ритейла' },
+  { title: 'Сити-фермерство', desc: 'Товары, услуги и оборудование для выращивания зелени, овощей и фруктов в городских условиях' },
+  { title: 'Ландшафтная экология', desc: 'Товары, услуги и оборудование для ландшафтной индустрии и служб городского озеленения' },
+  { title: 'Рециклинг', desc: 'Ответственное производство, потребление, повторное использование и восстановление товаров, упаковки и материалов' },
+  { title: 'Чистый дом и сад', desc: 'Экологичные товары, услуги для ухода за домом/садом, инновационные экотехнологии в строительстве домов и коттеджей' },
+  { title: 'Эко-продукты для человека и питомцев', desc: 'Технологии, товары, услуги и оборудование для производства экологически чистых продуктов питания человека и домашних питомцев' },
+  { title: 'ECO Lifestyle', desc: 'Агро-Экотуризм, экологичные косметика, одежда, аксессуары, техника, услуги' },
+  { title: 'ECO Образование и просвещение', desc: 'Обучающие программы, направленные на формирование экосознания и уважительного отношения к природе' },
 ];
 
 const ADVANTAGES = [
@@ -295,8 +295,9 @@ export default function ForExhibitor() {
           <h2 className="section-title text-center mb-12">8 специализированных направлений для вашего бизнеса</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             {SEGMENTS.map((seg, i) => (
-              <div key={i} className="card-eco p-5 rounded-2xl" style={{ backgroundColor: 'white', border: '1px solid var(--eco-beige-dark)' }}>
-                <span className="font-montserrat font-semibold text-sm leading-snug" style={{ color: 'var(--eco-text)' }}>{seg.title}</span>
+              <div key={i} className="card-eco p-5 rounded-2xl flex flex-col gap-2" style={{ backgroundColor: 'white', border: '1px solid var(--eco-beige-dark)' }}>
+                <span className="font-montserrat font-bold text-sm leading-snug" style={{ color: 'var(--eco-text)' }}>{seg.title}</span>
+                <span className="font-opensans text-xs leading-relaxed" style={{ color: 'var(--eco-text)', opacity: 0.7 }}>{seg.desc}</span>
               </div>
             ))}
           </div>
