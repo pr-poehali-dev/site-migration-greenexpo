@@ -28,4 +28,5 @@ export const GOALS = {
   DACHA_PRESENTATION_OPEN: 'dacha_presentation_open',
   DACHA_PARTICIPANT_SUBMIT: 'dacha_participant_form',
   DACHA_PRESENTATION_SUBMIT: 'dacha_presentation_form',
+  BUY_TICKET: 'buy_ticket',
 };

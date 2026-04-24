@@ -632,6 +632,7 @@ export default function Index() {
               href="https://www.flowers-expo.ru/basket/index.html"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => reachGoal(GOALS.BUY_TICKET)}
               className="font-montserrat font-700 text-sm tracking-widest px-10 py-4 rounded-full transition-all hover:opacity-90"
               style={{ backgroundColor: 'var(--eco-green-dark)', color: 'white' }}
             >
