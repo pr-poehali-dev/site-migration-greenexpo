@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useUtm } from '@/hooks/useUtm';
+import { reachGoal, GOALS } from '@/hooks/useAnalytics';
 
 const NOTIFY_URL = 'https://functions.poehali.dev/28e6c844-7b1b-41c6-9811-be3b2957727c';
 
-declare function ym(id: number, action: string, goal: string): void;
-
 function reachMetrikaGoal(goal: string) {
-  try { ym(99310671, 'reachGoal', goal); } catch (_e) { /* ignore */ }
+  reachGoal(goal);
 }
 
 const steps = [
@@ -170,14 +169,14 @@ export default function Dacha() {
           {/* Кнопки действий */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={() => { setShowParticipant(true); setShowPresentation(false); }}
+              onClick={() => { reachGoal(GOALS.DACHA_PARTICIPANT_OPEN); setShowParticipant(true); setShowPresentation(false); }}
               className="font-montserrat font-700 text-sm tracking-widest px-10 py-4 rounded-full transition-all hover:opacity-90"
               style={{ backgroundColor: 'var(--eco-green)', color: 'white' }}
             >
               СТАТЬ УЧАСТНИКОМ
             </button>
             <button
-              onClick={() => { setShowPresentation(true); setShowParticipant(false); }}
+              onClick={() => { reachGoal(GOALS.DACHA_PRESENTATION_OPEN); setShowPresentation(true); setShowParticipant(false); }}
               className="font-montserrat font-700 text-sm tracking-widest px-10 py-4 rounded-full border-2 transition-all hover:opacity-80"
               style={{ borderColor: 'var(--eco-green-dark)', color: 'var(--eco-green-dark)' }}
             >

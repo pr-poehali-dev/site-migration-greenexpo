@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/icon';
 import { useUtm } from '@/hooks/useUtm';
+import { reachGoal, GOALS } from '@/hooks/useAnalytics';
 import {
   Accordion,
   AccordionContent,
@@ -15,8 +16,7 @@ const HERO_IMAGE = 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-806
 const NOTIFY_URL = 'https://functions.poehali.dev/28e6c844-7b1b-41c6-9811-be3b2957727c';
 
 function reachMetrikaGoal(goal: string) {
-  const w = window as unknown as { ym?: (id: number, action: string, goal: string) => void };
-  if (w.ym) w.ym(100343781, 'reachGoal', goal);
+  reachGoal(goal);
 }
 
 const SEGMENTS = [
@@ -228,6 +228,7 @@ export default function ForExhibitor() {
 
       {/* Floating TG button */}
       <a href="https://t.me/greenexpo" target="_blank" rel="noopener noreferrer"
+        onClick={() => reachGoal(GOALS.CLICK_TELEGRAM)}
         className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-105 transition-transform"
         style={{ backgroundColor: '#2AABEE' }} title="Написать в Telegram">
         <Icon name="Send" size={24} className="text-white" />
@@ -543,12 +544,14 @@ export default function ForExhibitor() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://t.me/nastacia_egorova" target="_blank" rel="noopener noreferrer"
+              onClick={() => reachGoal(GOALS.CLICK_TELEGRAM)}
               className="flex items-center gap-3 text-white px-8 py-4 rounded-full font-montserrat font-700 text-sm tracking-widest transition-opacity hover:opacity-90"
               style={{ backgroundColor: '#2AABEE' }}>
               <Icon name="Send" size={20} />
               Написать в Telegram
             </a>
             <a href="https://vk.me/nastacia.egorova" target="_blank" rel="noopener noreferrer"
+              onClick={() => reachGoal(GOALS.CLICK_VK)}
               className="flex items-center gap-3 text-white px-8 py-4 rounded-full font-montserrat font-700 text-sm tracking-widest transition-opacity hover:opacity-90"
               style={{ backgroundColor: '#4680C2' }}>
               <Icon name="MessageCircle" size={20} />
@@ -661,10 +664,12 @@ export default function ForExhibitor() {
               <h3 className="font-montserrat font-bold mb-4" style={{ color: 'var(--eco-text)' }}>Мессенджеры</h3>
               <div className="flex flex-col gap-2">
                 <a href="https://t.me/greenexpo" target="_blank" rel="noopener noreferrer"
+                  onClick={() => reachGoal(GOALS.CLICK_TELEGRAM)}
                   className="flex items-center gap-2 font-opensans text-sm font-medium hover:opacity-80 transition-opacity" style={{ color: '#2AABEE' }}>
                   <Icon name="Send" size={16} /> Telegram
                 </a>
                 <a href="https://vk.me/greenexpo" target="_blank" rel="noopener noreferrer"
+                  onClick={() => reachGoal(GOALS.CLICK_VK)}
                   className="flex items-center gap-2 font-opensans text-sm font-medium hover:opacity-80 transition-opacity" style={{ color: '#4680C2' }}>
                   <Icon name="MessageCircle" size={16} /> ВКонтакте
                 </a>

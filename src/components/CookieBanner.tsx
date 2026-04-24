@@ -17,15 +17,21 @@ const CookieBanner = () => {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between gap-4 px-6 py-4 flex-wrap"
-      style={{ backgroundColor: 'rgba(30, 30, 30, 0.97)', borderTop: '1px solid rgba(255,255,255,0.1)' }}
+      className="fixed bottom-4 left-4 z-50 rounded-2xl shadow-xl p-4 flex flex-col gap-3"
+      style={{
+        backgroundColor: 'rgba(28, 28, 28, 0.96)',
+        border: '1px solid rgba(255,255,255,0.1)',
+        maxWidth: '280px',
+        width: 'calc(25vw + 60px)',
+        minWidth: '220px',
+      }}
     >
-      <p className="font-opensans text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', maxWidth: '800px' }}>
+      <p className="font-opensans text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.8)' }}>
         Используя данный сайт, вы даёте согласие на использование файлов cookie, помогающих нам сделать его удобнее для вас.
       </p>
       <button
         onClick={handleAccept}
-        className="font-montserrat font-700 text-sm tracking-widest px-8 py-3 rounded-full transition-all hover:opacity-90 shrink-0"
+        className="font-montserrat font-700 text-xs tracking-widest px-6 py-2.5 rounded-full transition-all hover:opacity-90 self-start"
         style={{ backgroundColor: 'var(--eco-green-dark)', color: 'white' }}
       >
         ОК

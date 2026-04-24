@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/icon';
 import { useUtm } from '@/hooks/useUtm';
+import { reachGoal, GOALS } from '@/hooks/useAnalytics';
 
 const heroImage = 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/files/5394c160-2a6a-4345-a2d3-d23038df86b2.jpg';
 const expoImage = 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/files/4db694dd-cc8c-49d7-979b-20eb8b01522b.jpg';
@@ -73,8 +74,7 @@ const infoPartners = [
 const NOTIFY_URL = 'https://functions.poehali.dev/28e6c844-7b1b-41c6-9811-be3b2957727c';
 
 function reachMetrikaGoal(goal: string) {
-  const w = window as unknown as { ym?: (id: number, action: string, goal: string) => void };
-  if (w.ym) w.ym(100343781, 'reachGoal', goal);
+  reachGoal(goal);
 }
 
 export default function Index() {
