@@ -28,6 +28,7 @@ import Hotel from "./pages/Hotel";
 import Dacha from "./pages/Dacha";
 import ForExhibitor from "./pages/ForExhibitor";
 import NotFound from "./pages/NotFound";
+import CookieBanner from "./components/CookieBanner";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <CookieBanner />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />

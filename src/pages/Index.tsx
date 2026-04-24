@@ -266,17 +266,22 @@ export default function Index() {
                 >
                   {sending ? 'ОТПРАВЛЯЕМ...' : 'ОТПРАВИТЬ'}
                 </button>
-                <p className="text-center font-opensans text-xs leading-relaxed" style={{ color: '#888' }}>
-                  Нажимая на кнопку «Отправить» я принимаю{' '}
-                  <Link to="/terms" className="underline" style={{ color: 'var(--eco-green)' }} onClick={() => setModalOpen(false)}>
-                    Пользовательское соглашение
-                  </Link>{' '}
-                  и даю согласие на обработку, хранение и передачу указанных мной персональных данных согласно{' '}
-                  <Link to="/privacy" className="underline" style={{ color: 'var(--eco-green)' }} onClick={() => setModalOpen(false)}>
-                    Политике конфиденциальности
-                  </Link>
-                  *
-                </p>
+                <div className="flex flex-col gap-2">
+                  <label className="flex items-start gap-2 font-opensans text-xs leading-relaxed cursor-pointer" style={{ color: '#888' }}>
+                    <input type="checkbox" required className="mt-0.5 shrink-0 accent-green-700" />
+                    <span>Я принимаю{' '}
+                      <a href="https://www.flowers-expo.ru/terms-of-use.html" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: 'var(--eco-green)' }}>Пользовательское соглашение</a>{' '}
+                      и{' '}
+                      <a href="https://www.flowers-expo.ru/all_oferta.html" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: 'var(--eco-green)' }}>Договор оферты</a>
+                    </span>
+                  </label>
+                  <label className="flex items-start gap-2 font-opensans text-xs leading-relaxed cursor-pointer" style={{ color: '#888' }}>
+                    <input type="checkbox" required className="mt-0.5 shrink-0 accent-green-700" />
+                    <span>Даю согласие на обработку, хранение и передачу указанных мной персональных данных согласно{' '}
+                      <a href="https://www.flowers-expo.ru/confidential.html" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: 'var(--eco-green)' }}>Политике конфиденциальности</a>
+                    </span>
+                  </label>
+                </div>
               </form>
             )}
           </div>
@@ -624,7 +629,7 @@ export default function Index() {
           {/* Кнопки */}
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://www.flowers-expo.ru/online/visitor-registration.html?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=button_buy_ticket"
+              href="https://www.flowers-expo.ru/basket/index.html"
               target="_blank"
               rel="noopener noreferrer"
               className="font-montserrat font-700 text-sm tracking-widest px-10 py-4 rounded-full transition-all hover:opacity-90"
