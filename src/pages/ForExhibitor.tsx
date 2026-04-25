@@ -250,9 +250,8 @@ export default function ForExhibitor() {
             7–9 СЕНТЯБРЯ 2026 · МВЦ "КРОКУС ЭКСПО" · МОСКВА
           </div>
           <h1 className="font-montserrat font-black leading-tight mb-6" style={{ fontSize: 'clamp(2.2rem, 5vw, 4rem)' }}>
-            GreenExpo 2026 —<br />
-            <span style={{ color: '#a8d8a8' }}>международная выставка-форум</span><br />
-            «Жизнь в стиле ECO»
+            GreenExpo'2026 —<br />
+            <span style={{ color: '#a8d8a8' }}>международная выставка-форум</span>
           </h1>
           <p className="text-lg md:text-xl mb-12 font-opensans max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.85)' }}>
             МВЦ "Крокус Экспо", Москва. Площадка, где производители встречаются с покупателями, дистрибьюторами и партнёрами.
