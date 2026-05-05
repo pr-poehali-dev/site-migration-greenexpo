@@ -27,6 +27,8 @@ import Subsidies from "./pages/Subsidies";
 import Hotel from "./pages/Hotel";
 import Dacha from "./pages/Dacha";
 import ForExhibitor from "./pages/ForExhibitor";
+import Blog from "./pages/Blog";
+import BlogArticleExhibitionChecklist from "./pages/BlogArticleExhibitionChecklist";
 import NotFound from "./pages/NotFound";
 import CookieBanner from "./components/CookieBanner";
 
@@ -57,6 +59,8 @@ const App = () => (
           <Route path="/hotel" element={<Hotel />} />
           <Route path="/dacha" element={<Dacha />} />
           <Route path="/forexhibitor" element={<ForExhibitor />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/kak-podgotovitsya-k-pervoy-vystavke" element={<BlogArticleExhibitionChecklist />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
