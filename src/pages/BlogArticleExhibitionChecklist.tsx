@@ -161,6 +161,7 @@ const GALLERY_PHOTOS = [
   { url: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/051b1b64-e3f9-41fd-9a70-d0ea8a36ee95.jpg', alt: 'Зал выставки GreenExpo 2025' },
   { url: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/4f60d2df-a3bb-4283-a036-0b5b46729d4d.jpg', alt: 'Аудитория деловой программы GreenExpo 2025' },
   { url: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/d40ac035-3cbb-42d1-bf1b-fc2729f40716.jpg', alt: 'Мастер-класс на GreenExpo 2025' },
+  { url: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/9fffffe1-c97e-4ecf-9655-aed703db9764.jpg', alt: 'Ландшафтная фотовыставка GreenExpo 2025' },
 ];
 
 export default function BlogArticleExhibitionChecklist() {

@@ -7,6 +7,7 @@ const navItems = [
   { label: 'ЭКСПОНЕНТАМ', anchor: 'exhibitors' },
   { label: 'ПОСЕТИТЕЛЯМ', anchor: 'visitors' },
   { label: 'ПРОГРАММА', path: '/program' },
+  { label: 'БЛОГ', path: '/blog' },
   { label: 'ПРЕССЕ', anchor: 'press' },
   { label: 'КОНТАКТЫ', anchor: 'contacts' },
 ];
