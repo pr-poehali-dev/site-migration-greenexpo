@@ -155,7 +155,13 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   );
 }
 
-const GALLERY_PLACEHOLDERS = Array.from({ length: 6 });
+const GALLERY_PHOTOS = [
+  { url: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/cd761e8d-2fde-446e-9f3f-5a838765683a.jpg', alt: 'Посетители выставки GreenExpo 2025' },
+  { url: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/725ba928-e21e-4403-87e7-138ebfd285e7.jpg', alt: 'Стенды участников GreenExpo 2025' },
+  { url: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/051b1b64-e3f9-41fd-9a70-d0ea8a36ee95.jpg', alt: 'Зал выставки GreenExpo 2025' },
+  { url: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/4f60d2df-a3bb-4283-a036-0b5b46729d4d.jpg', alt: 'Аудитория деловой программы GreenExpo 2025' },
+  { url: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/d40ac035-3cbb-42d1-bf1b-fc2729f40716.jpg', alt: 'Мастер-класс на GreenExpo 2025' },
+];
 
 export default function BlogArticleExhibitionChecklist() {
   const utm = useUtm();
@@ -406,13 +412,13 @@ export default function BlogArticleExhibitionChecklist() {
               Как проходила выставка GreenExpo'2025
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {GALLERY_PLACEHOLDERS.map((_, i) => (
-                <div
-                  key={i}
-                  className="aspect-[4/3] rounded-xl flex items-center justify-center"
-                  style={{ backgroundColor: '#d0d8c8' }}
-                >
-                  <Icon name="Image" size={32} style={{ color: '#a0b09a' }} />
+              {GALLERY_PHOTOS.map((photo, i) => (
+                <div key={i} className="aspect-[4/3] rounded-xl overflow-hidden">
+                  <img
+                    src={photo.url}
+                    alt={photo.alt}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
               ))}
             </div>
