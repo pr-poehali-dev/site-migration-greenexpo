@@ -224,7 +224,7 @@ export default function ForExhibitor() {
 
   return (
     <div style={{ backgroundColor: 'var(--eco-beige)' }}>
-      <Header />
+      <Header onOpenModal={() => openModal('Запрос на участие в выставке в качестве экспонента', 'forexhibitor_header')} />
 
       {/* Floating TG button */}
       <a href="https://t.me/greenexpo" target="_blank" rel="noopener noreferrer"

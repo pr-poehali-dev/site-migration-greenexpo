@@ -223,7 +223,7 @@ export default function Index() {
               <Icon name="X" size={20} />
             </button>
             <h2 className="font-montserrat font-800 text-xl mb-6 text-center" style={{ color: 'var(--eco-green-dark)' }}>
-              Запрос на участие в выставке
+              Запрос на участие в выставке в качестве экспонента
             </h2>
             {sent ? (
               <p className="text-center font-opensans py-6" style={{ color: 'var(--eco-green-dark)' }}>
