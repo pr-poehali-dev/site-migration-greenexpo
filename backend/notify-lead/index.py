@@ -108,7 +108,16 @@ def send_telegram(name: str, phone: str, email: str, role: str, source: str, utm
             data=data,
             headers={'Content-Type': 'application/json'}
         )
-        urllib.request.urlopen(req, timeout=10)
+        last_err = None
+        for attempt in range(3):
+            try:
+                urllib.request.urlopen(req, timeout=25)
+                last_err = None
+                break
+            except Exception as e:
+                last_err = e
+        if last_err is not None:
+            print(f'Telegram send failed for chat {chat_id}: {last_err}')
 
 
 def handler(event: dict, context) -> dict:
@@ -143,8 +152,15 @@ def handler(event: dict, context) -> dict:
             'body': json.dumps({'error': 'name and phone are required'})
         }
 
-    send_emails(name, phone, email, role, source, utm)
-    send_telegram(name, phone, email, role, source, utm)
+    try:
+        send_emails(name, phone, email, role, source, utm)
+    except Exception as e:
+        print(f'Email send failed: {e}')
+
+    try:
+        send_telegram(name, phone, email, role, source, utm)
+    except Exception as e:
+        print(f'Telegram send failed: {e}')
 
     return {
         'statusCode': 200,
