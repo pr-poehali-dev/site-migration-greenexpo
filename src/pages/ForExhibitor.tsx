@@ -192,22 +192,33 @@ export default function ForExhibitor() {
   const [openSending, setOpenSending] = useState(false);
 
   useEffect(() => {
-    const prevTitle = document.title;
+    const pageTitle = 'Стать экспонентом GreenExpo 2026 — аренда стенда для эко-производителей';
     const desc = 'Аренда стенда от 140 000 ₽ (4 м²). III Международная выставка эко-продукции, 7–9 сентября 2026, Москва, Крокус Экспо. Оставьте заявку на участие.';
-    document.title = 'Стать экспонентом GreenExpo 2026 — аренда стенда для эко-производителей';
 
-    let meta = document.querySelector('meta[name="description"]');
-    const prevDesc = meta?.getAttribute('content') || '';
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.setAttribute('name', 'description');
-      document.head.appendChild(meta);
-    }
-    meta.setAttribute('content', desc);
+    const prevTitle = document.title;
+    document.title = pageTitle;
+
+    const setMeta = (selector: string, attr: string, attrVal: string, content: string) => {
+      let el = document.querySelector(selector);
+      const prev = el?.getAttribute('content') || '';
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attr, attrVal);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+      return { el, prev };
+    };
+
+    const description = setMeta('meta[name="description"]', 'name', 'description', desc);
+    const ogTitle = setMeta('meta[property="og:title"]', 'property', 'og:title', pageTitle);
+    const ogDesc = setMeta('meta[property="og:description"]', 'property', 'og:description', desc);
 
     return () => {
       document.title = prevTitle;
-      meta?.setAttribute('content', prevDesc);
+      description.el?.setAttribute('content', description.prev);
+      ogTitle.el?.setAttribute('content', ogTitle.prev);
+      ogDesc.el?.setAttribute('content', ogDesc.prev);
     };
   }, []);
 
