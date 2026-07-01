@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import Icon from '@/components/ui/icon';
 import { useUtm } from '@/hooks/useUtm';
 import { reachGoal } from '@/hooks/useAnalytics';
+import { useSeo } from '@/hooks/useSeo';
 
 const NOTIFY_URL = 'https://functions.poehali.dev/28e6c844-7b1b-41c6-9811-be3b2957727c';
 
@@ -165,6 +166,11 @@ const GALLERY_PHOTOS = [
 ];
 
 export default function BlogArticleExhibitionChecklist() {
+  useSeo({
+    title: 'Как подготовиться к первой выставке — чек-лист эко-производителя | GreenExpo',
+    description: 'Подробный чек-лист подготовки к участию в выставке эко и органических продуктов GreenExpo. Советы производителям натуральных товаров, косметики и органики.',
+  });
+
   const utm = useUtm();
   const [modalOpen, setModalOpen] = useState(false);
 

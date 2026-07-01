@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/icon';
+import { useSeo } from '@/hooks/useSeo';
 
 const days = [
   {
@@ -58,6 +59,11 @@ const typeColors: Record<string, { bg: string; label: string }> = {
 };
 
 export default function Program() {
+  useSeo({
+    title: 'Программа GreenExpo 2026 — лекции и мастер-классы об эко и органике',
+    description: 'Деловая программа выставки GreenExpo 2026: лекции об органическом земледелии, эко-продуктах, натуральной косметике и зелёных технологиях. 7–9 сентября 2026, Москва.',
+  });
+
   return (
     <div style={{ backgroundColor: 'var(--eco-beige)' }}>
       <Header />

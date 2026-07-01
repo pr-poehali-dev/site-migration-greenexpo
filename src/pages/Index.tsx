@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/icon';
 import { useUtm } from '@/hooks/useUtm';
+import { useSeo } from '@/hooks/useSeo';
 import { reachGoal, GOALS } from '@/hooks/useAnalytics';
 
 const heroImage = 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/files/5394c160-2a6a-4345-a2d3-d23038df86b2.jpg';
@@ -80,6 +81,11 @@ function reachMetrikaGoal(goal: string) {
 export default function Index() {
   const utm = useUtm();
 
+  useSeo({
+    title: 'GreenExpo 2026 — международная выставка эко и органических продуктов в Москве',
+    description: 'III Международная выставка-форум GreenExpo: эко-продукты, органическое земледелие, натуральная косметика, эко-одежда и товары для дома. 7–9 сентября 2026, Москва, Крокус Экспо.',
+  });
+
   const [modalOpen, setModalOpen] = useState(false);
   const [form, setForm] = useState({ name: '', phone: '', email: '' });
   const [sent, setSent] = useState(false);
@@ -155,7 +161,7 @@ export default function Index() {
             className="font-montserrat font-800 leading-tight mb-5"
             style={{ fontSize: 'clamp(2.4rem, 6vw, 4.5rem)', color: 'var(--eco-green-dark)' }}
           >
-            GreenExpo'2026 –<br />международная выставка-форум
+            GreenExpo'2026 –<br />международная выставка эко и органических продуктов
           </h1>
 
           <ul className="text-center space-y-2 mb-8">

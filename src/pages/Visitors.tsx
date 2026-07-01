@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/icon';
+import { useSeo } from '@/hooks/useSeo';
 
 const whyCome = [
   { icon: 'Leaf', title: 'Органические продукты', desc: 'Попробуйте и купите сотни видов органических продуктов напрямую от производителей' },
@@ -19,6 +20,11 @@ const schedule = [
 ];
 
 export default function Visitors() {
+  useSeo({
+    title: 'Посетителям GreenExpo 2026 — выставка эко-продуктов и органики в Москве',
+    description: 'Билеты и программа для посетителей GreenExpo 2026: дегустации органических продуктов, натуральная косметика, эко-одежда, мастер-классы. 7–9 сентября 2026, Крокус Экспо.',
+  });
+
   return (
     <div style={{ backgroundColor: 'var(--eco-beige)' }}>
       <Header />

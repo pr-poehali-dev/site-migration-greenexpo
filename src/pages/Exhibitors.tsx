@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/icon';
+import { useSeo } from '@/hooks/useSeo';
 
 const benefits = [
   { icon: 'Target', title: 'Целевая аудитория', desc: 'Прямой контакт с профессионалами рынка: ретейлеры, дистрибьюторы, импортёры, HoReCa' },
@@ -38,6 +39,11 @@ const packages = [
 ];
 
 export default function Exhibitors() {
+  useSeo({
+    title: 'Экспоненты GreenExpo 2026 — производители эко и органических товаров',
+    description: 'Участники выставки GreenExpo 2026: производители органических продуктов, натуральной косметики, эко-одежды и товаров для дома. Найдите поставщиков экологичной продукции.',
+  });
+
   const [formData, setFormData] = useState({ name: '', company: '', phone: '', email: '', comment: '', agree: false });
 
   return (

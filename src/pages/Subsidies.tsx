@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useSeo } from '@/hooks/useSeo';
 
 const expenseItems = [
   'на регистрационный взнос',
@@ -461,6 +462,11 @@ const regions = [
 ];
 
 export default function Subsidies() {
+  useSeo({
+    title: 'Субсидии на участие в GreenExpo 2026 — выставка эко и органических товаров',
+    description: 'Субсидии и льготы на участие в выставке GreenExpo 2026 для производителей эко-продуктов, органического земледелия и натуральных товаров. Условия для фермеров и малого бизнеса.',
+  });
+
   return (
     <div style={{ backgroundColor: 'var(--eco-beige)' }}>
       <Header />

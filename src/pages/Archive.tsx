@@ -1,10 +1,16 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/icon';
+import { useSeo } from '@/hooks/useSeo';
 
 const heroImg = 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/files/4db694dd-cc8c-49d7-979b-20eb8b01522b.jpg';
 
 export default function Archive() {
+  useSeo({
+    title: 'Архив выставок GreenExpo — история форума эко и органических продуктов',
+    description: 'Архив прошедших выставок GreenExpo: итоги форумов эко-продуктов, органического земледелия, натуральной косметики и зелёных технологий в Москве.',
+  });
+
   return (
     <div style={{ backgroundColor: 'var(--eco-beige)' }}>
       <Header />

@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useSeo } from '@/hooks/useSeo';
 
 const sections = [
   {
@@ -97,6 +98,11 @@ Email: info@greenexpo.pro
 ];
 
 export default function Privacy() {
+  useSeo({
+    title: 'Политика конфиденциальности — GreenExpo 2026, выставка эко-продуктов',
+    description: 'Политика конфиденциальности сайта международной выставки GreenExpo 2026 — форума эко-продуктов, органического земледелия и натуральных товаров в Москве.',
+  });
+
   return (
     <div style={{ backgroundColor: 'var(--eco-beige)' }}>
       <Header />

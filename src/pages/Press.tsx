@@ -1,7 +1,13 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useSeo } from '@/hooks/useSeo';
 
 export default function Press() {
+  useSeo({
+    title: 'Пресс-центр GreenExpo 2026 — СМИ о выставке эко и органических продуктов',
+    description: 'Пресс-центр GreenExpo 2026: публикации, пресс-релизы и аккредитация СМИ. Международная выставка эко-продуктов, органического земледелия и натуральных товаров в Москве.',
+  });
+
   return (
     <div style={{ backgroundColor: 'var(--eco-beige)' }}>
       <Header />

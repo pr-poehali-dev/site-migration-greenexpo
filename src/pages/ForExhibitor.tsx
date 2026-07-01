@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/icon';
 import { useUtm } from '@/hooks/useUtm';
+import { useSeo } from '@/hooks/useSeo';
 import { reachGoal, GOALS } from '@/hooks/useAnalytics';
 import {
   Accordion,
@@ -191,36 +192,10 @@ export default function ForExhibitor() {
   const [openSent, setOpenSent] = useState(false);
   const [openSending, setOpenSending] = useState(false);
 
-  useEffect(() => {
-    const pageTitle = 'Стать экспонентом GreenExpo 2026 — аренда стенда для эко-производителей';
-    const desc = 'Аренда стенда от 140 000 ₽ (4 м²). III Международная выставка эко-продукции, 7–9 сентября 2026, Москва, Крокус Экспо. Оставьте заявку на участие.';
-
-    const prevTitle = document.title;
-    document.title = pageTitle;
-
-    const setMeta = (selector: string, attr: string, attrVal: string, content: string) => {
-      let el = document.querySelector(selector);
-      const prev = el?.getAttribute('content') || '';
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute(attr, attrVal);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-      return { el, prev };
-    };
-
-    const description = setMeta('meta[name="description"]', 'name', 'description', desc);
-    const ogTitle = setMeta('meta[property="og:title"]', 'property', 'og:title', pageTitle);
-    const ogDesc = setMeta('meta[property="og:description"]', 'property', 'og:description', desc);
-
-    return () => {
-      document.title = prevTitle;
-      description.el?.setAttribute('content', description.prev);
-      ogTitle.el?.setAttribute('content', ogTitle.prev);
-      ogDesc.el?.setAttribute('content', ogDesc.prev);
-    };
-  }, []);
+  useSeo({
+    title: 'Стать экспонентом GreenExpo 2026 — аренда стенда для эко-производителей',
+    description: 'Аренда стенда от 140 000 ₽ (4 м²). III Международная выставка эко и органических продуктов, натуральной косметики и товаров, 7–9 сентября 2026, Москва, Крокус Экспо. Оставьте заявку на участие.',
+  });
 
   function openModal(title: string, source: string) {
     reachMetrikaGoal('open_modal');

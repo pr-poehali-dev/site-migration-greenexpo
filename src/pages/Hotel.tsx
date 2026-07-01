@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useSeo } from '@/hooks/useSeo';
 
 const hotels = [
   {
@@ -113,6 +114,11 @@ const hotels = [
 ];
 
 export default function Hotel() {
+  useSeo({
+    title: 'Проживание рядом с GreenExpo 2026 — выставка эко и органических продуктов',
+    description: 'Отели и проживание для гостей выставки GreenExpo 2026 в Москве возле Крокус Экспо. Международный форум эко-продуктов, органического земледелия и натуральных товаров.',
+  });
+
   return (
     <div style={{ backgroundColor: 'var(--eco-beige)' }}>
       <Header />

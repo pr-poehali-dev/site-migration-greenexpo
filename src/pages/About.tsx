@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/icon';
+import { useSeo } from '@/hooks/useSeo';
 
 const heroImg = 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/files/5394c160-2a6a-4345-a2d3-d23038df86b2.jpg';
 
@@ -24,6 +25,11 @@ const sections = [
 ];
 
 export default function About() {
+  useSeo({
+    title: 'О выставке GreenExpo 2026 — форум эко и органических продуктов в Москве',
+    description: 'Всё о международной выставке-форуме GreenExpo 2026: эко-продукты, органическое земледелие, натуральная косметика, эко-одежда и зелёные технологии. 7–9 сентября 2026, Москва, Крокус Экспо.',
+  });
+
   return (
     <div style={{ backgroundColor: 'var(--eco-beige)' }}>
       <Header />

@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/icon';
+import { useSeo } from '@/hooks/useSeo';
 
 const contacts = [
   {
@@ -28,6 +29,11 @@ const hotels = [
 ];
 
 export default function Contacts() {
+  useSeo({
+    title: 'Контакты GreenExpo 2026 — выставка эко и органических продуктов в Москве',
+    description: 'Контакты организаторов выставки GreenExpo 2026. Свяжитесь с нами по участию, аренде стенда и посещению форума эко-продуктов и органического земледелия. Москва, Крокус Экспо.',
+  });
+
   return (
     <div style={{ backgroundColor: 'var(--eco-beige)' }}>
       <Header />

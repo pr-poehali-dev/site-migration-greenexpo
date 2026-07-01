@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useSeo } from '@/hooks/useSeo';
 
 const ARTICLES = [
   {
@@ -15,6 +16,11 @@ const ARTICLES = [
 ];
 
 export default function Blog() {
+  useSeo({
+    title: 'Блог GreenExpo — статьи об эко-продуктах и органическом земледелии',
+    description: 'Блог выставки GreenExpo: статьи об эко-продуктах, органическом земледелии, натуральной косметике, эко-одежде и зелёном образе жизни. Советы для производителей и покупателей.',
+  });
+
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: 'var(--eco-bg)' }}>
       <Header />

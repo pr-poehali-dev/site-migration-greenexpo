@@ -2,8 +2,14 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/icon';
 import { Link } from 'react-router-dom';
+import { useSeo } from '@/hooks/useSeo';
 
 export default function AboutCompany() {
+  useSeo({
+    title: 'О компании-организаторе GreenExpo — выставки эко и органических продуктов',
+    description: 'Организатор международной выставки GreenExpo — форума эко-продуктов, органического земледелия, натуральной косметики и эко-товаров. Опыт проведения выставок в Москве.',
+  });
+
   return (
     <div style={{ backgroundColor: 'var(--eco-beige)' }}>
       <Header />

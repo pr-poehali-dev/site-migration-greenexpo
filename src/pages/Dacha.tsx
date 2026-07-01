@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useUtm } from '@/hooks/useUtm';
 import { reachGoal, GOALS } from '@/hooks/useAnalytics';
+import { useSeo } from '@/hooks/useSeo';
 
 const NOTIFY_URL = 'https://functions.poehali.dev/28e6c844-7b1b-41c6-9811-be3b2957727c';
 
@@ -29,6 +30,11 @@ const defaultParticipantForm = { name: '', company: '', phone: '', email: '', ag
 const defaultPresentationForm = { name: '', company: '', site: '', phone: '', email: '' };
 
 export default function Dacha() {
+  useSeo({
+    title: 'Спецпроект ДАЧА на GreenExpo 2026 — эко-товары для сада и органики',
+    description: 'Спецпроект ДАЧА на выставке GreenExpo 2026: органическое земледелие, эко-товары для сада и огорода, натуральные удобрения и семена. 7–9 сентября 2026, Москва, Крокус Экспо.',
+  });
+
   const utm = useUtm();
 
   const [showParticipant, setShowParticipant] = useState(false);

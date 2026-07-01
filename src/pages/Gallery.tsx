@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useSeo } from '@/hooks/useSeo';
 
 const photos = [
   { src: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/f5916126-7a61-45e1-b923-579c094b71da.jpg', caption: 'Открытие GreenExpo 2025' },
@@ -40,6 +41,11 @@ const photos = [
 ];
 
 export default function Gallery() {
+  useSeo({
+    title: 'Фотогалерея GreenExpo — международная выставка эко и органических продуктов',
+    description: 'Фотографии с выставки GreenExpo: экспоненты эко-продуктов, органического земледелия, натуральной косметики и эко-товаров. Атмосфера форума в Москве, Крокус Экспо.',
+  });
+
   return (
     <div style={{ backgroundColor: 'var(--eco-beige)' }}>
       <Header />
