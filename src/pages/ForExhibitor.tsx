@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -190,6 +190,26 @@ export default function ForExhibitor() {
   const [openForm, setOpenForm] = useState({ name: '', phone: '', email: '' });
   const [openSent, setOpenSent] = useState(false);
   const [openSending, setOpenSending] = useState(false);
+
+  useEffect(() => {
+    const prevTitle = document.title;
+    const desc = 'Аренда стенда от 140 000 ₽ (4 м²). III Международная выставка эко-продукции, 7–9 сентября 2026, Москва, Крокус Экспо. Оставьте заявку на участие.';
+    document.title = 'Стать экспонентом GreenExpo 2026 — аренда стенда для эко-производителей';
+
+    let meta = document.querySelector('meta[name="description"]');
+    const prevDesc = meta?.getAttribute('content') || '';
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'description');
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', desc);
+
+    return () => {
+      document.title = prevTitle;
+      meta?.setAttribute('content', prevDesc);
+    };
+  }, []);
 
   function openModal(title: string, source: string) {
     reachMetrikaGoal('open_modal');
