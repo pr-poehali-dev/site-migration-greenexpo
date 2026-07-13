@@ -2,14 +2,14 @@
 Отправка уведомления о новом лиде на email и в Telegram.
 Принимает: name, phone, email, role (опционально), source (popup/form),
 utm_source, utm_medium, utm_campaign, utm_term, utm_content (опционально).
-v4
+v5
 """
 import json
 import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-import urllib.request
+import requests
 
 
 def format_utm(utm: dict) -> str:
@@ -84,39 +84,41 @@ def send_telegram(name: str, phone: str, email: str, role: str, source: str, utm
     for key in ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']:
         val = utm.get(key, '').strip()
         if val:
-            utm_lines.append(f"  `{key}`: {val}")
-    utm_block = '\n'.join(utm_lines) if utm_lines else '  _не определён_'
+            utm_lines.append(f"  {key}: {val}")
+    utm_block = '\n'.join(utm_lines) if utm_lines else '  не определён'
 
     text = (
-        f"🌿 *Новая заявка GreenExpo*\n\n"
+        f"🌿 Новая заявка GreenExpo\n\n"
         f"📋 Форма: {source_label}\n"
         f"👤 Имя: {name}\n"
         f"📞 Телефон: {phone}\n"
         f"✉️ Email: {email}\n"
         f"🏷 Роль: {role_label}\n\n"
-        f"📊 *UTM-метки:*\n{utm_block}"
+        f"📊 UTM-метки:\n{utm_block}"
     )
 
+    url = f'https://api.telegram.org/bot{token}/sendMessage'
+    payload_base = {'text': text}
     for chat_id in chat_ids:
-        data = json.dumps({
-            'chat_id': chat_id,
-            'text': text,
-            'parse_mode': 'Markdown'
-        }).encode('utf-8')
-        req = urllib.request.Request(
-            f'https://api.telegram.org/bot{token}/sendMessage',
-            data=data,
-            headers={'Content-Type': 'application/json'}
-        )
+        sent = False
         last_err = None
         for attempt in range(3):
             try:
-                urllib.request.urlopen(req, timeout=25)
-                last_err = None
-                break
+                resp = requests.post(
+                    url,
+                    json={'chat_id': chat_id, **payload_base},
+                    timeout=(6, 6),
+                )
+                if resp.status_code == 200:
+                    print(f'Telegram OK for chat {chat_id} (attempt {attempt + 1})')
+                    sent = True
+                    break
+                last_err = f'HTTP {resp.status_code}: {resp.text}'
+                if 400 <= resp.status_code < 500:
+                    break
             except Exception as e:
-                last_err = e
-        if last_err is not None:
+                last_err = str(e)
+        if not sent:
             print(f'Telegram send failed for chat {chat_id}: {last_err}')
 
 
