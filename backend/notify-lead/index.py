@@ -2,11 +2,12 @@
 Отправка уведомления о новом лиде на email и в Telegram.
 Принимает: name, phone, email, role (опционально), source (popup/form),
 utm_source, utm_medium, utm_campaign, utm_term, utm_content (опционально).
-v5
+v6
 """
 import json
 import os
 import smtplib
+import threading
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import requests
@@ -98,28 +99,31 @@ def send_telegram(name: str, phone: str, email: str, role: str, source: str, utm
     )
 
     url = f'https://api.telegram.org/bot{token}/sendMessage'
-    payload_base = {'text': text}
-    for chat_id in chat_ids:
-        sent = False
+
+    def send_one(chat_id):
         last_err = None
-        for attempt in range(3):
+        for attempt in range(4):
             try:
                 resp = requests.post(
                     url,
-                    json={'chat_id': chat_id, **payload_base},
-                    timeout=(6, 6),
+                    json={'chat_id': chat_id, 'text': text},
+                    timeout=(5, 5),
                 )
                 if resp.status_code == 200:
                     print(f'Telegram OK for chat {chat_id} (attempt {attempt + 1})')
-                    sent = True
-                    break
+                    return
                 last_err = f'HTTP {resp.status_code}: {resp.text}'
                 if 400 <= resp.status_code < 500:
                     break
             except Exception as e:
                 last_err = str(e)
-        if not sent:
-            print(f'Telegram send failed for chat {chat_id}: {last_err}')
+        print(f'Telegram send failed for chat {chat_id}: {last_err}')
+
+    threads = [threading.Thread(target=send_one, args=(cid,)) for cid in chat_ids]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
 
 
 def handler(event: dict, context) -> dict:
