@@ -93,7 +93,7 @@ export default function Press() {
 
         <div className="flex justify-center mb-12">
           <a
-            href="https://disk.yandex.ru/i/ixnM52Y3B15eMA?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=button_3_block"
+            href="https://disk.yandex.ru/d/myhupVQdDb7Kpg"
             target="_blank"
             rel="noopener noreferrer"
             className="font-montserrat font-700 text-sm tracking-widest px-12 py-4 rounded-full transition-all hover:opacity-90"
