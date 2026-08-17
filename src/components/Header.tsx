@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
+import greenExpoLogo from '@/assets/greenexpo-logo-white.png';
 
 const navItems = [
   { label: 'О ВЫСТАВКЕ', anchor: 'about' },
@@ -58,8 +59,8 @@ export default function Header({ onOpenModal }: HeaderProps) {
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <img
-              src="https://cdn.poehali.dev/files/fd84a788-1a72-431d-bef6-6c7a5d181c51.png"
-              alt="GreenExpo"
+              src={greenExpoLogo}
+              alt="ГринЭкспо"
               className="h-10 w-auto object-contain"
             />
           </Link>
