@@ -6,6 +6,7 @@ import Icon from '@/components/ui/icon';
 import { useUtm } from '@/hooks/useUtm';
 import { useSeo } from '@/hooks/useSeo';
 import { reachGoal, GOALS } from '@/hooks/useAnalytics';
+import greenExpoLogo from '@/assets/greenexpo-logo.png';
 
 const heroImage = 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/files/5394c160-2a6a-4345-a2d3-d23038df86b2.jpg';
 const expoImage = 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/files/4db694dd-cc8c-49d7-979b-20eb8b01522b.jpg';
@@ -576,7 +577,7 @@ export default function Index() {
               >
                 {item.isLogos ? (
                   <div className="flex flex-col gap-2 items-center justify-center mb-4">
-                    <img src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/50bd4f74-638e-401b-a97a-9648d41cc09d.png" alt="GreenExpo" className="h-8 object-contain" />
+                    <img src={greenExpoLogo} alt="ГринЭкспо" className="h-8 object-contain" />
                     <img src="https://cdn.poehali.dev/files/c8d69aa7-7bdc-4eb6-9355-88587867cf38.png" alt="FlowersExpo" className="h-8 object-contain" />
                   </div>
                 ) : item.img ? (
@@ -712,8 +713,8 @@ export default function Index() {
             <div className="bg-white rounded-2xl p-8 shadow-sm">
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-6">
                 <img
-                  src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/50bd4f74-638e-401b-a97a-9648d41cc09d.png"
-                  alt="GreenExpo"
+                  src={greenExpoLogo}
+                  alt="ГринЭкспо"
                   className="h-14 object-contain"
                 />
                 <img
@@ -752,8 +753,8 @@ export default function Index() {
                   Контакты:
                 </p>
                 <img
-                  src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/50bd4f74-638e-401b-a97a-9648d41cc09d.png"
-                  alt="GreenExpo"
+                  src={greenExpoLogo}
+                  alt="ГринЭкспо"
                   className="h-10 object-contain"
                 />
               </div>
