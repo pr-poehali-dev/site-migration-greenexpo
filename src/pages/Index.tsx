@@ -7,6 +7,7 @@ import { useUtm } from '@/hooks/useUtm';
 import { useSeo } from '@/hooks/useSeo';
 import { reachGoal, GOALS } from '@/hooks/useAnalytics';
 import greenExpoLogo from '@/assets/greenexpo-logo.png';
+import pitomkinoLogo from '@/assets/pitomkino-logo.png';
 
 const heroImage = 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/files/5394c160-2a6a-4345-a2d3-d23038df86b2.jpg';
 const expoImage = 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/files/4db694dd-cc8c-49d7-979b-20eb8b01522b.jpg';
@@ -57,20 +58,11 @@ const pressItems = [
   { img: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/884da8d0-6131-4c94-b2e0-522bae05ff46.jpg', label: 'Телесъёмки' },
 ];
 
-const partners = [
-  { name: 'Союз органического земледелия', logo: 'https://cdn.poehali.dev/files/42e67576-c450-45e0-90d0-e9796ca964c9.jpg', url: 'https://soz.bio/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
-  { name: 'Фонд Органика', logo: 'https://cdn.poehali.dev/files/9920cf71-2de3-4a84-8396-0fb6e645e493.png', url: 'https://organicfund.ru/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
-  { name: 'Wildberries & Russ', logo: 'https://cdn.poehali.dev/files/9dfb62a3-8e69-4bb0-a08c-8c23a309809e.png', url: 'https://www.wildberries.ru/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
-  { name: 'Роскачество', logo: 'https://cdn.poehali.dev/files/2c4f4bf7-7240-41e1-bcff-6b312fdc5a63.png', url: 'https://roskachestvo.gov.ru/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
-  { name: 'SYNTX', logo: 'https://cdn.poehali.dev/files/eb175aaa-454e-4618-ac5c-7e80672e3d04.jpg', url: 'https://syntx.ai/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
-];
-
 const infoPartners = [
-  { name: 'ШОЗ', logo: 'https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/220b2bbc-3cae-4d52-ac08-c90e705d371b.jpg', url: 'https://vk.com/organicschool_online?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
-  { name: 'АГРОпрактика', logo: 'https://cdn.poehali.dev/files/3215cc0c-27f0-4cab-9555-2eacb8ff8f94.jpg', url: 'https://www.agropraktika.com/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
   { name: 'Союз органического земледелия', logo: 'https://cdn.poehali.dev/files/067b4fdc-f0a2-4535-8417-07d2ba92cdb3.jpg', url: 'https://soz.bio/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
   { name: 'ECO portal', logo: 'https://cdn.poehali.dev/files/b091d059-c574-4adf-932b-21699ea8822e.jpg', url: 'https://ecoportal.su/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
   { name: 'NIKOMA', logo: 'https://cdn.poehali.dev/files/aa068fce-d090-43fc-b8db-37e389af587b.png', url: 'https://vk.com/nikoma_garden?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
+  { name: 'Питомкино', logo: pitomkinoLogo, url: 'http://pitomkino.ru/?utm_source=greenexpo_pro&utm_medium=lnk&utm_campaign=partner_block' },
 ];
 
 const NOTIFY_URL = 'https://functions.poehali.dev/28e6c844-7b1b-41c6-9811-be3b2957727c';
@@ -813,19 +805,11 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Партнёры */}
+      {/* Информационные партнёры */}
       <section className="py-16" style={{ backgroundColor: 'var(--eco-beige-dark)' }}>
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="section-title">Партнёры</h2>
-          <div className="flex flex-wrap justify-center items-center gap-8 mb-12">
-            {partners.map((p) => (
-              <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl px-6 py-5 shadow-sm flex items-center justify-center hover:opacity-80 transition-opacity" style={{ minWidth: 160, minHeight: 80 }}>
-                <img src={p.logo} alt={p.name} className="max-h-16 max-w-[160px] object-contain" />
-              </a>
-            ))}
-          </div>
           <h2 className="section-title">Информационные партнёры</h2>
-          <div className="flex flex-wrap justify-center items-center gap-8">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-8">
             {infoPartners.map((p) => (
               <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl px-6 py-5 shadow-sm flex items-center justify-center hover:opacity-80 transition-opacity" style={{ minWidth: 140, minHeight: 80 }}>
                 <img src={p.logo} alt={p.name} className="max-h-16 max-w-[160px] object-contain" />
