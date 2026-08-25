@@ -451,20 +451,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Баннер ДАЧА */}
-      <section className="py-6 px-4" style={{ backgroundColor: 'var(--eco-beige)' }}>
-        <div className="max-w-5xl mx-auto">
-          <Link to="/dacha" className="block rounded-2xl overflow-hidden cursor-pointer group">
-            <img
-              src="https://cdn.poehali.dev/projects/13b38f1b-0e5e-49c6-8d52-8061839426e8/bucket/3ca292b2-a513-4bfd-821e-4b251e562fc2.png"
-              alt="Спецпроект ДАЧА GreenExpo'2026"
-              className="w-full object-cover transition-transform duration-500 group-hover:scale-[1.01]"
-              style={{ display: 'block' }}
-            />
-          </Link>
-        </div>
-      </section>
-
       {/* Почему стоит участвовать */}
       <section id="exhibitors" className="py-20" style={{ backgroundColor: 'white' }}>
         <div className="max-w-5xl mx-auto px-4">

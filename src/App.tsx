@@ -25,7 +25,6 @@ import Archive from "./pages/Archive";
 import AboutCompany from "./pages/AboutCompany";
 import Subsidies from "./pages/Subsidies";
 import Hotel from "./pages/Hotel";
-import Dacha from "./pages/Dacha";
 import ForExhibitor from "./pages/ForExhibitor";
 import Blog from "./pages/Blog";
 import BlogArticleExhibitionChecklist from "./pages/BlogArticleExhibitionChecklist";
@@ -57,7 +56,6 @@ const App = () => (
           <Route path="/about-company" element={<AboutCompany />} />
           <Route path="/sub" element={<Subsidies />} />
           <Route path="/hotel" element={<Hotel />} />
-          <Route path="/dacha" element={<Dacha />} />
           <Route path="/forexhibitor" element={<ForExhibitor />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/kak-podgotovitsya-k-pervoy-vystavke" element={<BlogArticleExhibitionChecklist />} />
