@@ -36,6 +36,16 @@ export default function ProgramEventCard({ event }: ProgramEventCardProps) {
             {event.detail}
           </p>
         )}
+        {event.bullets && (
+          <ul className="mt-2 space-y-1">
+            {event.bullets.map((b) => (
+              <li key={b} className="font-opensans text-xs leading-relaxed flex gap-2" style={{ color: '#5a7a5a' }}>
+                <span style={{ color: 'var(--eco-green)' }}>—</span>
+                {b}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
