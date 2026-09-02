@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useSeo } from '@/hooks/useSeo';
@@ -91,7 +92,7 @@ export default function Press() {
           </ul>
         </div>
 
-        <div className="flex justify-center mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           <a
             href="https://disk.yandex.ru/d/myhupVQdDb7Kpg"
             target="_blank"
@@ -101,6 +102,13 @@ export default function Press() {
           >
             СКАЧАТЬ ЛОГОТИП
           </a>
+          <Link
+            to="/pressrelease"
+            className="font-montserrat font-700 text-sm tracking-widest px-12 py-4 rounded-full transition-all hover:opacity-90"
+            style={{ backgroundColor: 'var(--eco-green)', color: 'white' }}
+          >
+            СКАЧАТЬ ПРЕСС-РЕЛИЗ
+          </Link>
         </div>
 
         <div>

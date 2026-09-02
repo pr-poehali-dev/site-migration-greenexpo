@@ -17,6 +17,7 @@ import Exhibitors from "./pages/Exhibitors";
 import Visitors from "./pages/Visitors";
 import Program from "./pages/Program";
 import Press from "./pages/Press";
+import PressRelease from "./pages/PressRelease";
 import Contacts from "./pages/Contacts";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/visitors" element={<Visitors />} />
           <Route path="/program" element={<Program />} />
           <Route path="/press" element={<Press />} />
+          <Route path="/pressrelease" element={<PressRelease />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
